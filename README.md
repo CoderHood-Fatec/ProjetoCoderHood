@@ -9,6 +9,8 @@ D --> I[Visualização de Nota]
 ```
 
 
-Como um professor
-Eu preciso de um sistema que possibilite inserir Scores de alunos
+Como um professor;
+
+Eu preciso de um sistema que possibilite inserir Scores de alunos;
+
 Para conseguir avaliar a evolução dos mesmos ao longo do curso 
