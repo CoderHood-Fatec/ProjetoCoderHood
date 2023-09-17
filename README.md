@@ -23,21 +23,7 @@
 
 ## Requisitos
 
-* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso* Linguagem de programação Python;
-* Uso
-  
+
 <span id="fluxos"></span>
 
 ## Fluxos
