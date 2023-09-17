@@ -74,10 +74,11 @@ D --> I[Visualização de Nota]
 ## Backlog
 
 
-| ID  | *User Stories | Épico | Sprint 
+| ID  | User Stories |  Épico | Sprint 
 | ------------- | ------------- | ------------- | ------------- |
-| 1  | Criar Turma   | Criação de Turmas  | 1  | Content Cell  | Content Cell  |
-| 1  | Criar Turma   | Content Cell  | 1  | Content Cell  | Content Cell  |
+| 1  | O usuário precisa **cadastrar as turmas** no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino   | Criação de Turmas  | [1] (https://trello.com/c/unBfxMw4/1-cadastrar-uma-turma)  | 
+| 2  | Após criar a Turma, o administrador precisa **inserir alunos à turma**  .... | Content Cell  | 1  |
+| 3  | Inserir história do ciclo de entrega e scores??    | Content Cell  | 1  |
 
 
 
