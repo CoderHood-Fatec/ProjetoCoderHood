@@ -63,10 +63,9 @@ M2)
 
 ```mermaid
 flowchart TD
-A[Sistema] --> C[Admin] & B[Professor] & D[Alunos]
+A[Sistema] --> B[Professor] 
 B --> E[Inserir Scores] & F[Ciclos de Entregas]
-C --> G[Alteração de Cadastros] & H[Confecção de Perfis]
-D --> I[Visualização de Nota]
+
 ```
 
 <span id="backlog"></span>
