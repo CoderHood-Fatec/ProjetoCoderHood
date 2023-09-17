@@ -21,7 +21,7 @@ que são usados no final para computar o chamado FEE (fator de ensino evolutivo)
 empresa não dispõe atualmente de um SI (sistema de informação) direcionado para a gestão e
 acompanhamento dos scores de seus alunos.
 
-O desafio do seu grupo é apoiar a PBLTeX a levantar, especificar e desenvolver essa solução
+  O desafio da CoderHood é apoiar a PBLTeX a levantar, especificar e desenvolver essa solução
 <span id="cronograma"></span>
 
 ## Cronograma
@@ -74,6 +74,8 @@ D --> I[Visualização de Nota]
 ## Backlog
 
 <span id="wireframes"></span>
+
+
 
 ## Wireframes
 
