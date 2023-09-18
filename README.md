@@ -75,9 +75,9 @@ B --> E[Inserir Scores] & F[Ciclos de Entregas]
 
 | ID  | User Stories |  Épico | Sprint 
 | ------------- | ------------- | ------------- | ------------- |
-| 1  | O usuário precisa **cadastrar as turmas** no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino   | Criação de Turmas  | [#1](https://trello.com/c/unBfxMw4/1-cadastrar-uma-turma)  | 
-| 2  | Após criar a Turma, o administrador precisa **inserir alunos à turma**  .... | Content Cell  | 1  |
-| 3  | Inserir história do ciclo de entrega e scores??    | Content Cell  | 1  |
+| 1  | **Cadastro de visualização de Turmas:** O usuário precisa cadastrar e visualizar as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino   | Criação de Turmas  | [#1](https://trello.com/c/unBfxMw4/1-cadastrar-uma-turma)  | 
+| 2  | **Cadastro de Alunos:** O administrador precisa cadastrar em uma turma já existente .... | Controle de Alunos  | 1  |
+| 3  | **O professor **O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final.    | Content Cell  | 1  |
 
 
 
