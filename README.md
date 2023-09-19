@@ -79,9 +79,11 @@ G--> CTn[Nome da Turma] & CTq[Qtd de Alunos]
 
 | ID  | User Stories |  Épico | Sprint 
 | ------------- | ------------- | ------------- | ------------- |
-| 1  | **Cadastro de Turmas:** O usuário precisa cadastrar e visualizar as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino   | Criação de Turmas  | [#1](https://trello.com/c/unBfxMw4/1-cadastrar-uma-turma)  | 
-| 2  | **Cadastro de Alunos:** O administrador precisa cadastrar em uma turma já existente .... | Controle de Alunos  | 1  |
-| 3  | **O professor** O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final    | Content Cell  | 1  |
+| 1  | **Gerenciamento de Turmas:** O professor precisa cadastrar, visualizar e remover as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino   | Criação de Turmas  | [#1](https://trello.com/c/unBfxMw4/1-cadastrar-uma-turma)  | 
+| 2  | **Gerenciamento de Alunos:** O professor precisa cadastrar, visualizar e remover em uma turma já existente no sistema para que possa realizar seu acompanhamento acadêmico | Controle de Alunos  | [#2](https://trello.com/c/7qZJmNIV/10-cadastrar-aluno)  |
+| 3  | **Gerenciamento de Ciclo de Entregas** O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final    | Content Cell  | 2  |
+| 3  | **Gerenciamento de notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas.| Content Cell  | 2  |
+
 
 
 
