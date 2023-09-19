@@ -64,7 +64,9 @@ M2)
 ```mermaid
 flowchart TD
 A[Sistema] --> B[Professor] 
-B --> E[Inserir Scores] & F[Ciclos de Entregas]
+B --> C[Turmas] & G[Cadastro de Turmas]
+C--> H[Cadastro de Alunos] & D[Alunos]
+D--> F[Scores] & E[Ciclos de entrega]
 
 ```
 
