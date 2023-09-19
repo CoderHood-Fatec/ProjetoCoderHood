@@ -67,6 +67,8 @@ A[Sistema] --> B[Professor]
 B --> C[Turmas] & G[Cadastro de Turmas]
 C--> H[Cadastro de Alunos] & D[Alunos]
 D--> F[Scores] & E[Ciclos de entrega]
+H--> CAn[Nome Aluno] & CAd[Data de Nascimento] & CAr[RA]
+G--> CTn[Nome da Turma] & CTq[Qtd de Alunos]
 
 ```
 
