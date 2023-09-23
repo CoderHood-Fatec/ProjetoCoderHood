@@ -33,16 +33,16 @@ acompanhamento dos scores de seus alunos.
 ## Requisitos
 
 ### Requisitos Funcionais
-* O SI deve possuir um controle de Turmas
-* O SI deve possuir um controle de Grupos de Alunos
-* O SI deve permitir um controle de Alunos
-* O SI deve permitir a carga de Alunos
-* O SI deve permitir um controle dos Ciclos de Entrega
-* O SI deve permitir a carga de Scores parciais relacionados ao Ciclo de Entrega
-* O SI deve permitir a Configuração de parâmetros globais
-* O SI deve permitir a exportação de dados consolidados, computados e métricas 
+* O sistema deve possuir um controle de Turmas
+* O sistema deve possuir um controle de Grupos de Alunos
+* O sistema deve permitir um controle de Alunos
+* O sistema deve permitir a carga de Alunos
+* O sistema deve permitir um controle dos Ciclos de Entrega
+* O sistema deve permitir a carga de Scores parciais relacionados ao Ciclo de Entrega
+* O sistema deve permitir a Configuração de parâmetros globais
+* O sistema deve permitir a exportação de dados consolidados, computados e métricas 
 inferidas
-* O SI deve prover visibilidades objetivas e diretas que possibilitem o acompanhamento 
+* O sistema deve prover visibilidades objetivas e diretas que possibilitem o acompanhamento 
 dos cursos providos pela PBLTeX
 
 ### Requisitos Não Funcionais
