@@ -28,7 +28,7 @@ acompanhamento dos scores de seus alunos.
 
 | Sprint  | Nome | Data inicio  | Data Fim | Status |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| --  | KickOff   | 28/08   | 06/09 | | ✔️
+| --  | KickOff   | 28/08   | 06/09 |✔️ | 
 | 1  | Sprint 1   | 04/09   | 24/09 | | 
 | 2  | Sprint 2   | 25/09   | 15/10 | |
 | 3  | Sprint 3   | 16/10   | 05/11 | | 
