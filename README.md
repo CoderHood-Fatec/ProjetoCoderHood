@@ -33,7 +33,7 @@ acompanhamento dos scores de seus alunos.
 | 2  | Sprint 2   | 25/09   | 15/10 | |
 | 3  | Sprint 3   | 16/10   | 05/11 | | 
 | 4  | Sprint 4   | 06/11   | 26/11 | | 
-| Feira de Soluções  | 12/12    ||||
+| -- | Feira de Soluções  | 12/12  |||
 
 
 
