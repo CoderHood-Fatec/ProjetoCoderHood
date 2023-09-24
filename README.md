@@ -80,6 +80,7 @@ D--> F[Scores] & E[Ciclos de entrega]
 H--> CAn[Nome Aluno] & CAd[Data de Nascimento] & CAr[RA]
 G--> CTn[Nome da Turma] & CTq[Qtd de Alunos]
 
+https://www.canva.com/design/DAFvSXf40XE/VEOEoDPBUCqXGEaf54vT8g/edit?utm_content=DAFvSXf40XE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ```
 
 <span id="backlog"></span>
