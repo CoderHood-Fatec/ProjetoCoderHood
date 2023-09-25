@@ -74,17 +74,37 @@ https://www.canva.com/design/DAFvSXf40XE/VEOEoDPBUCqXGEaf54vT8g/edit?utm_content
 
 <span id="backlog"></span>
 
+Integrante |Ocupação |Github
+ -----------|---------|------
+Vinícius Augusto da Silva Monteiro |Product Owner|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](hhttps://github.com/viniciusFUU)
+Rogério Carlos Ribeiro Junior |Scrum Master|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/Rogeriowski)
+Cesar Augusto Anselmo Pelogia Truyts |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/cesarpelogia)
+Cesar Augusto de Oliveira |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/cesar2099xy)
+Juan Henrique Evaristo Cursino |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/JuanCursino)
+Julio Cesar da Silva Araujo |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/JulioAraujo92)
+Leonardo Ribeiro Mariano |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/LeoRibeiro05)
+Rennerson Vasconcelos Afonso |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/Rennerson13)
+
 ## Backlog
 
 
-| ID  | User Stories |  Épico | Sprint 
-| ------------- | ------------- | ------------- | ------------- |
-| 1  | **Gerenciamento de Turmas:** O professor precisa cadastrar, visualizar e remover as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino   | Criação de Turmas  | [#2](https://trello.com/c/unBfxMw4/1-cadastrar-uma-turma)  | 
-| 2  | **Gerenciamento de Alunos:** O professor precisa cadastrar, visualizar e remover em uma turma já existente no sistema para que possa realizar seu acompanhamento acadêmico | Controle de Alunos  | [#2](https://trello.com/c/7qZJmNIV/10-cadastrar-aluno)  |
-| 3  | **Gerenciamento de Ciclo de Entregas** O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final    | Ciclo de Entregas  | [#3](https://trello.com/c/jyWWDRxE/15-criar-ciclo-de-entrega) |
-| 4  | **Gerenciamento de notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas.| Ciclo de Entregas  | [#3](https://trello.com/c/74CfZiV4/14-visualizar-notas) |
+| Prioridades | ID  | User Stories |  Épico | Sprint 
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|  | 1  | **Gerenciamento de Turmas:** O professor precisa cadastrar, visualizar e remover as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino   | Criação de Turmas  | [#2](https://trello.com/c/unBfxMw4/1-cadastrar-uma-turma)  | 
+Prioridades | 2  | **Gerenciamento de Alunos:** O professor precisa cadastrar, visualizar e remover em uma turma já existente no sistema para que possa realizar seu acompanhamento acadêmico | Controle de Alunos  | [#2](https://trello.com/c/7qZJmNIV/10-cadastrar-aluno)  |
+|  | 2  | **Inserir Notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas | Controle de Alunos  | [#2](https://trello.com/c/74CfZiV4/14-visualizar-notas)  |
+|  | 2  | **Grupo de Alunos:** O professor precisa dividir a turma em grupos para que posteriormente possa atribuir uma mesma nota para todos os seus integrantes, além de acompanhar a performance por grupo na página de relatórios| Controle de Alunos  | [#2] |
+|  | 2  | **Configuração de Parametros Globais:** Ao enviar uma atividade para os alunos, o professor deve ser capaz de configurar parametros como prazo da atividade para todas as turmas, visando facilitar o processo para ele  | Configurações  | [#2] |
+|  | 3  | **Gerenciamento de Ciclo de Entregas** O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final  |  | Ciclo de Entregas  | [#3](https://trello.com/c/jyWWDRxE/15-criar-ciclo-de-entrega) |
+|  | 4  | **Gerenciamento de notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas.| Ciclo de Entregas  | [#3](https://trello.com/c/74CfZiV4/14-visualizar-notas) |
+|  | 4  | **Gerenciamento de notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas.| Ciclo de Entregas  | [#3](https://trello.com/c/74CfZiV4/14-visualizar-notas) |
 
 
+Grupo de Alunos
+Carga de Alunos
+Configurações de parametros globais
+Importação dos dados
+Painel de relatórios
 <span id="wireframes"></span>
 
 
