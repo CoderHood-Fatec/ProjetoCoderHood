@@ -6,6 +6,8 @@
 <p align="center"> |
     <a href="#objetivo">Objetivo</a> |
     <a href="#cronograma">Cronograma</a> |
+    <a href="#integrantes">Integrantes</a> |
+
     <a href="#requisitos">Requisitos</a> |
     <a href="#fluxos">Fluxos</a> |
     <a href="#wireframes">Wireframes</a> | 
@@ -73,6 +75,8 @@ M2)
 https://www.canva.com/design/DAFvSXf40XE/VEOEoDPBUCqXGEaf54vT8g/edit?utm_content=DAFvSXf40XE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 <span id="backlog"></span>
+
+## Integrantes
 
 Integrante |Ocupação |Github
  -----------|---------|------
