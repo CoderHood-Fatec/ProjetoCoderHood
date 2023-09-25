@@ -7,7 +7,6 @@
     <a href="#objetivo">Objetivo</a> |
     <a href="#cronograma">Cronograma</a> |
     <a href="#integrantes">Integrantes</a> |
-
     <a href="#requisitos">Requisitos</a> |
     <a href="#fluxos">Fluxos</a> |
     <a href="#wireframes">Wireframes</a> | 
@@ -36,8 +35,6 @@ acompanhamento dos scores de seus alunos.
 | 3  | Sprint 3   | 16/10   | 05/11 | | 
 | 4  | Sprint 4   | 06/11   | 26/11 | | 
 | -- | Feira de Soluções  | 12/12  | 12/12 ||
-
-
 
 
 <span id="requisitos"></span>
