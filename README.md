@@ -68,6 +68,21 @@ M2)
 
 <span id="fluxos"></span>
 
+## Backlog
+
+
+| Prioridade | User Stories | Sprint 
+| ------------- | ------------- | ------------- 
+| Alta |  **Gerenciamento de Turmas:** O professor precisa cadastrar, visualizar e remover as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino  | [#2]  | 
+| Alta | **Gerenciamento de Alunos:** O professor precisa cadastrar, visualizar e remover em uma turma já existente no sistema para que possa realizar seu acompanhamento acadêmico | [#2]  |
+| Alta | **Inserir Notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas | [#2]  |
+| Média | **Configuração de Parametros Globais:** Ao enviar uma atividade para os alunos, o professor deve ser capaz de configurar parametros como prazo da atividade para todas as turmas, visando facilitar o processo para ele  | [#3] |
+| Média | **Grupo de Alunos:** O professor precisa dividir a turma em grupos para que posteriormente possa atribuir uma mesma nota para todos os seus integrantes, além de acompanhar a performance por grupo na página de relatórios| [#3] |
+| Alta | **Gerenciamento de Ciclo de Entregas:** O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final  | [#3] |
+| Baixa | **Painel de Relatórios:** O professor precisa ter uma visão consolidada com as principais métricas que permitam-o acompanhar a performance de sua turma, grupos e alunos| [#3] |
+| Média | **Importação dos Dados:** O professor precisa extrair relatórios e listas contendo os alunos das turmas ou grupos para poder realizar análises e preparar relatórios para a secretária.| [#4] |
+| Baixa | **Carga de Alunos**: Permitir o professor carregarinformações em massa para aumentar sua eficiência de trabalho | [#4] |
+
 ## Fluxos
 
 https://www.canva.com/design/DAFvSXf40XE/VEOEoDPBUCqXGEaf54vT8g/edit?utm_content=DAFvSXf40XE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
@@ -87,17 +102,4 @@ Julio Cesar da Silva Araujo |Desenvolvedor|[<img src="https://camo.githubusercon
 Leonardo Ribeiro Mariano |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/LeoRibeiro05)
 Rennerson Vasconcelos Afonso |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/Rennerson13)
 
-## Backlog
 
-
-| Prioridade | User Stories | Sprint 
-| ------------- | ------------- | ------------- 
-| Alta |  **Gerenciamento de Turmas:** O professor precisa cadastrar, visualizar e remover as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino  | [#2]  | 
-| Alta | **Gerenciamento de Alunos:** O professor precisa cadastrar, visualizar e remover em uma turma já existente no sistema para que possa realizar seu acompanhamento acadêmico | [#2]  |
-| Alta | **Inserir Notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas | [#2]  |
-| Média | **Configuração de Parametros Globais:** Ao enviar uma atividade para os alunos, o professor deve ser capaz de configurar parametros como prazo da atividade para todas as turmas, visando facilitar o processo para ele  | [#3] |
-| Média | **Grupo de Alunos:** O professor precisa dividir a turma em grupos para que posteriormente possa atribuir uma mesma nota para todos os seus integrantes, além de acompanhar a performance por grupo na página de relatórios| [#3] |
-| Alta | **Gerenciamento de Ciclo de Entregas:** O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final  | [#3] |
-| Baixa | **Painel de Relatórios:** O professor precisa ter uma visão consolidada com as principais métricas que permitam-o acompanhar a performance de sua turma, grupos e alunos| [#3] |
-| Média | **Importação dos Dados:** O professor precisa extrair relatórios e listas contendo os alunos das turmas ou grupos para poder realizar análises e preparar relatórios para a secretária.| [#4] |
-| Baixa | **Carga de Alunos**: Permitir o professor carregarinformações em massa para aumentar sua eficiência de trabalho | [#4] |
