@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <img class="coderhood" src="../Logo API.png" alt="" srcset="">
+        <img class="pbltex" src="../Logo PBLTex.png" alt="" srcset="">
+    </header>
+    <div id="container">
+        <nav id="nav-container">
+                <button id="openModalBtn" class="link-button">Cadastro de Turmas</button>
+                <button class="link-button">Alunos</button>
+        </nav>
+
+        <div id="modal-container">
+            <div id="fade" class="hide"></div>
+            <div id="modal" class="hide">
+
+                <div id="modal-header">
+                    <h2 class="cadastro-turma">Cadastre a Turma</h2>
+                    <button id="closeModalBtn">X</button>
+                </div>
+
+                <div id="modal-body">
+                    <input id="nomeTurma" type="text" placeholder="Nome da Turma:">
+                    <input id="professor" type="text" placeholder="Professor:">
+                    <input id="turno" type="text" placeholder="Turno:">
+
+                    <button id="btn" type="submit" onclick="enviarDados()">Adicionar</button>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>
+
+</body>
+</html>
