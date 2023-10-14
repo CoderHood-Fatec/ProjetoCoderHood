@@ -112,7 +112,7 @@ Rennerson Vasconcelos Afonso |Desenvolvedor|[<img src="https://camo.githubuserco
   <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/0e29ad8f-1e17-4fa3-859b-a571dcf6f038" style="margin: 20px; width: 50px; height: 50px;" />
   <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/ffa82c19-6c57-4c0a-bc1f-61c6e5a23865" style="margin: 20px; width: 50px; height: 50px;" />
   <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/f20f107a-59e6-4cbd-b91e-11157452722b" style="margin: 20px; width: 50px; height: 50px;" />
-    <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/3b4515e2-dd0b-4778-affb-feaa268d2388" style="margin: 20px; width: 60px; height: 60px;" />
+    <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/a7b03fdc-424b-4350-a2b4-f6712bd6b8dc" style="margin: 20px; width: 60px; height: 60px;" />
     
 </div>
 
@@ -120,12 +120,9 @@ Rennerson Vasconcelos Afonso |Desenvolvedor|[<img src="https://camo.githubuserco
 
 <div align="Left">
     
-  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/1530fbc9-6922-4d49-b97c-501c84e5d38b" style="margin: 20px; width: 50px; height: 50px;" />
-  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/debf1e95-11f5-44ab-b919-9a563dd69ce3" style="margin: 20px; width: 100px; height: 100px;" />
-  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/0e29ad8f-1e17-4fa3-859b-a571dcf6f038" style="margin: 20px; width: 50px; height: 50px;" />
-  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/ffa82c19-6c57-4c0a-bc1f-61c6e5a23865" style="margin: 20px; width: 50px; height: 50px;" />
-  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/f20f107a-59e6-4cbd-b91e-11157452722b" style="margin: 20px; width: 50px; height: 50px;" />
-    <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/3b4515e2-dd0b-4778-affb-feaa268d2388" style="margin: 20px; width: 60px; height: 60px;" />
-    
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/64bcacc5-7180-4467-af93-4ece29788a50" style="margin: 20px; width: 50px; height: 50px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/5a7d9f2a-8c71-4a65-9b6c-c8037925f3c6" style="margin: 20px; width: 100px; height: 100px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/01324c3e-137d-4dc1-9c1f-322354594786" style="margin: 20px; width: 50px; height: 50px;" />
+
 </div>
 
