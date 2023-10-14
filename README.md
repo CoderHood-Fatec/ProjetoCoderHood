@@ -121,7 +121,7 @@ Rennerson Vasconcelos Afonso |Desenvolvedor|[<img src="https://camo.githubuserco
 <div align="Left">
     
   <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/64bcacc5-7180-4467-af93-4ece29788a50" style="margin: 20px; width: 50px; height: 50px;" />
-  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/5a7d9f2a-8c71-4a65-9b6c-c8037925f3c6" style="margin: 20px; width: 50px; height: 100px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/5a7d9f2a-8c71-4a65-9b6c-c8037925f3c6" style="margin: 20px; width: 50px; height: 50px;" />
   <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/01324c3e-137d-4dc1-9c1f-322354594786" style="margin: 20px; width: 50px; height: 50px;" />
 
 </div>
