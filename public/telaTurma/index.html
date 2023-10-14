@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Home</title>
+    <title>Cadastro de Alunos</title>
 </head>
 <body>
     <header>
@@ -14,13 +14,15 @@
     </header>
     <div id="container">
         <nav id="nav-container">
-                <button id="openModalBtn" class="link-button">Cadastro de Turmas</button>
-                <button class="link-button">Alunos</button>
+                <button id="openModalBtn" class="link-button">Cadastro de Aluno</button>
         </nav>
 
         <main>
-          <h1>Turmas</h1>
-          <div id="inserirTurma"></div>
+            <div id="conteudo-turma">
+                <h2>{{turma["Nome da Turma"]}}</h2>
+                <h3>{turma["Professor"]}</h3>
+            </div>
+          <div id="inserir-aluno"></div>
         </main>
 
         <div id="modal-container">
@@ -28,13 +30,14 @@
             <div id="modal" class="hide">
 
                 <div id="modal-header">
-                    <h2 class="cadastro-turma">Cadastre a Turma</h2>
+                    <h2 class="cadastro-turma">Cadastro de Aluno</h2>
                     <button id="closeModalBtn">X</button>
                 </div>
 
                 <div id="modal-body">
-                    <input id="nomeTurma" type="text" placeholder="Nome da Turma:">
-                    <input id="professor" type="text" placeholder="Professor:">
+                    <input id="nomeAluno" type="text" placeholder="Nome do Aluno:">
+                    <input id="ra" type="text" placeholder="RA:">
+                    <input id="turma" type="text" placeholder="Turma:">
                     <input id="turno" type="text" placeholder="Turno:">
 
                     <button id="btn" type="submit" onclick="enviarDados()">Adicionar</button>

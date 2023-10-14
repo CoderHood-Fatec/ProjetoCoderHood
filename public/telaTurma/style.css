@@ -41,7 +41,7 @@ nav{
     display: flex;
     flex-direction: column;
     padding: 50px 0;
-    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px;
+    border: 1px solid black;
     height: 100vh;
     background-color: #E69F64;
 }
@@ -160,32 +160,4 @@ nav{
     padding: 5px 15px;
     border: none;
     border-radius: 20px;
-}
-
-main{
-  margin: 0 auto;
-  color: #015190;
-}
-
-main h1{
-  font-size: 1.8rem;
-  margin: 30px 0 20px 0;
-  position: static;
-}
-
-main #inserirTurma{
-  display: flex;
-  flex-direction: column;
-}
-
-main a{
-  text-decoration:none;
-  color: #015190;
-  margin-bottom: 10px;
-}
-
-main a:hover{
-  transition: .3s;
-  color: #026ec0;
-  font-size: 1.2rem
 }
