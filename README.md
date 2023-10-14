@@ -103,5 +103,29 @@ Leonardo Ribeiro Mariano |Desenvolvedor|[<img src="https://camo.githubuserconten
 Rennerson Vasconcelos Afonso |Desenvolvedor|[<img src="https://camo.githubusercontent.com/fbc3df79ffe1a99e482b154b29262ecbb10d6ee4ed22faa82683aa653d72c4e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3130303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562266c6f676f436f6c6f723d7768697465" />](https://github.com/Rennerson13)
 
 ## Tecnologias Utilizadas
+### Principais Ferramentas
 
+<div align="Left">
+    
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/1530fbc9-6922-4d49-b97c-501c84e5d38b" style="margin: 20px; width: 50px; height: 50px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/debf1e95-11f5-44ab-b919-9a563dd69ce3" style="margin: 20px; width: 100px; height: 100px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/0e29ad8f-1e17-4fa3-859b-a571dcf6f038" style="margin: 20px; width: 50px; height: 50px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/ffa82c19-6c57-4c0a-bc1f-61c6e5a23865" style="margin: 20px; width: 50px; height: 50px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/f20f107a-59e6-4cbd-b91e-11157452722b" style="margin: 20px; width: 50px; height: 50px;" />
+    <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/3b4515e2-dd0b-4778-affb-feaa268d2388" style="margin: 20px; width: 60px; height: 60px;" />
+    
+</div>
+
+### Ferramentas secundárias
+
+<div align="Left">
+    
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/1530fbc9-6922-4d49-b97c-501c84e5d38b" style="margin: 20px; width: 50px; height: 50px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/debf1e95-11f5-44ab-b919-9a563dd69ce3" style="margin: 20px; width: 100px; height: 100px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/0e29ad8f-1e17-4fa3-859b-a571dcf6f038" style="margin: 20px; width: 50px; height: 50px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/ffa82c19-6c57-4c0a-bc1f-61c6e5a23865" style="margin: 20px; width: 50px; height: 50px;" />
+  <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/f20f107a-59e6-4cbd-b91e-11157452722b" style="margin: 20px; width: 50px; height: 50px;" />
+    <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/3b4515e2-dd0b-4778-affb-feaa268d2388" style="margin: 20px; width: 60px; height: 60px;" />
+    
+</div>
 
