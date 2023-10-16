@@ -163,8 +163,12 @@ nav{
 }
 
 main{
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
   color: #015190;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 }
 
 main h1{
@@ -185,7 +189,7 @@ main a{
 }
 
 main a:hover{
-  transition: .3s
+  transition: .3s;
   color: #026ec0;
-  font-size: 1.2rem
+  font-size: 1.2rem;
 }

@@ -48,18 +48,27 @@ function enviarDados() {
     body: JSON.stringify(dados), //convertendo em JSON os objetos
   }
 
-  console.log(window.location)
+  const inserirAlunoDiv = document.getElementById("inserirAluno");
+  function adicionarAluno(aluno) {
+    const alunoDiv = document.createElement("div");
+    alunoDiv.innerHTML = `<p>Nome: ${aluno["Nome do Aluno"]}  R.A: ${aluno["R.A"]}  Turma: ${aluno["Turma"]}</p> <input type="number" placeholder="Nota"/>`;
+    inserirAlunoDiv.appendChild(alunoDiv);
+  }
 
-  //Enviando a requisição POST para o servidor
-  fetch(window.location.origin + '/turma', option).then(teste => {
-    teste.text().then(id =>{
-    //Exibindo a resposta do servidor na página
-    document.getElementById("inserirAluno").innerHTML+=`<a target="__blank" href="/turmas/${id}">`  +id+'</a>'
-      console.log(id + "este é o text")
-  })
-  }).catch(e => {
-      console.log(e);
-      });
+  adicionarAluno(dados);
+
+  // console.log(window.location)
+
+  // //Enviando a requisição POST para o servidor
+  // fetch(window.location.origin + '/aluno', option).then(teste => {
+  //   teste.text().then(id =>{
+  //   //Exibindo a resposta do servidor na página
+  //   document.getElementById("inserirAluno").innerHTML+=`<a target="__blank" href="/turmas/${id}">`  +id+'</a>'
+  //     console.log(id + "este é o text")
+  // })
+  // }).catch(e => {
+  //     console.log(e);
+  //     });
 
   toggleModal();
 

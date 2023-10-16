@@ -47,9 +47,14 @@ def getTurmas(nome):
 
 
 # Rota para página do aluno pela id
-@app.route('/aluno/<int:id>')
-def aluno(id):
-  return str(id)
+alunos = []
+
+
+@app.route('/aluno', methods=['POST'])
+def addAluno():
+  global alunos
+  alunos.append(request.get_json())
+  return request.get_json()
 
 
 # Roda a nossa API
