@@ -51,7 +51,7 @@ function enviarDados() {
   const inserirAlunoDiv = document.getElementById("inserirAluno");
   function adicionarAluno(aluno) {
     const alunoDiv = document.createElement("div");
-    alunoDiv.innerHTML = `<p>Nome: ${aluno["Nome do Aluno"]}  R.A: ${aluno["R.A"]}  Turma: ${aluno["Turma"]}</p> <input type="number" placeholder="Nota"/>`;
+    alunoDiv.innerHTML = `Nome: ${aluno["Nome do Aluno"]}  R.A: ${aluno["R.A"]}  Turma: ${aluno["Turma"]}</p> <input type="number" placeholder="Nota"/>`;
     inserirAlunoDiv.appendChild(alunoDiv);
   }
 

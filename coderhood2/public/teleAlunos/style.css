@@ -177,9 +177,13 @@ main h1{
   position: static;
 }
 
+main input{
+  width: 30px;
+}
+
 #inserirAluno p{
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
 }
 
 main #inserirTurma{
