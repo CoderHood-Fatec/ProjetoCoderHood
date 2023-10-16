@@ -71,17 +71,17 @@ M2)
 ## Backlog
 
 
-| Prioridade | User Stories | Sprint 
-| ------------- | ------------- | ------------- 
-| Alta |  **Gerenciamento de Turmas:** O professor precisa cadastrar, visualizar e remover as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino  | [#2]  | 
-| Alta | **Gerenciamento de Alunos:** O professor precisa cadastrar, visualizar e remover em uma turma já existente no sistema para que possa realizar seu acompanhamento acadêmico | [#2]  |
-| Alta | **Inserir Notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas | [#2]  |
-| Média | **Configuração de Parametros Globais:** Ao enviar uma atividade para os alunos, o professor deve ser capaz de configurar parametros como prazo da atividade para todas as turmas, visando facilitar o processo para ele  | [#3] |
-| Média | **Grupo de Alunos:** O professor precisa dividir a turma em grupos para que posteriormente possa atribuir uma mesma nota para todos os seus integrantes, além de acompanhar a performance por grupo na página de relatórios| [#3] |
-| Alta | **Gerenciamento de Ciclo de Entregas:** O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final  | [#3] |
-| Baixa | **Painel de Relatórios:** O professor precisa ter uma visão consolidada com as principais métricas que permitam-o acompanhar a performance de sua turma, grupos e alunos| [#3] |
-| Média | **Importação dos Dados:** O professor precisa extrair relatórios e listas contendo os alunos das turmas ou grupos para poder realizar análises e preparar relatórios para a secretária.| [#4] |
-| Baixa | **Carga de Alunos**: Permitir o professor carregarinformações em massa para aumentar sua eficiência de trabalho | [#4] |
+| Ranking de Prioridades | Prioridade | User Stories | Sprint 
+| ------------- | ------------- | ------------- | ------------- 
+| 1º | Alta |  **Gerenciamento de Turmas:** O professor precisa cadastrar, visualizar e remover as turmas no sistema para que seja possível gerenciamento e acompanhamento dos alunos durante o processo de ensino  | [#2]  | 
+| 2º | Alta | **Gerenciamento de Alunos:** O professor precisa cadastrar, visualizar e remover em uma turma já existente no sistema para que possa realizar seu acompanhamento acadêmico | [#2]  |
+| 3º | Alta | **Inserir Notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas | [#2]  |
+| 5º | Média | **Configuração de Parametros Globais:** Ao enviar uma atividade para os alunos, o professor deve ser capaz de configurar parametros como prazo da atividade para todas as turmas, visando facilitar o processo para ele  | [#3] |
+| 6º | Média | **Grupo de Alunos:** O professor precisa dividir a turma em grupos para que posteriormente possa atribuir uma mesma nota para todos os seus integrantes, além de acompanhar a performance por grupo na página de relatórios| [#3] |
+| 4º | Alta | **Gerenciamento de Ciclo de Entregas:** O Professor precisa criar atividades  o ciclo de entregas, para isso precisa ser delimitado a data inicial e a data final  | [#3] |
+| 8º | Baixa | **Painel de Relatórios:** O professor precisa ter uma visão consolidada com as principais métricas que permitam-o acompanhar a performance de sua turma, grupos e alunos| [#3] |
+| 7º | Média | **Importação dos Dados:** O professor precisa extrair relatórios e listas contendo os alunos das turmas ou grupos para poder realizar análises e preparar relatórios para a secretária.| [#4] |
+| 9º | Baixa | **Carga de Alunos**: Permitir o professor carregar informações em massa para aumentar sua eficiência de trabalho | [#4] |
 
 ## Fluxos
 
