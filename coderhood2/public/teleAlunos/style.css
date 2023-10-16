@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: inter, arial;
+    font-size: 20px;
+}
+
+body{
+    color: rgb(255, 255, 255);
+    background: #FBBB85;    
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: auto;
+    background-color: 
+    #F58220;
+    padding-top: 15px;
+    height: 75px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.coderhood{
+    margin: -67px 0 0 -100px;
+    height: 200px;
+}
+
+.pbltex{
+    height: 65px;
+}
+
+#container{
+    display: flex;
+    justify-content: baseline;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px;
+    height: 100vh;
+    background-color: #E69F64;
+}
+
+.link-button{
+    width: 300px;
+    height: 57px;
+    margin-top: 20px;
+    font-size: 30px;
+    border: none;
+}
+
+.link-button:hover{
+    background-color: rgb(196, 196, 196);
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    opacity: 1;
+}
+
+#modal-container{
+    padding: 1rem;
+}
+
+#modal-container h2{
+    margin-bottom: 1rem;
+}
+
+#fade, #modal{
+    transition: .5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+#modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #FBBB85;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 500px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 25px;
+}
+
+#modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#modal-body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#modal-body input{
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+}
+
+#modal-body button {
+    margin: 0 auto; 
+    width: 30%;
+    height: 40px;
+    text-align: center; 
+    background-color: #D57727;
+    border: 0.5px solid black;
+    border-radius: 10px;
+}
+
+#modal-body button:hover{
+    background-color: #a85f1f;
+    cursor: pointer;
+}
+
+#modal.hide,
+#fade.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#closeModalBtn{
+    background-color: rgb(3, 3, 3);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+#closeModalBtn:hover{
+    cursor: pointer;
+    background-color: rgb(199, 0, 0);
+}
+
+.cadastro-turma{
+    margin: 0 auto; 
+    background-color: #015190;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 20px;
+}
+
+main{
+  margin: 0 auto;
+  color: #015190;
+}
+
+main h1{
+  font-size: 1.8rem;
+  margin: 30px 0 20px 0;
+  position: static;
+}
+
+main #inserirTurma{
+  display: flex;
+  flex-direction: column;
+}
+
+main a{
+  text-decoration:none;
+  color: #015190;
+  margin-bottom: 10px;
+}
+
+main a:hover{
+  transition: .3s;
+  color: #026ec0;
+  font-size: 1.2rem;
+}

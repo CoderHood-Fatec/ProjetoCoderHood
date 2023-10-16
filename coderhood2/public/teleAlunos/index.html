@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="public/Login/style.css">
-      <title>Login</title>
-  </head>
-  <body>
-    <h1>{{turma["Nome da Turma"]}}</h1>
-    <h2>{{turma["Professor"]}}</h2>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Turma {{turma["Nome da Turma"]}}</title>
+</head>
+<body>
+    <header>
+        <img class="coderhood" src="../Logo API.png" alt="" srcset="">
+        <img class="pbltex" src="../Logo PBLTex.png" alt="" srcset="">
+    </header>
+    <div id="container">
+        <nav id="nav-container">
+                <button id="openModalBtn" class="link-button">Cadastro de Alunos</button>
+        </nav>
+
+        <main>
+          <h1>Alunos</h1>
+          <div id="inserirAluno"></div>
+        </main>
+
+        <div id="modal-container">
+            <div id="fade" class="hide"></div>
+            <div id="modal" class="hide">
+
+                <div id="modal-header">
+                    <h2 class="cadastro-turma">Cadastre o Aluno</h2>
+                    <button id="closeModalBtn">X</button>
+                </div>
+
+                <div id="modal-body">
+                    <input id="nomeAluno" type="text" placeholder="Nome do Aluno:">
+                    <input id="ra" type="text" placeholder="Digite o R.A do Aluno:">
+                    <input id="turma" type="text" placeholder="Digite a Turma do Aluno:">
+                    <input id="turno" type="text" placeholder="Turno:">
+
+                    <button id="btn" type="submit" onclick="enviarDados()">Adicionar</button>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>
+
+</body>
 </html>
