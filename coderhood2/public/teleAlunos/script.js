@@ -58,6 +58,7 @@ function enviarDados() {
     <span class="titulo">R.A:</span> ${aluno["R.A"]}  
     <span class="titulo">Turma:</span> ${aluno["Turma"]}  
     <span class="titulo">Turno:</span> ${aluno["Turno"]}
+    <input type="number" placeholder="Nota"/>
   `;
 
    

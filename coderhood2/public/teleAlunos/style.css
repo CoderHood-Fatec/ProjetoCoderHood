@@ -203,6 +203,11 @@ main input{
     text-align: center;
 }
 
+.aluno input{
+    width: 70px;
+    text-align: center;
+}
+
 .titulo{
     color:#015190;
     margin-left: 40px;
