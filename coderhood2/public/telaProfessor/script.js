@@ -51,7 +51,7 @@ function enviarDados() {
   fetch(window.location.origin + '/turma', option).then(teste => {
     teste.text().then(id =>{
     //Exibindo a resposta do servidor na página
-    document.getElementById("inserirTurma").innerHTML+=`<a target="__blank" href="/turmas/${id}">` + "Turma: " +id+'</a>'
+    document.getElementById("inserirTurma").innerHTML+=`<a class=turma target="__blank" href="/turmas/${id}">` + " " +id+'</a>'
       console.log(id + "este é o text")
   })
   }).catch(e => {

@@ -162,6 +162,26 @@ nav{
     border-radius: 20px;
 }
 
+.bgTurma{
+
+
+    color: white !important; 
+    width: 70%;
+
+    text-align: center;
+    align-items: center;
+}
+
+.turma{
+    background-color: #F58220;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+
+
 main{
   width: 100%;
   display: flex;
@@ -187,12 +207,15 @@ main h1{
 main #inserirTurma{
   display: flex;
   flex-direction: column;
+  color: white !important;
+
 }
 
 main a{
   text-decoration:none;
-  color: #015190;
+  color: white;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 main a:hover{
