@@ -188,6 +188,33 @@ main input{
   flex-direction: row;
 }
 
+#inserirAluno{
+    color: white;
+    width: 90%;
+    text-align: center;
+}
+
+.aluno{
+    background-color: #F58220;  
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.titulo{
+    color:#015190;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.infAluno{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 main #inserirTurma{
   display: flex;
   flex-direction: column;
