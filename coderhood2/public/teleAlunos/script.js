@@ -14,6 +14,24 @@ const toggleModal = () => {
   el.addEventListener("click", () => toggleModal());
 });
 
+function receberNotas(id) {
+  console.log(id)
+  const notaAlunoInput = document.getElementById("nota"+id)
+
+  const notaAluno = parseFloat(notaAlunoInput.value)
+
+  if (notaAluno >= 0 && notaAluno <= 10){
+    const nota = {
+      "nota aluno": notaAluno,
+    }
+    console.log("Deu certo");
+    console.log(nota);
+  } else{
+    console.log("deu errado");
+  }
+
+}
+
 //Recebendo os dados inseridos no cadastrar turmas
 function enviarDados() {
   //Referências dos elementos inseridos
@@ -58,9 +76,9 @@ function enviarDados() {
     <span class="titulo">R.A:</span> ${aluno["R.A"]}  
     <span class="titulo">Turma:</span> ${aluno["Turma"]}  
     <span class="titulo">Turno:</span> ${aluno["Turno"]}
-    <input type="number" placeholder="Nota"/>
+    <input id="nota${aluno["R.A"]}" type="text" placeholder="Nota"/>
+    <button type="submit" onclick="receberNotas(${aluno["R.A"]})" class="btnNota">Teste</button>
   `;
-
    
     inserirAlunoDiv.appendChild(alunoDiv);
   }

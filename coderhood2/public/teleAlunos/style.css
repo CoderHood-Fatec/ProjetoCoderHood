@@ -241,3 +241,19 @@ div#addHtml{
   display: flex;
   flex-direction: inline;
 }
+
+.btnNota{
+    font-size: .8rem;
+    width: 60px;
+    height: 30px;
+    border: 1px solid #fff;
+    background-color: #026ec0;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.btnNota:hover{
+    background-color: #0490fc;
+    transition: .4s;
+    cursor: pointer;
+}
