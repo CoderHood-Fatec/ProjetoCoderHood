@@ -124,4 +124,4 @@ Rennerson Vasconcelos Afonso |Desenvolvedor|[<img src="https://camo.githubuserco
 
 ## Entrega do 2º Sprint
 
-<p align="center"> <img src="entrega_segundo_sprint.gif"/> </p>
+<p align="center"> <img src="GIF Atualizado - Google Chrome 2023-10-19 19-41-55.gif"/> </p>
