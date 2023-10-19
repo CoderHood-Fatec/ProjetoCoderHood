@@ -121,3 +121,7 @@ Rennerson Vasconcelos Afonso |Desenvolvedor|[<img src="https://camo.githubuserco
   <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/assets/142257303/64bcacc5-7180-4467-af93-4ece29788a50" style="margin: 20px; width: 50px; height: 50px;" />
 
 </div>
+
+## Entrega do 2º Sprint
+
+<p align="center"> <img src="entrega_segundo_sprint.gif"/> </p>
