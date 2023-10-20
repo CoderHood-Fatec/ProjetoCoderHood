@@ -87,16 +87,10 @@ function enviarDados() {
 
   // console.log(window.location)
 
-  // //Enviando a requisição POST para o servidor
-  // fetch(window.location.origin + '/aluno', option).then(teste => {
-  //   teste.text().then(id =>{
-  //   //Exibindo a resposta do servidor na página
-  //   document.getElementById("inserirAluno").innerHTML+=`<a target="__blank" href="/turmas/${id}">`  +id+'</a>'
-  //     console.log(id + "este é o text")
-  // })
-  // }).catch(e => {
-  //     console.log(e);
-  //     });
+  //Enviando a requisição POST para o servidor
+  fetch(window.location.origin + '/aluno', option).catch(e => {
+    alert('Ocorreu um erro: ' + e)
+    });
 
   toggleModal();
 
