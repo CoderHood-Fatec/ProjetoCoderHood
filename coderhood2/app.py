@@ -1,6 +1,8 @@
+from math import log
+import os
 from flask import Flask, jsonify, request, send_from_directory
 from flask.templating import render_template
-
+import json
 #Criando instância Flask
 app = Flask(__name__, template_folder='public')
 
@@ -11,16 +13,26 @@ def homepage():
   return 'A API está no ar'
 
 
-#Lista para armazenar informações das turmas
-turmas = []
-
-
 #Rota para adicionar turma
 @app.route('/turma', methods=['POST'])
 def addTurma():
+  with open("JSON/" + request.get_json()["Nome da Turma"] + ".json", "w") as f:
+    json.dump(request.get_json(),f)
+
+  return request.get_json()["Nome da Turma"]# Pegando os 'ids' das turmas por string
+
+@app.route('/turmas/<string:nome>')
+def getTurmas(nome):
   global turmas
-  turmas.append(request.get_json())
-  return request.get_json()["Nome da Turma"]
+
+  with open("JSON/" + nome + ".json") as f:
+    turma = json.load(f)
+    print(turma["Nome da Turma"])
+    if turma:
+      return render_template('teleAlunos/index.html', turma=turma)
+
+      
+  return jsonify({"Erro": "Turma não encontrada"})
 
 
 #Rota para login
@@ -36,15 +48,14 @@ def public(path):
   return send_from_directory('public', path)
 
 
-# Pegando os 'ids' das turmas por string
-@app.route('/turmas/<string:nome>')
-def getTurmas(nome):
-  global turmas
-  for turma in turmas:
-    if turma["Nome da Turma"] == nome:
-      return render_template('teleAlunos/index.html', turma=turma)
-  return jsonify({"Erro": "Turma não encontrada"})
+@app.route("/professor")
+def tela_professor():
+  turmas = os.listdir("JSON")
 
+  for i in range(len(turmas)):
+    turmas[i] = turmas[i].removesuffix(".json")
+
+  return render_template('telaProfessor/index.html', turmas=turmas)
 
 # Rota para página do aluno pela id
 alunos = []
@@ -53,8 +64,16 @@ alunos = []
 @app.route('/aluno', methods=['POST'])
 def addAluno():
   global alunos
-  alunos.append(request.get_json())
-  return request.get_json()
+  turma = None
+  with open("JSON/" + request.get_json()["Turma"] + ".json", "r") as f:
+    turma = json.load(f)
+
+  with open("JSON/" + request.get_json()["Turma"] + ".json", "w") as fw:
+    turma["Alunos"].append(request.get_json())
+    json.dump(turma, fw)
+
+
+  return request.get_json()["Nome do Aluno"]
 
 
 # Roda a nossa API

@@ -31,6 +31,7 @@ function enviarDados() {
       "Nome da Turma": nomeTurma,
       Professor: professor,
       Turno: turno,
+      Alunos: []
     };
 
   //exibindo o teste no navegador
@@ -51,7 +52,7 @@ function enviarDados() {
   fetch(window.location.origin + '/turma', option).then(teste => {
     teste.text().then(id =>{
     //Exibindo a resposta do servidor na página
-    document.getElementById("inserirTurma").innerHTML+=`<a class=turma target="__blank" href="/turmas/${id}">` + " " +id+'</a>'
+    document.getElementById("inserirTurma").innerHTML+=`<a class=turma href="/turmas/${id}">` + " " +id+'</a>'
       console.log(id + "este é o text")
   })
   }).catch(e => {
