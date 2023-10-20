@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/public/telaProfessor/style.css">
+    <script src="/public/telaProfessor/script.js" defer></script>
     <title>Turmas</title>
 </head>
 <body>
     <header>
-        <img class="coderhood" src="../Logo API.png" alt="" srcset="">
-        <img class="pbltex" src="../Logo PBLTex.png" alt="" srcset="">
+        <img class="coderhood" src="/public/Logo API.png" alt="" srcset="">
+        <img class="pbltex" src="/public/Logo PBLTex.png" alt="" srcset="">
     </header>
     <div id="container">
         <nav id="nav-container">
@@ -21,7 +21,11 @@
         <main>
           <h1>Turmas</h1>
           <div class="bgTurma">
-            <div id="inserirTurma"></div>
+            <div id="inserirTurma">
+                {% for turma in turmas %}
+                    <a class=turma href="/turmas/{{turma}}"> {{turma}} </a>
+                {% endfor %}  
+            </div>
           </div>
         </main>
 
