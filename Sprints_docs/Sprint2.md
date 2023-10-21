@@ -17,16 +17,14 @@
 </div>
 
 
-<span id="objetivo"></span>
-
 ## Objetivo do 2º sprint
 
-* Entregar um sistema que tenha capacidade de atender as funcionalidades básicas para atender o usuário (professor). As funcionalidades básicas foram: criação de turmas, criação de alunos e inserção de notas.  
+* Traçamos como objetivo entregar no segundo sprint um sistema que tenha capacidade de atender as funcionalidades básicas de acordo com a necessidade do usuário (professor). As funcionalidades básicas definidas foram: criação de turmas, criação de alunos e inserção de notas.  
 
 ## Backlog do 2º sprint
 
 
-| Ranking de Prioridades | Prioridade | User Stories | Sprint | Status |
+| Ranking de Prioridades do 2º sprint | Prioridade | User Stories | Sprint | Status |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 1º | Alta |  **Tela de Acesso:** Tela que em princípio não terá validação, mas dará acesso à tela HOME.  | [#2]  |✔️| 
 | 2º | Alta |  **Cadastrar turma:** O professor precisa cadastrar as turmas no sistema para que seja possível o gerenciamento e acompanhamento dos alunos durante o processo de ensino.  | [#2]  |✔️| 
