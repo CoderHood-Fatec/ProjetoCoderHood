@@ -3,6 +3,19 @@
 <p align="center"> <img width="200px" height="200px" src="Coderhood.jpg"/> </p>
 <br id="topo">
 
+<div align="center">
+    
+  <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
+  <img src="https://img.shields.io/badge/HTML5-151515?style=for-the-badge&logo=html5&logoColor=602D9B"/>
+  <img src="https://img.shields.io/badge/CSS3-151515?style=for-the-badge&logo=css3&logoColor=602D9B"/>
+  <img src="https://img.shields.io/badge/JavaScript-151515?style=for-the-badge&logo=javascript&logoColor=602D9B"/>
+  <img src="https://img.shields.io/badge/Python-151515?style=for-the-badge&logo=python&logoColor=602D9B"/>
+  <img src="https://img.shields.io/badge/Flask-151515?style=for-the-badge&logo=flask&logoColor=602D9B"/>
+  <img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+    
+</div>
+
 
 <span id="objetivo"></span>
 
@@ -23,30 +36,6 @@
 | 6º | Média | **Lançar Notas:** O professor precisa inserir as notas pros alunos para avaliá-los após a data final de um ciclo de entregas. | [#2] |✔️| 
 | 7º | Alta | **Visualizar Notas:** O professor precisa visualizar as notas dos alunos, após uma inserção ou remoção de dados (notas).  | [#2] |✔️|
 
-
-
-## Tecnologias Utilizadas no 2º sprint
-### Principais Ferramentas
-
-<div align="Left">
-    
-  <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
-  <img src="https://img.shields.io/badge/HTML5-151515?style=for-the-badge&logo=html5&logoColor=602D9B"/>
-  <img src="https://img.shields.io/badge/CSS3-151515?style=for-the-badge&logo=css3&logoColor=602D9B"/>
-  <img src="https://img.shields.io/badge/JavaScript-151515?style=for-the-badge&logo=javascript&logoColor=602D9B"/>
-  <img src="https://img.shields.io/badge/Python-151515?style=for-the-badge&logo=python&logoColor=602D9B"/>
-  <img src="https://img.shields.io/badge/Flask-151515?style=for-the-badge&logo=flask&logoColor=602D9B"/>
-    
-</div>
-
-### Ferramentas secundárias
-
-<div align="Left">
-    
-  <img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
-
-</div>
 
 ## Entrega do 2º Sprint
 
