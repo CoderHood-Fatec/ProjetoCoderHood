@@ -1,1 +1,9 @@
-{"Nome da Turma": "Teste", "Professor": "Teste", "Turno": "Teste", "Alunos": [{"Nome do Aluno": "Teste", "R.A": "505050", "Turma": "Teste", "Turno": "Teste"}]}
+{"Nome da Turma": "Teste", "Professor": "Teste", "Turno": "Teste", 
+"Alunos": [
+    {
+        "Nome do Aluno": "Teste", 
+        "R.A": "505050", 
+        "Turma": "Teste", 
+        "Turno": "Teste"
+    }
+]}

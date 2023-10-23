@@ -52,6 +52,8 @@ def public(path):
 def tela_professor():
   turmas = os.listdir("JSON")
 
+  turmas.remove(".txt")
+
   for i in range(len(turmas)):
     turmas[i] = turmas[i].removesuffix(".json")
 

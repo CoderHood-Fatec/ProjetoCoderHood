@@ -50,7 +50,7 @@ function enviarDados() {
   const dados = {
       "Nome do Aluno": nomeAluno,
       "R.A": ra,
-      "Turma": turma,
+      "Turma": turmaAtual,
       "Turno": turno,
     };
 
@@ -74,8 +74,6 @@ function enviarDados() {
     alunoDiv.innerHTML = `
     <span class="titulo">Nome:</span> ${aluno["Nome do Aluno"]}  
     <span class="titulo">R.A:</span> ${aluno["R.A"]}  
-    <span class="titulo">Turma:</span> ${aluno["Turma"]}  
-    <span class="titulo">Turno:</span> ${aluno["Turno"]}
     <input id="nota${aluno["R.A"]}" type="text" placeholder="Nota"/>
     <button type="submit" onclick="receberNotas(${aluno["R.A"]})" class="btnNota">Teste</button>
   `;
