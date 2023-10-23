@@ -122,3 +122,6 @@ document.querySelectorAll("input").forEach((input) => {
     }
   });
 });
+
+
+//Rota para página inicial

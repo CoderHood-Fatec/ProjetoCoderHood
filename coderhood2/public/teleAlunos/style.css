@@ -26,10 +26,22 @@ header{
 .coderhood{
     margin: -67px 0 0 -100px;
     height: 200px;
+    transition: transform 0.2s;
 }
 
 .pbltex{
     height: 65px;
+    transition: transform 0.2s;
+}
+
+.coderhood:hover{
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+.pbltex:hover{
+    transform: scale(1.25);
+    cursor: pointer;
 }
 
 #container{
@@ -191,6 +203,8 @@ nav{
     cursor: pointer;
     background-color: rgb(199, 0, 0);
 }
+
+
 
 .cadastro-turma, .cicloEntregas{
     margin: 0 auto; 
