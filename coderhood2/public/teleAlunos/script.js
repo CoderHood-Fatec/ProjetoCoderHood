@@ -3,6 +3,10 @@ const openModalBtn = document.getElementById("openModalBtn");
 const closeModalBtn = document.getElementById("closeModalBtn");
 const modal = document.getElementById("modal");
 const fade = document.getElementById("fade");
+const openModalBtnCiclo = document.getElementById("openModalBtnCiclo");
+const closeModalBtnCiclo = document.getElementById("closeModalBtnCiclo");
+const modalCiclo = document.getElementById("modalCiclo");
+const fadeCiclo = document.getElementById("fadeCiclo");
 
 //Função para alterar a visibilidade do modal
 const toggleModal = () => {
@@ -10,8 +14,18 @@ const toggleModal = () => {
   fade.classList.toggle("hide");
 };
 
+const toggleModalCiclo = () => {
+  modalCiclo.classList.toggle("hide");
+  fadeCiclo.classList.toggle("hide");
+};
+
+
 [openModalBtn, closeModalBtn, fade].forEach((el) => {
   el.addEventListener("click", () => toggleModal());
+});
+
+[openModalBtnCiclo, closeModalBtnCiclo, fadeCiclo].forEach((el) => {
+  el.addEventListener("click", () => toggleModalCiclo());
 });
 
 function receberNotas(id) {

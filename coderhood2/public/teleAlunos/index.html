@@ -9,6 +9,7 @@
     </script>
     <script src="/public/teleAlunos/script.js" defer></script>
     <title>Turma {{turma["Nome da Turma"]}}</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -18,12 +19,13 @@
     <div id="container">
         <nav id="nav-container">
                 <button id="openModalBtn" class="link-button">Cadastro de Alunos</button>
+                <button id="openModalBtnCiclo" class="link-button">Ciclo de Entregas</button>
         </nav>
 
         <main>
 
-          <h1>Turma {{turma["Nome da Turma"]}} - {{turma["Turno"]}}</h1>
-          <div id="inserirAluno">
+        <h1>Turma {{turma["Nome da Turma"]}} - {{turma["Turno"]}}</h1>
+        <div id="inserirAluno">
             {% for aluno in turma["Alunos"] %}
             <div class="aluno">
                 <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}  
@@ -32,7 +34,7 @@
                 <button type="submit" onclick="receberNotas({{aluno['R.A']}})" class="btnNota">Teste</button>
             </div>
             {% endfor %}
-          </div>
+        </div>
         </main>
 
         <div id="modal-container">
@@ -54,9 +56,33 @@
                 </div>
 
             </div>
-    
+
+        </div>
+        <div id="modal-container">
+            <div id="fadeCiclo" class="hide"></div>
+            <div id="modalCiclo" class="hide">
+
+                <div id="modal-header">
+                    <h2 class="cicloEntregas">Ciclo de Entregas</h2>
+                    <button id="closeModalBtnCiclo">X</button>
+                </div>
+
+                <div id="modal-body">
+                    <ul>
+                        <li>Nome</li>
+                        <li>Data Ínicio</li>
+                        <li>Data Fim</li>
+                        <li>Nota</li>
+                        <li>Peso</li>
+                        <li>Status</li>
+                    </ul>
+
+                </div>
+
+            </div>
         </div>
     </div>
 
 </body>
+<script src="script.js"></script>
 </html>
