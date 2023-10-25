@@ -19,7 +19,6 @@ const toggleModalCiclo = () => {
   fadeCiclo.classList.toggle("hide");
 };
 
-
 [openModalBtn, closeModalBtn, fade].forEach((el) => {
   el.addEventListener("click", () => toggleModal());
 });
@@ -29,21 +28,20 @@ const toggleModalCiclo = () => {
 });
 
 function receberNotas(id) {
-  console.log(id)
-  const notaAlunoInput = document.getElementById("nota"+id)
+  console.log(id);
+  const notaAlunoInput = document.getElementById("nota" + id);
 
-  const notaAluno = parseFloat(notaAlunoInput.value)
+  const notaAluno = parseFloat(notaAlunoInput.value);
 
-  if (notaAluno >= 0 && notaAluno <= 10){
+  if (notaAluno >= 0 && notaAluno <= 10) {
     const nota = {
       "nota aluno": notaAluno,
-    }
+    };
     console.log("Deu certo");
     console.log(nota);
-  } else{
+  } else {
     console.log("deu errado");
   }
-
 }
 
 //Recebendo os dados inseridos no cadastrar turmas
@@ -51,34 +49,28 @@ function enviarDados() {
   //Referências dos elementos inseridos
   const nomeAlunoInput = document.getElementById("nomeAluno");
   const raInput = document.getElementById("ra");
-  const turmaInput = document.getElementById("turma");
-  const turnoInput = document.getElementById("turno");
 
   //Pegando os valores inseridos nos inputs
   const nomeAluno = nomeAlunoInput.value;
   const ra = raInput.value;
-  const turma = turmaInput.value;
-  const turno = turnoInput.value;
 
   //Criando uma lista de objeto com os dados das turmas
   const dados = {
-      "Nome do Aluno": nomeAluno,
-      "R.A": ra,
-      "Turma": turmaAtual,
-      "Turno": turno,
-    };
+    "Nome do Aluno": nomeAluno,
+    "R.A": ra,
+  };
 
   //exibindo o teste no navegador
   console.log(dados);
 
   //configurando a requisição POST
   const option = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(dados), //convertendo em JSON os objetos
-  }
+  };
 
   const inserirAlunoDiv = document.getElementById("inserirAluno");
   function adicionarAluno(aluno) {
@@ -91,7 +83,7 @@ function enviarDados() {
     <input id="nota${aluno["R.A"]}" type="text" placeholder="Nota"/>
     <button type="submit" onclick="receberNotas(${aluno["R.A"]})" class="btnNota">Teste</button>
   `;
-   
+
     inserirAlunoDiv.appendChild(alunoDiv);
   }
 
@@ -100,9 +92,9 @@ function enviarDados() {
   // console.log(window.location)
 
   //Enviando a requisição POST para o servidor
-  fetch(window.location.origin + '/aluno', option).catch(e => {
-    alert('Ocorreu um erro: ' + e)
-    });
+  fetch(window.location.origin + "/aluno", option).catch((e) => {
+    alert("Ocorreu um erro: " + e);
+  });
 
   toggleModal();
 
@@ -122,6 +114,5 @@ document.querySelectorAll("input").forEach((input) => {
     }
   });
 });
-
 
 //Rota para página inicial
