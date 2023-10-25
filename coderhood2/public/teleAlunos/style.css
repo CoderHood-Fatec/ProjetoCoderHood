@@ -118,7 +118,7 @@ nav{
     background-color: #FBBB85;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 70%;
+    width: 90%;
     max-width: 90%;
     padding: 1.2rem;
     border-radius: 25px;
@@ -150,7 +150,7 @@ nav{
     height: 40px;
     text-align: center; 
     background-color: #D57727;
-    border: 0.5px solid black;
+    border: none;
     border-radius: 10px;
 }
 

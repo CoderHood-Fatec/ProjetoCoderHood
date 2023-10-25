@@ -70,13 +70,13 @@ nav{
     margin-bottom: 1rem;
 }
 
-#fade, #modal{
+#fade, #modal, #fadeAluno, #modalAluno{
     transition: .5s;
     opacity: 1;
     pointer-events: all;
 }
 
-#fade{
+#fade, #fadeAluno{
     position: fixed;
     top: 0;
     left: 0;
@@ -86,14 +86,14 @@ nav{
     z-index: 5;
 }
 
-#modal{
+#modal, #modalAluno{
     position: fixed;
     left: 50%;
     top: 50%;
     background-color: #FBBB85;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 500px;
+    width: 700px;
     max-width: 90%;
     padding: 1.2rem;
     border-radius: 25px;
@@ -125,7 +125,7 @@ nav{
     height: 40px;
     text-align: center; 
     background-color: #D57727;
-    border: 0.5px solid black;
+    border: none;
     border-radius: 10px;
 }
 
@@ -134,13 +134,12 @@ nav{
     cursor: pointer;
 }
 
-#modal.hide,
-#fade.hide{
+#modal.hide, #fade.hide, #modalAluno.hide, #fadeAluno.hide{
     opacity: 0;
     pointer-events: none;
 }
 
-#closeModalBtn{
+#closeModalBtn, #closeModalBtnAluno{
     background-color: rgb(3, 3, 3);
     color: #fff;
     border: none;
@@ -149,7 +148,7 @@ nav{
     margin-bottom: 15px;
 }
 
-#closeModalBtn:hover{
+#closeModalBtn:hover, #closeModalBtnAluno:hover{
     cursor: pointer;
     background-color: rgb(199, 0, 0);
 }
@@ -180,7 +179,17 @@ nav{
     font-weight: bold;
 }
 
+#ciclo{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
 
+.textoCiclo{
+    color: #015190;
+    font-weight: bold;
+}
 
 main{
   width: 100%;

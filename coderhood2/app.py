@@ -1,83 +1,108 @@
-from math import log
-import os
-from flask import Flask, jsonify, request, send_from_directory
-from flask.templating import render_template
+from flask import Flask, jsonify, request, send_from_directory, render_template
 import json
-#Criando instância Flask
+import os
+
 app = Flask(__name__, template_folder='public')
+json_folder = "JSON"
 
-
-# Rota para página inicial
-@app.route('/teste')
-def homepage():
-  return 'A API está no ar'
-
-
-#Rota para adicionar turma
-@app.route('/turma', methods=['POST'])
-def addTurma():
-  with open("JSON/" + request.get_json()["Nome da Turma"] + ".json", "w") as f:
-    json.dump(request.get_json(),f)
-
-  return request.get_json()["Nome da Turma"]# Pegando os 'ids' das turmas por string
-
-@app.route('/turmas/<string:nome>')
-def getTurmas(nome):
-  global turmas
-
-  with open("JSON/" + nome + ".json") as f:
-    turma = json.load(f)
-    print(turma["Nome da Turma"])
-    if turma:
-      return render_template('teleAlunos/index.html', turma=turma)
-
-      
-  return jsonify({"Erro": "Turma não encontrada"})
-
-
-#Rota para login
+# Rota para login
 @app.route('/')
 def login():
-  with open("./public/Login/index.html") as f:
-    return f.read()
-
-
-#Rota para arquivos estáticos
+    with open("./public/Login/index.html") as f:
+        return f.read()
+    
+# Rota para arquivos estáticos
 @app.route('/public/<path:path>')
 def public(path):
-  return send_from_directory('public', path)
+    return send_from_directory('public', path)
 
-
+# Rota para a tela do professor
 @app.route("/professor")
 def tela_professor():
-  turmas = os.listdir("JSON")
+    with open(os.path.join(json_folder, "turmas.json"), "r") as f:
+        turmas = json.load(f)
 
-  turmas.remove(".txt")
+    nomes_turmas = [turma["Nome da Turma"] for turma in turmas]
 
-  for i in range(len(turmas)):
-    turmas[i] = turmas[i].removesuffix(".json")
+    return render_template('telaProfessor/index.html', turmas=nomes_turmas,)
 
-  return render_template('telaProfessor/index.html', turmas=turmas)
 
-# Rota para página do aluno pela id
+# Inicializa os dados das turmas e alunos
+turmas = []
 alunos = []
+turma_id_counter = 1
+aluno_id_counter = 1
+
+# Rota para adicionar turma
+@app.route('/turma', methods=['POST'])
+def addTurma():
+    data = request.get_json()
+    turma_name = data.get("Nome da Turma")
+    global turma_id_counter
+    turma_id = turma_id_counter 
+    turma_id_counter += 1
+    turma = {
+        "ID": turma_id,
+        "Nome da Turma": turma_name,
+        "Professor": data.get("Professor"),
+        "Turno": data.get("Turno"),
+        "alunos": [],
+        "ciclos": [],
+    }
+
+    turmas.append(turma)
+    save_data()
+    return turma_name
+
+# Rota para obter todas as turmas
+@app.route('/turmas/<string:nome>')
+def getTurmas(nome):
+    global turmas
+
+    turma = next((t for t in turmas if t["Nome da Turma"] == nome), None)
+    if turma:
+        return render_template('teleAlunos/index.html', turma=turma)
+
+    return jsonify({"Erro": "Turma não encontrada"})
 
 
+# Rota para adicionar aluno
 @app.route('/aluno', methods=['POST'])
 def addAluno():
-  global alunos
-  turma = None
-  with open("JSON/" + request.get_json()["Turma"] + ".json", "r") as f:
-    turma = json.load(f)
+    data = request.get_json()
+    global aluno_id_counter
+    aluno_id = aluno_id_counter 
+    aluno_id_counter += 1
 
-  with open("JSON/" + request.get_json()["Turma"] + ".json", "w") as fw:
-    turma["Alunos"].append(request.get_json())
-    json.dump(turma, fw)
+    aluno = {
+        "ID": aluno_id,
+        "Nome do Aluno": data.get("Nome do Aluno"),
+        "R.A": data.get("R.A")
+    }
+    alunos.append(aluno)
+    save_data()
+    return data.get("Nome do Aluno")
 
+# Rota para obter todos os alunos
+@app.route('/alunos')
+def getAlunos():
+    return jsonify({"alunos": alunos})
 
-  return request.get_json()["Nome do Aluno"]
+# Função para salvar os dados em arquivos JSON
+def save_data():
+    with open(os.path.join(json_folder, "turmas.json"), "w") as f:
+        json.dump(turmas, f)
+    with open(os.path.join(json_folder, "alunos.json"), "w") as f:
+        json.dump(alunos, f)
+        
 
-
-# Roda a nossa API
+# Roda a API
 if __name__ == '__main__':
-  app.run(host='0.0.0.0')
+    # Carrega os dados ao iniciar a aplicação
+    if os.path.exists(os.path.join(json_folder, "turmas.json")):
+        with open(os.path.join(json_folder, "turmas.json"), "r") as f:
+            turmas = json.load(f)
+    if os.path.exists(os.path.join(json_folder, "alunos.json")):
+        with open(os.path.join(json_folder, "alunos.json"), "r") as f:
+            alunos = json.load(f)
+    app.run(host='0.0.0.0')

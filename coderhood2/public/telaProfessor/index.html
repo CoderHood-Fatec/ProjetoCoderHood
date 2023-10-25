@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/public/telaProfessor/style.css">
     <script src="/public/telaProfessor/script.js" defer></script>
     <title>Turmas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -15,7 +16,8 @@
     <div id="container">
         <nav id="nav-container">
                 <button id="openModalBtn" class="link-button">Cadastro de Turmas</button>
-                <button class="link-button">Alunos</button>
+                <button id="openModalBtnAluno" class="link-button">Cadastro de Alunos</button>
+                <a href="/alunos"> <button class="link-button">Alunos</button></a>
         </nav>
 
         <main>
@@ -28,7 +30,7 @@
             </div>
           </div>
         </main>
-
+        
         <div id="modal-container">
             <div id="fade" class="hide"></div>
             <div id="modal" class="hide">
@@ -39,17 +41,47 @@
                 </div>
 
                 <div id="modal-body">
-                    <input id="nomeTurma" type="text" placeholder="Nome da Turma:">
-                    <input id="professor" type="text" placeholder="Professor:">
-                    <input id="turno" type="text" placeholder="Turno:">
-
+                    <input id="nomeTurma" type="text" placeholder="Nome da Turma:" required>
+                    <input id="professor" type="text" placeholder="Professor:" required>
+                    <input id="turno" type="text" placeholder="Turno:" required>
+                    <div id="ciclo">
+                        <div>
+                            <p class="textoCiclo">Início do Ciclo</p>
+                            <input id="cicloInicio" type="date" placeholder="Início do Ciclo" >
+                        </div>
+                        <div>
+                            <p class="textoCiclo">Fim do Ciclo</p>
+                            <input id="cicloFim" type="date" placeholder="Fim do Ciclo">
+                        </div>
+                        <button id="btnCiclo" type="submit" onclick="adicionarCiclo()">Salvar Ciclo</button>
+                    </div>
                     <button id="btn" type="submit" onclick="enviarDados()">Adicionar</button>
                 </div>
 
             </div>
-    
+        </div>
+        <div id="modal-container">
+            <div id="fadeAluno" class="hide"></div>
+            <div id="modalAluno" class="hide">
+
+                <div id="modal-header">
+                    <h2 class="cadastro-turma">Cadastre o Aluno</h2>
+                    <button id="closeModalBtnAluno">X</button>
+                </div>
+
+                <div id="modal-body">
+                    <input id="nomeAluno" type="text" placeholder="Nome do Aluno:" required>
+                    <input id="ra" type="number" placeholder="Digite o R.A do Aluno:" required>
+                    <div id="checkboxContainer">
+
+                    </div>
+
+                    <button id="btn" type="submit" onclick="enviarDadosAluno()">Adicionar</button>
+                </div>
+
         </div>
     </div>
 
 </body>
 </html>
+<script src="script.js"></script>
