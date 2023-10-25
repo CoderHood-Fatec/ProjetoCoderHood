@@ -1,87 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/teleAlunos/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/teleAlunos/style.css" />
     <script>
-        const turmaAtual = '{{turma["Nome da Turma"]}}'
+      const turmaAtual = '{{turma["Nome da Turma"]}}';
     </script>
     <script src="/public/teleAlunos/script.js" defer></script>
     <title>Turma {{turma["Nome da Turma"]}}</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <a href="/professor"><img class="coderhood" src="/public/Logo API.png" alt="Logo coderhood" ></a>
-        <a href="/professor"><img class="pbltex" src="/public/Logo PBLTex.png" alt="Logo PBLTex" ></a>
+      <a href="/professor"
+        ><img class="coderhood" src="/public/Logo API.png" alt="Logo coderhood"
+      /></a>
+      <a href="/professor"
+        ><img class="pbltex" src="/public/Logo PBLTex.png" alt="Logo PBLTex"
+      /></a>
     </header>
     <div id="container">
-        <nav id="nav-container">
-                <button id="openModalBtn" class="link-button">Cadastro de Alunos</button>
-                <button id="openModalBtnCiclo" class="link-button">Ciclo de Entregas</button>
-        </nav>
+      <nav id="nav-container">
+        <button id="openModalBtn" class="link-button">
+          Cadastro de Alunos
+        </button>
+        <button id="openModalBtnCiclo" class="link-button">
+          Ciclo de Entregas
+        </button>
+      </nav>
 
-        <main>
-
+      <main>
         <h1>Turma {{turma["Nome da Turma"]}} - {{turma["Turno"]}}</h1>
         <div id="inserirAluno">
-            {% for aluno in turma["Alunos"] %}
-            <div class="aluno">
-                <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}  
-                <span class="titulo">R.A:</span> {{aluno["R.A"]}}  
-                <input id="nota{{aluno['R.A']}}" type="text" placeholder="Nota"/>
-                <button type="submit" onclick="receberNotas({{aluno['R.A']}})" class="btnNota">Teste</button>
-            </div>
-            {% endfor %}
+          {% for aluno in turma["Alunos"] %}
+          <div class="aluno">
+            <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
+            <span class="titulo">R.A:</span> {{aluno["R.A"]}}
+            <input id="nota{{aluno['R.A']}}" type="text" placeholder="Nota" />
+            <button
+              type="submit"
+              onclick="receberNotas({{aluno['R.A']}})"
+              class="btnNota"
+            >
+              Teste
+            </button>
+          </div>
+          {% endfor %}
         </div>
-        </main>
+      </main>
 
-        <div id="modal-container">
-            <div id="fade" class="hide"></div>
-            <div id="modal" class="hide">
+      <div id="modal-container">
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+          <div id="modal-header">
+            <h2 class="cadastro-turma">Cadastre o Aluno</h2>
+            <button id="closeModalBtn">X</button>
+          </div>
 
-                <div id="modal-header">
-                    <h2 class="cadastro-turma">Cadastre o Aluno</h2>
-                    <button id="closeModalBtn">X</button>
-                </div>
+          <div id="modal-body">
+            <input id="nomeAluno" type="text" placeholder="Nome do Aluno:" />
+            <input id="ra" type="text" placeholder="Digite o R.A do Aluno:" />
 
-                <div id="modal-body">
-                    <input id="nomeAluno" type="text" placeholder="Nome do Aluno:">
-                    <input id="ra" type="text" placeholder="Digite o R.A do Aluno:">
-                    <input id="turma" type="text" placeholder="Digite a Turma do Aluno:">
-                    <input id="turno" type="text" placeholder="Turno:">
-
-                    <button id="btn" type="submit" onclick="enviarDados()">Adicionar</button>
-                </div>
-
-            </div>
-
+            <button id="btn" type="submit" onclick="enviarDados()">
+              Adicionar
+            </button>
+          </div>
         </div>
-        <div id="modal-container">
-            <div id="fadeCiclo" class="hide"></div>
-            <div id="modalCiclo" class="hide">
+      </div>
+      <div id="modal-container">
+        <div id="fadeCiclo" class="hide"></div>
+        <div id="modalCiclo" class="hide">
+          <div id="modal-header">
+            <h2 class="cicloEntregas">Ciclo de Entregas</h2>
+            <button id="closeModalBtnCiclo">X</button>
+          </div>
 
-                <div id="modal-header">
-                    <h2 class="cicloEntregas">Ciclo de Entregas</h2>
-                    <button id="closeModalBtnCiclo">X</button>
-                </div>
-
-                <div id="modal-body">
-                    <ul>
-                        <li>Nome</li>
-                        <li>Data Ínicio</li>
-                        <li>Data Fim</li>
-                        <li>Peso</li>
-                        <li>Status</li>
-                    </ul>
-
-                </div>
-
-            </div>
+          <div id="modal-body">
+            <ul>
+              <li>Nome</li>
+              <li>Data Ínicio</li>
+              <li>Data Fim</li>
+              <li>Peso</li>
+              <li>Status</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-
-</body>
-<script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
 </html>

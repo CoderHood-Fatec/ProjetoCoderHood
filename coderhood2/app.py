@@ -6,17 +6,23 @@ app = Flask(__name__, template_folder='public')
 json_folder = "JSON"
 
 # Rota para login
+
+
 @app.route('/')
 def login():
     with open("./public/Login/index.html") as f:
         return f.read()
-    
+
 # Rota para arquivos estáticos
+
+
 @app.route('/public/<path:path>')
 def public(path):
     return send_from_directory('public', path)
 
 # Rota para a tela do professor
+
+
 @app.route("/professor")
 def tela_professor():
     with open(os.path.join(json_folder, "turmas.json"), "r") as f:
@@ -34,12 +40,14 @@ turma_id_counter = 1
 aluno_id_counter = 1
 
 # Rota para adicionar turma
+
+
 @app.route('/turma', methods=['POST'])
 def addTurma():
     data = request.get_json()
     turma_name = data.get("Nome da Turma")
     global turma_id_counter
-    turma_id = turma_id_counter 
+    turma_id = turma_id_counter
     turma_id_counter += 1
     turma = {
         "ID": turma_id,
@@ -55,6 +63,8 @@ def addTurma():
     return turma_name
 
 # Rota para obter todas as turmas
+
+
 @app.route('/turmas/<string:nome>')
 def getTurmas(nome):
     global turmas
@@ -71,7 +81,7 @@ def getTurmas(nome):
 def addAluno():
     data = request.get_json()
     global aluno_id_counter
-    aluno_id = aluno_id_counter 
+    aluno_id = aluno_id_counter
     aluno_id_counter += 1
 
     aluno = {
@@ -84,17 +94,21 @@ def addAluno():
     return data.get("Nome do Aluno")
 
 # Rota para obter todos os alunos
+
+
 @app.route('/alunos')
 def getAlunos():
     return jsonify({"alunos": alunos})
 
 # Função para salvar os dados em arquivos JSON
+
+
 def save_data():
     with open(os.path.join(json_folder, "turmas.json"), "w") as f:
         json.dump(turmas, f)
     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
         json.dump(alunos, f)
-        
+
 
 # Roda a API
 if __name__ == '__main__':
