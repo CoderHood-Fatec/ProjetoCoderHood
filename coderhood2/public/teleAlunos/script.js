@@ -76,6 +76,7 @@ function enviarDados() {
     <span class="titulo">R.A:</span> ${aluno["R.A"]}  
     <input id="nota${aluno["R.A"]}" type="text" placeholder="Nota"/>
     <button type="submit" onclick="receberNotas(${aluno["R.A"]})" class="btnNota">Teste</button>
+    <button onclick="deleteAluno(${i})">Excluir</button>
   `;
    
     inserirAlunoDiv.appendChild(alunoDiv);
@@ -98,6 +99,21 @@ function enviarDados() {
   turmaInput.value = "";
   turnoInput.value = "";
 }
+
+  function deleteAluno(ra){
+    
+  const option = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+
+  
+  fetch(window.location.origin + '/turma/'+turmaAtual+'/aluno/' + ra, option).catch(e => {
+    alert('Ocorreu um erro: ' + e)
+    });
+  }
 
 //Adicionando evento para fechar o modal ao click no button ou apertar tecla enter
 document.querySelectorAll("input").forEach((input) => {
