@@ -26,10 +26,22 @@ header{
 .coderhood{
     margin: -67px 0 0 -100px;
     height: 200px;
+    transition: transform 0.2s;
 }
 
 .pbltex{
     height: 65px;
+    transition: transform 0.2s;
+}
+
+.coderhood:hover{
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+.pbltex:hover{
+    transform: scale(1.25);
+    cursor: pointer;
 }
 
 #container{
@@ -70,13 +82,13 @@ nav{
     margin-bottom: 1rem;
 }
 
-#fade, #modal{
+#fade, #modal, #modalCiclo, #modalhide{
     transition: .5s;
     opacity: 1;
     pointer-events: all;
 }
 
-#fade{
+#fade, #fadeCiclo{
     position: fixed;
     top: 0;
     left: 0;
@@ -94,6 +106,19 @@ nav{
     transform: translate(-50%, -50%);
     z-index: 10;
     width: 500px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 25px;
+}
+
+#modalCiclo{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #FBBB85;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
     max-width: 90%;
     padding: 1.2rem;
     border-radius: 25px;
@@ -125,8 +150,28 @@ nav{
     height: 40px;
     text-align: center; 
     background-color: #D57727;
-    border: 0.5px solid black;
+    border: none;
     border-radius: 10px;
+}
+
+#modal-body ul{
+    list-style: none; /* Remove os marcadores de lista */
+    display: table; /* Transforma a lista em uma tabela */
+    width: 100%; /* Define a largura da tabela */
+    border-collapse: collapse; /* Remove espaçamento entre as células */
+    align-items: center;
+    text-align: center;
+    background-color: white;
+}
+
+#modal-body li{
+    display: table-cell ;
+    padding: 5px 10px; 
+    border: 1px solid #0490fc; 
+    text-align: center; 
+    align-items: center;
+    color: #015190;
+    font-weight: bold;
 }
 
 #modal-body button:hover{
@@ -134,13 +179,13 @@ nav{
     cursor: pointer;
 }
 
-#modal.hide,
-#fade.hide{
+#modal.hide, #modalCiclo.hide,
+#fade.hide, #fadeCiclo.hide{
     opacity: 0;
     pointer-events: none;
 }
 
-#closeModalBtn{
+#closeModalBtn, #closeModalBtnCiclo{
     background-color: rgb(3, 3, 3);
     color: #fff;
     border: none;
@@ -154,7 +199,14 @@ nav{
     background-color: rgb(199, 0, 0);
 }
 
-.cadastro-turma{
+#closeModalBtnCiclo:hover{
+    cursor: pointer;
+    background-color: rgb(199, 0, 0);
+}
+
+
+
+.cadastro-turma, .cicloEntregas{
     margin: 0 auto; 
     background-color: #015190;
     padding: 5px 15px;
