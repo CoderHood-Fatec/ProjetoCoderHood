@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/public/telaProfessor/style.css">
     <script src="/public/telaProfessor/script.js" defer></script>
     <title>Turmas</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -25,7 +24,7 @@
           <div class="bgTurma">
             <div id="inserirTurma">
                 {% for turma in turmas %}
-                    <a class=turma href="/turmas/{{turma}}"> {{turma}} </a>
+                    <a class=turma href="/turmas/{{turma['Nome da Turma']}}"> {{turma["Nome da Turma"]}} </a>
                 {% endfor %}  
             </div>
           </div>
@@ -72,6 +71,12 @@
                 <div id="modal-body">
                     <input id="nomeAluno" type="text" placeholder="Nome do Aluno:" required>
                     <input id="ra" type="number" placeholder="Digite o R.A do Aluno:" required>
+                    <select id="turmasAdicionadas">
+                        {% for turma in turmas %}
+                            <option disabled selected>Selecione a turma</option> 
+                            <option>{{turma["Nome da Turma"]}}</option> 
+                        {% endfor %}
+                    </select>
                     <div id="checkboxContainer">
 
                     </div>
@@ -84,4 +89,3 @@
 
 </body>
 </html>
-<script src="script.js"></script>

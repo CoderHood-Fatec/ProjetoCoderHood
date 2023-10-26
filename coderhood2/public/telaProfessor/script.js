@@ -20,11 +20,17 @@ function enviarDados() {
   const nomeTurmaInput = document.getElementById("nomeTurma");
   const professorInput = document.getElementById("professor");
   const turnoInput = document.getElementById("turno");
+  const turmasInput = document.getElementById("turmasAdicionadas");
 
   //Pegando os valores inseridos nos inputs
   const nomeTurma = nomeTurmaInput.value;
   const professor = professorInput.value;
   const turno = turnoInput.value;
+  const novaTurma = document.createElement("option")
+
+  novaTurma.textContent = nomeTurma
+
+  turmasInput.appendChild(novaTurma)
 
   //Criando uma lista de objeto com os dados das turmas
   const dados = {
@@ -106,16 +112,17 @@ function enviarDadosAluno() {
   //Referências dos elementos inseridos
   const nomeAlunoInput = document.getElementById("nomeAluno");
   const raInput = document.getElementById("ra");
+  const turmasInput = document.getElementById("turmasAdicionadas");
 
   //Pegando os valores inseridos nos inputs
   const nomeAluno = nomeAlunoInput.value;
   const ra = raInput.value;
 
-
   //Criando uma lista de objeto com os dados das turmas
   const dados = {
       "Nome do Aluno": nomeAluno,
       "R.A": ra,
+      "turma": turmasInput.value
     };
 
   //exibindo o teste no navegador
@@ -144,24 +151,7 @@ function enviarDadosAluno() {
   // Limpar os campos de entrada
   nomeAlunoInput.value = "";
   raInput.value = "";
-  turmaInput.value = "";
-  turnoInput.value = "";
 }
-
-//Adicionando evento para fechar o modal ao click no button ou apertar tecla enter
-document.querySelectorAll("input").forEach((input) => {
-  input.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      enviarDadosAluno();
-    }
-  });
-});
-
-
-
-
-
 
 /* //Carregar turmas para selecionar em qual turma o aluno irá fazer parte
 

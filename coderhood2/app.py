@@ -28,9 +28,7 @@ def tela_professor():
     with open(os.path.join(json_folder, "turmas.json"), "r") as f:
         turmas = json.load(f)
 
-    nomes_turmas = [turma["Nome da Turma"] for turma in turmas]
-
-    return render_template('telaProfessor/index.html', turmas=nomes_turmas,)
+    return render_template('telaProfessor/index.html', turmas=turmas,)
 
 
 # Inicializa os dados das turmas e alunos
@@ -38,6 +36,26 @@ turmas = []
 alunos = []
 turma_id_counter = 1
 aluno_id_counter = 1
+
+with open("JSON/turmas.json") as t:
+  turmas = json.load(t)
+  if turmas != []:
+    max_id = max(item["ID"] for item in turmas)
+
+    if max_id > 0:
+      turma_id_counter = max_id + 1
+
+with open ("JSON/alunos.json") as a:
+    alunos = json.load(a)
+    if alunos != []:
+        max_id_a = max(item["ID"] for item in alunos)
+
+        if max_id_a > 0:
+            aluno_id_counter = max_id_a + 1
+
+with open ("JSON/turmas.json") as aa:
+    add_alunos = json.load(aa)
+    
 
 # Rota para adicionar turma
 
@@ -57,6 +75,7 @@ def addTurma():
         "alunos": [],
         "ciclos": [],
     }
+
 
     turmas.append(turma)
     save_data()

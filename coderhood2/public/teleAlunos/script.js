@@ -82,7 +82,7 @@ function enviarDados() {
     <span class="titulo">R.A:</span> ${aluno["R.A"]}  
     <input id="nota${aluno["R.A"]}" type="text" placeholder="Nota"/>
     <button type="submit" onclick="receberNotas(${aluno["R.A"]})" class="btnNota">Teste</button>
-    <button onclick="deleteAluno(${i})">Excluir</button>
+    
   `;
 
     inserirAlunoDiv.appendChild(alunoDiv);
@@ -102,8 +102,6 @@ function enviarDados() {
   // Limpar os campos de entrada
   nomeAlunoInput.value = "";
   raInput.value = "";
-  turmaInput.value = "";
-  turnoInput.value = "";
 }
 
   function deleteAluno(ra){
