@@ -55,7 +55,7 @@ with open ("JSON/alunos.json") as a:
 
 with open ("JSON/turmas.json") as aa:
     add_alunos = json.load(aa)
-    
+     
 
 # Rota para adicionar turma
 
@@ -86,11 +86,24 @@ def addTurma():
 
 @app.route('/turmas/<string:nome>')
 def getTurmas(nome):
+    search_id_alunos = []
+    with open ("JSON/turmas.json") as f:
+        load_turmas = json.load(f)
+        for turma in load_turmas:
+            if turma["Nome da Turma"] == nome:
+                search_id_alunos = turma["alunos"]
+
+    with open ("JSON/alunos.json") as a:
+        alunos_encontrados = []
+        load_alunos = json.load(a)
+        for aluno in load_alunos:
+            if aluno["ID"] in search_id_alunos:
+                alunos_encontrados.append(aluno)
     global turmas
 
     turma = next((t for t in turmas if t["Nome da Turma"] == nome), None)
     if turma:
-        return render_template('teleAlunos/index.html', turma=turma)
+        return render_template('teleAlunos/index.html', turma=turma, alunos=alunos_encontrados)
 
     return jsonify({"Erro": "Turma não encontrada"})
 
@@ -106,10 +119,23 @@ def addAluno():
     aluno = {
         "ID": aluno_id,
         "Nome do Aluno": data.get("Nome do Aluno"),
-        "R.A": data.get("R.A")
+        "R.A": data.get("R.A"),
+        "turma": data.get("turma")
     }
     alunos.append(aluno)
     save_data()
+    
+    with open("JSON/turmas.json", "r") as at:
+        add_alunos_turmas = json.load(at)
+
+    with open("JSON/turmas.json", "w") as at:
+        aluno_em_turma = aluno["turma"] 
+        for turma in add_alunos_turmas:
+            if turma["Nome da Turma"] == aluno_em_turma:
+                turma["alunos"].append(aluno["ID"])
+        
+        json.dump(add_alunos_turmas, at)
+
     return data.get("Nome do Aluno")
 
 # Rota para obter todos os alunos
