@@ -38,14 +38,14 @@ turma_id_counter = 1
 aluno_id_counter = 1
 
 with open("JSON/turmas.json") as t:
-  turmas = json.load(t)
-  if turmas != []:
-    max_id = max(item["ID"] for item in turmas)
+    turmas = json.load(t)
+    if turmas != []:
+        max_id = max(item["ID"] for item in turmas)
 
-    if max_id > 0:
-      turma_id_counter = max_id + 1
+        if max_id > 0:
+            turma_id_counter = max_id + 1
 
-with open ("JSON/alunos.json") as a:
+with open("JSON/alunos.json") as a:
     alunos = json.load(a)
     if alunos != []:
         max_id_a = max(item["ID"] for item in alunos)
@@ -53,9 +53,9 @@ with open ("JSON/alunos.json") as a:
         if max_id_a > 0:
             aluno_id_counter = max_id_a + 1
 
-with open ("JSON/turmas.json") as aa:
+with open("JSON/turmas.json") as aa:
     add_alunos = json.load(aa)
-     
+
 
 # Rota para adicionar turma
 
@@ -76,7 +76,6 @@ def addTurma():
         "ciclos": [],
     }
 
-
     turmas.append(turma)
     save_data()
     return turma_name
@@ -87,13 +86,13 @@ def addTurma():
 @app.route('/turmas/<string:nome>')
 def getTurmas(nome):
     search_id_alunos = []
-    with open ("JSON/turmas.json") as f:
+    with open("JSON/turmas.json") as f:
         load_turmas = json.load(f)
         for turma in load_turmas:
             if turma["Nome da Turma"] == nome:
                 search_id_alunos = turma["alunos"]
 
-    with open ("JSON/alunos.json") as a:
+    with open("JSON/alunos.json") as a:
         alunos_encontrados = []
         load_alunos = json.load(a)
         for aluno in load_alunos:
@@ -106,6 +105,23 @@ def getTurmas(nome):
         return render_template('teleAlunos/index.html', turma=turma, alunos=alunos_encontrados)
 
     return jsonify({"Erro": "Turma não encontrada"})
+
+# def cicloEntregas(turma, periodo_inicio, periodo_fim):
+#     try:
+#         with open("JSON/turmas.json", "r") as f:
+#             turma = json.load(f)
+
+#         ciclos = turma['ciclo']
+
+#         entrega = {'periodo_inicio': periodo_inicio, 'periodo_fim': periodo_fim}
+#         ciclos.append(entrega)
+
+#         with open('JSON/turmas.json', "w") as f2:
+#             json.dump(turma, f, indent=4)
+
+#         print(f"Período de entrega {periodo_inicio} - {periodo_fim} adicionado com sucesso.")
+#     except Exception as e:
+#         print(f"Ocorreu um erro: {e}")
 
 
 # Rota para adicionar aluno
@@ -124,16 +140,16 @@ def addAluno():
     }
     alunos.append(aluno)
     save_data()
-    
+
     with open("JSON/turmas.json", "r") as at:
         add_alunos_turmas = json.load(at)
 
     with open("JSON/turmas.json", "w") as at:
-        aluno_em_turma = aluno["turma"] 
+        aluno_em_turma = aluno["turma"]
         for turma in add_alunos_turmas:
             if turma["Nome da Turma"] == aluno_em_turma:
                 turma["alunos"].append(aluno["ID"])
-        
+
         json.dump(add_alunos_turmas, at)
 
     return data.get("Nome do Aluno")
