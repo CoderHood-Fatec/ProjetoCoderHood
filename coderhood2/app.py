@@ -111,7 +111,7 @@ def getTurmas(nome):
 #         with open("JSON/turmas.json", "r") as f:
 #             turma = json.load(f)
 
-#         ciclos = turma['ciclo']
+#         ciclos = turma['ciclos']
 
 #         entrega = {'periodo_inicio': periodo_inicio, 'periodo_fim': periodo_fim}
 #         ciclos.append(entrega)
