@@ -83,22 +83,6 @@ document.querySelectorAll("input").forEach((input) => {
   });
 });
 
-function adicionarCiclo(){
-  const inicioCicloInput = document.getElementById("cicloInicio");
-  const fimCicloInput = document.getElementById("cicloFim")
-
-  const inicioCiclo = inicioCicloInput.value;
-  const fimCiclo = fimCicloInput.value;
-
-  console.log(inicioCiclo, fimCiclo);
-}
-
-
-
-
-
-
-
 //Referências para os elemetnos do modal
 const openModalBtnAluno = document.getElementById("openModalBtnAluno");
 const closeModalBtnAluno = document.getElementById("closeModalBtnAluno");
@@ -144,8 +128,6 @@ function enviarDadosAluno() {
     },
     body: JSON.stringify(dados), //convertendo em JSON os objetos
   }
-
-
 
   // console.log(window.location)
 

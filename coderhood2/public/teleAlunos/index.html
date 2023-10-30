@@ -75,15 +75,31 @@
             <h2 class="cicloEntregas">Ciclo de Entregas</h2>
             <button id="closeModalBtnCiclo">X</button>
           </div>
+          <div id="ciclo">
+              <div>
+                  <label>
+                    Início do Ciclo:
+                    <input id="cicloInicio" type="date" placeholder="teste"> 
+                  </label>
+                  <label>
+                    Fim do Ciclo:
+                    <input id="cicloFim" type="date" placeholder="Fim do Ciclo">
+                  </label>                  
+              </div>
+              <button id="btnCiclo" type="submit" onclick="adicionarCiclo()">Salvar Ciclo</button>
+          </div>
 
           <div id="modal-body">
-            <ul>
+            {% for ciclo in turma['ciclos'] %}
+              <a href="/turmas/{{ciclo}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
+            {% endfor %}
+            <!--<ul>
               <li>Nome</li>
               <li>Data Ínicio</li>
               <li>Data Fim</li>
               <li>Peso</li>
               <li>Status</li>
-            </ul>
+            </ul> -->
           </div>
         </div>
       </div>

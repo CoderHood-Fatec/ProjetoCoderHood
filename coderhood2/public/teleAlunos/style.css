@@ -118,7 +118,7 @@ nav{
     background-color: #FBBB85;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 90%;
+    width: 800px;
     max-width: 90%;
     padding: 1.2rem;
     border-radius: 25px;
@@ -203,8 +203,6 @@ nav{
     cursor: pointer;
     background-color: rgb(199, 0, 0);
 }
-
-
 
 .cadastro-turma, .cicloEntregas{
     margin: 0 auto; 
@@ -308,4 +306,19 @@ div#addHtml{
     background-color: #0490fc;
     transition: .4s;
     cursor: pointer;
+}
+
+#ciclo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#ciclo label{
+    color: #000;
+}
+
+#ciclo button{
+    height: 25px;
+    margin: auto 0;
 }

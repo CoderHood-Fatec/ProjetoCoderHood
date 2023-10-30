@@ -106,6 +106,36 @@ def getTurmas(nome):
 
     return jsonify({"Erro": "Turma não encontrada"})
 
+@app.route('/ciclo', methods=['POST'])
+def addCiclo():
+    """
+    Request: 
+    {
+        "periodo_inicio": "2021-01-01",
+        "periodo_fim": "2021-12-31",
+        "turma": "Turma 1"
+    }
+    """
+    data = request.get_json()
+    periodo_inicio = data.get("periodo_inicio")
+    periodo_fim = data.get("periodo_fim")
+
+    global turmas
+
+    ciclo = {
+        "periodo_inicio": periodo_inicio,
+        "periodo_fim": periodo_fim
+    }
+
+    # Encontra a turma e adiciona o ciclo
+    turma = next((t for t in turmas if t["Nome da Turma"] == data.get("turma")), None)
+    if turma:
+        turma["ciclos"].append(ciclo)
+        
+    save_data()
+    return jsonify({"periodo_inicio": periodo_inicio, "periodo_fim": periodo_fim})
+
+
 # def cicloEntregas(turma, periodo_inicio, periodo_fim):
 #     try:
 #         with open("JSON/turmas.json", "r") as f:
@@ -115,6 +145,7 @@ def getTurmas(nome):
 
 #         entrega = {'periodo_inicio': periodo_inicio, 'periodo_fim': periodo_fim}
 #         ciclos.append(entrega)
+#         print("Pegou aqui")
 
 #         with open('JSON/turmas.json', "w") as f2:
 #             json.dump(turma, f, indent=4)
@@ -122,6 +153,8 @@ def getTurmas(nome):
 #         print(f"Período de entrega {periodo_inicio} - {periodo_fim} adicionado com sucesso.")
 #     except Exception as e:
 #         print(f"Ocorreu um erro: {e}")
+
+#     return
 
 
 # Rota para adicionar aluno

@@ -104,7 +104,36 @@ function enviarDados() {
   raInput.value = "";
 }
 
-  function deleteAluno(ra){
+function adicionarCiclo(){
+  const inicioCicloInput = document.getElementById("cicloInicio");
+  const fimCicloInput = document.getElementById("cicloFim")
+
+  const inicioCiclo = inicioCicloInput.value;
+  const fimCiclo = fimCicloInput.value;
+  // const turmaAtual = document.getElementById("nomeTurma").value
+
+  console.log(inicioCiclo, fimCiclo);
+
+  // Faça o fetch de ciclo
+  fetch(window.location.origin + '/ciclo', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      periodo_inicio: inicioCiclo,
+      periodo_fim: fimCiclo,
+      turma: turmaAtual
+    })
+  }).then(response => response.json()).then(data => {
+    const novo_ciclo = document.getElementById('modal-body').innerHTML+=`<a/turmas/${ciclo}">`+ "" +ciclo+'</a>'
+
+    console.log(data);
+  })
+}
+
+function deleteAluno(ra){
     
   const option = {
       method: 'DELETE',
