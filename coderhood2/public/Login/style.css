@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: inter, arial;
+  font-family: arial;
   font-size: 20px;
-  color: #c6d6d6;
-  background: linear-gradient(to bottom right, #282832, #dee7e7, #282832);
+  color: #282832;
+  background: rgb(40,40,50);
+  background: radial-gradient(circle, rgba(40,40,50,1) 0%, rgba(222,231,231,0.7653186274509804) 68%, rgba(40,40,50,1) 350%);
   overflow: hidden;
 }
 
@@ -13,7 +16,7 @@ header {
   justify-content: space-around;
   text-align: center;
   margin: auto;
-  background-color: #282832;
+  background-color: #28283260;
   padding-top: 15px;
   height: 75px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
@@ -25,19 +28,19 @@ header {
 }
 
 .pbltex {
-  height: 65px;
+  height: 70px;
 }
 
 #container-login p {
   font-size: 40px;
   display: flex;
   justify-content: center;
-  padding: 2vh 0;
-  margin: 8vh auto;
+  padding: 0.2vh 0;
+  margin: 1vh auto;
   border-radius: 5px;
   width: 70.5vh;
   background-color: #a92727;
-  box-shadow: rgba(0, 0, 0, 0.366) 0px 3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.366) 0px 1px 3px;
 }
 
 #container-box-user {
@@ -51,7 +54,7 @@ header {
   border-radius: 5px;
   width: 60vh;
   background-color: rgb(198, 214, 214);
-  box-shadow: rgba(0, 0, 0, 0.64) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.64) 0px 1px 3px;
 }
 
 #container-box-user .first-label,
@@ -96,4 +99,8 @@ header {
   box-shadow: rgba(0, 0, 0, 0.64) 0px 5px 15px;
   transition: 0.5s;
   cursor: pointer;
+}
+
+footer{
+  background-attachment: [fixed];
 }
