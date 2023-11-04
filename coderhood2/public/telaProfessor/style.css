@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
-  font-family: inter, arial;
+  font-family: teko;
   font-size: 20px;
 }
 
 body {
   color: rgb(255, 255, 255);
-  background: #fbbb85;
+  background: rgb(40,40,50);
+  background: linear-gradient(119deg, rgba(40,40,50,0.6) 0%, rgba(222,231,231,0.6) 50%, rgba(198,214,214,0.6) 100%);
   overflow: hidden;
 }
 
@@ -16,10 +20,10 @@ header {
   justify-content: space-around;
   text-align: center;
   margin: auto;
-  background-color: #f58220;
+  background-color: #28283260;
   padding-top: 15px;
   height: 75px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
 }
 
 .coderhood {
@@ -40,9 +44,9 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 50px 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 5px;
   height: 100vh;
-  background-color: #e69f64;
+  background-color: #28283260;
 }
 
 .link-button {
@@ -94,7 +98,7 @@ nav {
   position: fixed;
   left: 50%;
   top: 50%;
-  background-color: #fbbb85;
+  background-color: #c6d6d6;
   transform: translate(-50%, -50%);
   z-index: 10;
   width: 700px;
@@ -128,13 +132,16 @@ nav {
   width: 30%;
   height: 40px;
   text-align: center;
-  background-color: #d57727;
+  background-color: #a92727;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0.5px;
 }
 
 #modal-body button:hover {
-  background-color: #a85f1f;
+  background-color: #447D40;
   cursor: pointer;
 }
 
@@ -164,10 +171,12 @@ nav {
 
 .cadastro-turma {
   margin: 0 auto;
-  background-color: #015190;
-  padding: 5px 15px;
+  background-color: #282832;
+  padding: 5px 30px;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
+  font-size: 30px; 
+  letter-spacing: 2px;
 }
 
 .bgTurma {
@@ -179,11 +188,13 @@ nav {
 }
 
 .turma {
-  background-color: #f58220;
-  border-radius: 15px;
+  background-color: #a92727;
+  border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 2px;;
 }
 
 #ciclo {
@@ -201,7 +212,7 @@ nav {
 main {
   width: 100%;
   display: flex;
-  color: #015190;
+  color: #282832;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;

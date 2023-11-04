@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
-    font-family: inter, arial;
+    font-family: teko;
     font-size: 20px;
 }
 
 body{
     color: rgb(255, 255, 255);
-    background: #FBBB85;    
+    background: rgb(40,40,50);
+    background: linear-gradient(119deg, rgba(40,40,50,0.6) 0%, rgba(222,231,231,0.6) 50%, rgba(198,214,214,0.6) 100%);    
     overflow: hidden;
 }
 
@@ -16,8 +20,7 @@ header{
     justify-content: space-around;
     text-align: center;
     margin: auto;
-    background-color: 
-    #F58220;
+    background-color: #28283260;
     padding-top: 15px;
     height: 75px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -55,7 +58,7 @@ nav{
     padding: 50px 0;
     box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px;
     height: 100vh;
-    background-color: #E69F64;
+    background-color: #28283260;
 }
 
 .link-button{
@@ -102,7 +105,7 @@ nav{
     position: fixed;
     left: 50%;
     top: 50%;
-    background-color: #FBBB85;
+    background-color: #c6d6d6;
     transform: translate(-50%, -50%);
     z-index: 10;
     width: 500px;
@@ -115,7 +118,7 @@ nav{
     position: fixed;
     left: 50%;
     top: 50%;
-    background-color: #FBBB85;
+    background-color: #c6d6d6;
     transform: translate(-50%, -50%);
     z-index: 10;
     width: 800px;
@@ -145,20 +148,24 @@ nav{
 }
 
 #modal-body button {
-    margin: 0 auto; 
+    margin: 0 auto;
     width: 30%;
     height: 40px;
-    text-align: center; 
-    background-color: #D57727;
+    text-align: center;
+    background-color: #a92727;
     border: none;
     border-radius: 10px;
+    font-size: 25px;
+    letter-spacing: 1.5px; 
+    color: #dee7e7;
 }
 
+
 #modal-body ul{
-    list-style: none; /* Remove os marcadores de lista */
-    display: table; /* Transforma a lista em uma tabela */
-    width: 100%; /* Define a largura da tabela */
-    border-collapse: collapse; /* Remove espaçamento entre as células */
+    list-style: none;
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
     align-items: center;
     text-align: center;
     background-color: white;
@@ -175,7 +182,7 @@ nav{
 }
 
 #modal-body button:hover{
-    background-color: #a85f1f;
+    background-color: #a92727;
     cursor: pointer;
 }
 
@@ -206,19 +213,23 @@ nav{
 
 .cadastro-turma, .cicloEntregas{
     margin: 0 auto; 
-    background-color: #015190;
+    background-color: #283232;
     padding: 5px 15px;
     border: none;
     border-radius: 20px;
+    font-size: 25px; 
+    letter-spacing: 2px;
 }
 
 main{
   width: 100%;
   display: flex;
-  color: #015190;
+  color: #282832;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  font-size: 45px; 
+  letter-spacing: 3px;
 }
 
 main h1{
@@ -245,12 +256,14 @@ main input{
 }
 
 .aluno{
-    background-color: #F58220;  
+    background-color: #a92727;  
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     margin-bottom: 15px;
     text-align: center;
+    font-size: 30px;
+    letter-spacing: 1.5px;
 }
 
 .aluno input{
@@ -259,7 +272,9 @@ main input{
 }
 
 .titulo{
-    color:#015190;
+    color:#283232;
+    font-size: 30px;
+    letter-spacing: 1.5px;
     margin-left: 40px;
     font-weight: bold;
 }
@@ -292,18 +307,19 @@ div#addHtml{
   flex-direction: inline;
 }
 
-.btnNota{
-    font-size: .8rem;
+.btnNota {
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: #283232; 
     width: 60px;
     height: 30px;
-    border: 1px solid #fff;
-    background-color: #026ec0;
-    color: #fff;
-    border-radius: 5px;
+    border: 1px solid #a92727;
+    background-color: #dee7e7;
+    border-radius: 2px;
 }
 
 .btnNota:hover{
-    background-color: #0490fc;
+    background-color: #c6d6d630;
     transition: .4s;
     cursor: pointer;
 }

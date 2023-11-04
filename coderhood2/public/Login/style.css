@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: arial;
+  font-family: teko;
   font-size: 20px;
   color: #282832;
   background: rgb(40,40,50);
@@ -32,15 +32,16 @@ header {
 }
 
 #container-login p {
-  font-size: 40px;
+  font-size: 60px;
   display: flex;
   justify-content: center;
   padding: 0.2vh 0;
-  margin: 1vh auto;
+  margin: 10vh auto;
   border-radius: 5px;
   width: 70.5vh;
   background-color: #a92727;
   box-shadow: rgba(0, 0, 0, 0.366) 0px 1px 3px;
+  color: #dee7e7
 }
 
 #container-box-user {
@@ -49,7 +50,7 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 10vh 5vh;
+  padding: 5vh 5vh;
   margin: 8vh auto;
   border-radius: 5px;
   width: 60vh;
@@ -60,7 +61,7 @@ header {
 #container-box-user .first-label,
 .second-label {
   text-align: center;
-  font-size: 15px;
+  font-size: 35px;
   display: flex;
   justify-content: center;
 }
