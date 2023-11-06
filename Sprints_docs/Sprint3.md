@@ -36,4 +36,4 @@
 
 ## Entrega do 3º Sprint
 
-<p align="center"> <img src="Sprints_docs/Turmas - Google Chrome 2023-11-05 22-43-15.gif"/> </p>
+<p align="center"> <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/blob/f7a00a79f4f0a7b97e58df59e64e4363957755b6/Sprints_docs/Turmas%20-%20Google%20Chrome%202023-11-05%2022-43-15.gif"/> </p>
