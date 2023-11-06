@@ -36,4 +36,4 @@
 
 ## Entrega do 3º Sprint
 
-<p align="center"> <img src="GIF Atualizado - Google Chrome 2023-10-19 19-41-55.gif"/> </p>
+<p align="center"> <img src="Sprints_docs/Turmas - Google Chrome 2023-11-05 22-43-15.gif"/> </p>
