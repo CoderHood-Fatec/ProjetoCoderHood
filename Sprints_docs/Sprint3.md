@@ -27,7 +27,7 @@
 | Ranking de Prioridades do 3º sprint | Prioridade | User Stories | Sprint | Status |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 1º | Alta |  **Gerenciar Ciclo de Entrega:** Professor pode criar um ciclo de entregas, dentro da turma, inserindo as informações de data de inicio e fim do ciclo  | [#3]  |✔️| 
-| 2º | Alta |  **Armazenamento das informações:** Garantir que os dados persistam no sistema: Alteração da base para criar dois Json de Turmas e Alunos para armazenar as informações  | [#3]  |✔️| 
+| 2º | Alta |  **Armazenamento das informações:** Garantir que os dados persistam no sistema a partir da alteração da base para criar dois JSON de Turmas e Alunos  | [#3]  |✔️| 
 | 3º | Alta | **Visualizar Ciclo de Entrega:** Um botão que permite vizualizar o que acabou de criar. | [#3]  |✔️| 
 | 4º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas. | [#3]  |✔️| 
 | 5º | Média | **Visualizar Aluno:** O professor precisa visualizar os dados dos alunos (nome, RA) ao entrar na página da turma.  | [#3] |✔️| 
