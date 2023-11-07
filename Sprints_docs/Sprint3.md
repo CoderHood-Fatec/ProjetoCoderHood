@@ -31,7 +31,7 @@
 | 3º | Alta | **Visualizar Ciclo de Entrega:** Um botão que permite visualizar o que acabou de criar. | [#3]  |✔️| 
 | 4º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas. | [#3]  |✔️| 
 | 5º | Média | **Visualizar Aluno:** O professor precisa visualizar os dados dos alunos (nome, RA) ao entrar na página da turma.  | [#3] |✔️| 
-| 6º | Média | **Estilizações:** Atualizações na interface visual. | [#3] |✔️| 
+| 6º | Baixa | **Estilizações:** Atualizações na interface visual. | [#3] |✔️| 
 
 
 ## Entrega do 3º Sprint
