@@ -19,21 +19,24 @@
 
 ## Objetivo do 4º sprint
 
-* Traçamos como objetivo entregar no quarto sprint um sistema que tenha capacidade de atender as funcionalidades básicas de acordo com a necessidade do usuário (professor). As funcionalidades básicas definidas foram: Gerenciar Ciclo de Entrega, Criação do Ciclo de Entrega, Botão de Visualização do Ciclo de Entrega, Visualizar notas e dados do aluno em Turmas, garantir a persistência dos dados no sistema e ajustes de estilização na interface.  
+* Traçamos como objetivo entregar no quarto sprint um sistema que tenha capacidade de atender as funcionalidades básicas de acordo com a necessidade do usuário (professor). As tarefas definidas foram: Finalizar a task Gerenciar Ciclo de Entrega cujas pendências são: incluir notas ao final dos ciclos, pesos e visualização dos ciclos criados; Visualizar notas do aluno em Turmas, Editar/Remover Turmas e Alunos; Desenvolver Tela de Alunos e permitir o cadastro de um aluno em mais de uma turma
 
 ## Backlog do 3º sprint
 
 
 | Ranking de Prioridades do 3º sprint | Prioridade | User Stories | Sprint | Status |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1º | Alta |  **Gerenciar Ciclo de Entrega:** O professor terá a função de criar ciclos de entregas para que consiga definir o início e o fim de cada período de atividades e poderá inserir as notas somente no fim de cada ciclo. **Pendências:** Pesos, inserir notas no fim do ciclo, visualização de ciclos criados  | [#3]  |40%| 
-| 2º | Alta |  **Inserir um mesmo aluno em mais de uma turma:** Garantir que os dados persistam no sistema a partir da alteração da base para criar dois JSON de Turmas e Alunos  | [#3]  |✔️| 
-| 3º | Alta | **Editar e remover aluno/Turma** Um botão que permite visualizar o que acabou de criar. | [#3]  |✔️| 
-| 4º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas. | [#3]  |✔️| 
-| 5º | Média | **Visualizar Aluno:** O professor precisa visualizar os dados dos alunos (nome, RA) ao entrar na página da turma.  | [#3] |✔️| 
-| 6º | Baixa | **Estilizações:** Atualizações na interface visual. | [#3] |✔️| 
+| 1º | Alta |  **Gerenciar Ciclo de Entrega:** O professor terá a função de criar ciclos de entregas para que consiga definir o início e o fim de cada período de atividades e poderá inserir as notas somente no fim de cada ciclo. **Pendências:** Pesos, inserir notas no fim do ciclo, visualização de ciclos criados  | [#4]  || 
+| 2º | Alta | **Desenvolver tela de Alunos** Desenvolver o front da tela de Alunos onde serão mostrados todos os alunos do sistema e as turmas em que estão adicionados | [#4]  || 
+| 3º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas.	| [#4]  || 
+| 4º | Média |  **Inserir um mesmo aluno em mais de uma turma:** Garantir que um mesmo aluno possa ser inserido em mais de uma turma | [#4]  || 
+| 5º | Média | **Editar e Remover aluno** Permitir a edição e exclusão de alunos. | [#4]  || 
+| 6º | Média | **Remover Turmas** Permitir excluir Turmas | [#4]  || 
 
 
-## Entrega do 3º Sprint
+
+
+
+## Entrega do 4º Sprint
 
 <p align="center"> <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/blob/6eca3ca5e8d6eecbce69729d45e6de9295b69d13/Sprints_docs/WhatsApp%20Video%202023-11-06%20at%2022.06.50.gif"/> </p>
