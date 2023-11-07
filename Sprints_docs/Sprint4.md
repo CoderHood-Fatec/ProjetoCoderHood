@@ -21,7 +21,7 @@
 
 * Traçamos como objetivo entregar no quarto sprint um sistema que tenha capacidade de atender as funcionalidades básicas de acordo com a necessidade do usuário (professor). As tarefas definidas foram: Finalizar a task Gerenciar Ciclo de Entrega cujas pendências são: incluir notas ao final dos ciclos, pesos e visualização dos ciclos criados; Visualizar notas do aluno em Turmas, Editar/Remover Turmas e Alunos; Desenvolver Tela de Alunos e permitir o cadastro de um aluno em mais de uma turma
 
-## Backlog do 3º sprint
+## Backlog do 4º sprint
 
 
 | Ranking de Prioridades do 3º sprint | Prioridade | User Stories | Sprint | Status |
