@@ -26,11 +26,11 @@
 
 | Ranking de Prioridades do 3º sprint | Prioridade | User Stories | Sprint | Status |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1º | Alta |  **Gerenciar Ciclo de Entrega:** O professor terá a função de criar ciclos de entregas para que consiga definir o início e o fim de cada período de atividades e poderá inserir as notas somente no fim de cada ciclo. **Pendências:** Pesos, inserir notas no fim do ciclo, visualização de ciclos criados  | [#3]  |40%| 
-| 2º | Alta |  **Armazenamento das informações:** Garantir que os dados persistam no sistema a partir da alteração da base para criar dois JSON de Turmas e Alunos  | [#3]  |✔️| 
-| 3º | Alta | **Visualizar Ciclo de Entrega:** Um botão que permite visualizar o que acabou de criar. | [#3]  |✔️| 
-| 4º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas. | [#3]  |✔️| 
-| 5º | Média | **Visualizar Aluno:** O professor precisa visualizar os dados dos alunos (nome, RA) ao entrar na página da turma.  | [#3] |✔️| 
+| 1º | Alta |  **Armazenamento das informações:** Garantir que os dados persistam no sistema a partir da alteração da base para criar dois JSON de Turmas e Alunos  | [#3]  |✔️| 
+| 2º | Alta | **Visualizar Ciclo de Entrega:** Um botão que permite visualizar o que acabou de criar. | [#3]  |✔️| 
+| 3º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas. | [#3]  |✔️| 
+| 4º | Média | **Visualizar Aluno:** O professor precisa visualizar os dados dos alunos (nome, RA) ao entrar na página da turma.  | [#3] |✔️| 
+| 5º | Média |  **Gerenciar Ciclo de Entrega:** O professor terá a função de criar ciclos de entregas para que consiga definir o início e o fim de cada período de atividades e poderá inserir as notas somente no fim de cada ciclo. **Pendências:** Pesos, inserir notas no fim do ciclo, visualização de ciclos criados  | [#3]  |Em Andamento| 
 | 6º | Baixa | **Estilizações:** Atualizações na interface visual. | [#3] |✔️| 
 
 
