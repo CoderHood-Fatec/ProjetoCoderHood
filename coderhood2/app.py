@@ -1,6 +1,7 @@
-from flask import Flask, jsonify, request, send_from_directory, render_template
+from flask import Flask, jsonify, request, send_from_directory, render_template, Response
 import json
 import os
+import csv
 
 app = Flask(__name__, template_folder='public')
 json_folder = "JSON"
@@ -30,6 +31,40 @@ def tela_professor():
 
     return render_template('telaProfessor/index.html', turmas=turmas,)
 
+@app.route('/export_csv')
+def export_csv():
+    json_file_path = 'JSON/alunos.json'
+
+    # Load data from JSON file
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+
+    # Create a CSV string
+    csv_data = convert_to_csv(data)
+
+    # Set response headers
+    headers = {
+        'Content-Type': 'text/csv',
+        'Content-Disposition': 'attachment; filename=alunos.csv'
+    }
+
+    # Return the CSV as a response
+    return Response(csv_data, headers=headers)
+
+def convert_to_csv(data):
+    # Assuming data is a list of dictionaries
+    csv_string = ''
+    if data:
+        # Get header from the keys of the first dictionary
+        header = ','.join(data[0].keys()) + '\n'
+        csv_string += header
+
+        # Write data rows
+        for row in data:
+            values = ','.join(map(str, row.values())) + '\n'
+            csv_string += values
+
+    return csv_string
 
 # Inicializa os dados das turmas e alunos
 turmas = []
