@@ -80,6 +80,16 @@ def addTurma():
     save_data()
     return turma_name
 
+# Carregue os dados das turmas apenas uma vez ao iniciar o aplicativo
+def load_turmas():
+    if os.path.exists(os.path.join(json_folder, "turmas.json")):
+        with open(os.path.join(json_folder, "turmas.json"), "r") as f:
+            return json.load(f)
+    return []
+
+turmas = load_turmas()
+
+
 # Rota para obter todas as turmas
 
 
@@ -169,23 +179,26 @@ def addAluno():
         "ID": aluno_id,
         "Nome do Aluno": data.get("Nome do Aluno"),
         "R.A": data.get("R.A"),
-        "turma": data.get("turma")
+        "turma": [int(turma_id) for turma_id in data.get("turmas")]
     }
     alunos.append(aluno)
     save_data()
 
-    with open("JSON/turmas.json", "r") as at:
-        add_alunos_turmas = json.load(at)
+    # Adicione o aluno às turmas existentes sem sobrescrever o arquivo JSON
+    for turma in turmas:
+        if turma["ID"] in aluno["turma"]:
+            if aluno_id not in turma["alunos"]:
+                turma["alunos"].append(aluno_id)
 
-    with open("JSON/turmas.json", "w") as at:
-        aluno_em_turma = aluno["turma"]
-        for turma in add_alunos_turmas:
-            if turma["Nome da Turma"] == aluno_em_turma:
-                turma["alunos"].append(aluno["ID"])
-
-        json.dump(add_alunos_turmas, at)
+    with open(os.path.join(json_folder, "turmas.json"), "w") as f:
+        json.dump(turmas, f)
 
     return data.get("Nome do Aluno")
+
+
+
+
+
 
 # Rota para obter todos os alunos
 

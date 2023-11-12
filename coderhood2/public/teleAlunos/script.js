@@ -130,6 +130,7 @@ function adicionarCiclo(){
     const novo_ciclo = document.getElementById('modal-body').innerHTML+=`<a/turmas/${ciclo}">`+ "" +ciclo+'</a>'
 
     console.log(data);
+    window.location.reload();
   })
 }
 
@@ -157,5 +158,7 @@ document.querySelectorAll("input").forEach((input) => {
     }
   });
 });
+
+
 
 //Rota para página inicial

@@ -338,3 +338,16 @@ div#addHtml{
     height: 25px;
     margin: auto 0;
 }
+
+/* Estilo para os links dos ciclos */
+.ciclo-link {
+  text-decoration: none; /* Remova a formatação de sublinhado padrão */
+  color: #333; /* Cor do texto */
+  font-size: 30px; /* Tamanho da fonte */
+}
+
+/* Estilo para o contêiner modal-body */
+#modal-body {
+  padding: 20px; /* Espaçamento interno para melhor leitura */
+
+}

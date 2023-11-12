@@ -102,6 +102,16 @@ header {
   cursor: pointer;
 }
 
+
+
 footer{
-  background-attachment: [fixed];
+  background-color: #28283260;
+  color: white;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+footer a{
+  color: white;
+  text-decoration: none;
 }

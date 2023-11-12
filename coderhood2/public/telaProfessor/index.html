@@ -58,21 +58,19 @@
                     <button id="closeModalBtnAluno">X</button>
                 </div>
 
+
                 <div id="modal-body">
                     <input id="nomeAluno" type="text" placeholder="Nome do Aluno:" required>
                     <input id="ra" type="number" placeholder="Digite o R.A do Aluno:" required>
-                    <select id="turmasAdicionadas">
+                    <div id="turmasAdicionadas">
                         {% for turma in turmas %}
-                            <option disabled selected>Selecione a turma</option> 
-                            <option>{{turma["Nome da Turma"]}}</option> 
+                            <input type="checkbox" id="turma{{ turma['ID'] }}" name="turmas[]" value="{{ turma['ID'] }}">
+                            <label for="turma{{ turma['ID'] }}">{{ turma['Nome da Turma'] }}</label>
                         {% endfor %}
-                    </select>
-                    <div id="checkboxContainer">
-
                     </div>
-
                     <button id="btn" type="submit" onclick="enviarDadosAluno()">Adicionar</button>
                 </div>
+                
 
         </div>
     </div>

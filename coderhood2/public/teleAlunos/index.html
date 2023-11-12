@@ -42,7 +42,7 @@
               onclick="receberNotas({{aluno['R.A']}})"
               class="btnNota"
             >
-              Teste
+              Salvar
             </button>
                 
           </div>
@@ -91,7 +91,7 @@
 
           <div id="modal-body">
             {% for ciclo in turma['ciclos'] %}
-              <a href="/turmas/{{ciclo}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
+              <a class="ciclo-link" href="/turmas/{{ciclo}}">Inicio do Ciclo: {{ciclo["periodo_inicio"]}} <br>Final do Ciclo: {{ciclo["periodo_fim"]}}</a>
             {% endfor %}
             <!--<ul>
               <li>Nome</li>

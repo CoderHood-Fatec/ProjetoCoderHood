@@ -101,40 +101,44 @@ const toggleModalAluno = () => {
 
 //Recebendo os dados inseridos no cadastrar turmas
 function enviarDadosAluno() {
-  //Referências dos elementos inseridos
+  // Referências dos elementos inseridos
   const nomeAlunoInput = document.getElementById("nomeAluno");
   const raInput = document.getElementById("ra");
-  const turmasInput = document.getElementById("turmasAdicionadas");
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
 
-  //Pegando os valores inseridos nos inputs
+  // Pegando os valores inseridos nos inputs
   const nomeAluno = nomeAlunoInput.value;
   const ra = raInput.value;
+  const turmasSelecionadas = [];
 
-  //Criando uma lista de objeto com os dados das turmas
+  checkboxes.forEach(checkbox => {
+      turmasSelecionadas.push(checkbox.value);
+      console.log(turmasSelecionadas)
+  });
+
+  // Criando um objeto com os dados do aluno, incluindo as turmas selecionadas
   const dados = {
       "Nome do Aluno": nomeAluno,
       "R.A": ra,
-      "turma": turmasInput.value
-    };
+      "turmas": turmasSelecionadas
+  };
 
-  //exibindo o teste no navegador
+  // exibindo os dados no navegador
   console.log(dados);
 
-  //configurando a requisição POST
+  // configurando a requisição POST
   const option = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(dados), //convertendo em JSON os objetos
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dados), // convertendo em JSON os objetos
   }
 
-  // console.log(window.location)
-
-  //Enviando a requisição POST para o servidor
+  // Enviando a requisição POST para o servidor
   fetch(window.location.origin + '/aluno', option).catch(e => {
       console.log(e);
-      });
+  });
 
   toggleModalAluno();
 
@@ -175,3 +179,4 @@ function carregarTurmas() {
 
 // Chame a função carregarTurmas para preencher o div de checkboxes quando a página for carregada
 window.addEventListener('load', carregarTurmas); */
+
