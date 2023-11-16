@@ -20,12 +20,7 @@
       /></a>
     </header>
     <div id="container">
-      <nav id="nav-container">
-        
-        <button id="openModalBtnCiclo" class="link-button">
-          Ciclo de Entregas
-        </button>
-      </nav>
+      
 
       <main>
         <h1>Turma {{turma["Nome da Turma"]}} - {{turma["Turno"]}}</h1>
@@ -34,14 +29,14 @@
           <div class="aluno">
             <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
             <span class="titulo">R.A:</span> {{aluno["R.A"]}}
-            <!--<input id="nota{{aluno['R.A']}}" type="text" placeholder="Nota" />-->
-            <!--<button
+            <input id="nota{{aluno['R.A']}}" type="text" placeholder="Nota" />
+            <button
               type="submit"
               onclick="receberNotas({{aluno['R.A']}})"
               class="btnNota"
             >
               Teste
-            </button>-->
+            </button>
                 
           </div>
           {% endfor %}

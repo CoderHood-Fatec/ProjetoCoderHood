@@ -19,10 +19,6 @@ const toggleModalCiclo = () => {
   fadeCiclo.classList.toggle("hide");
 };
 
-[openModalBtn, closeModalBtn, fade].forEach((el) => {
-  el.addEventListener("click", () => toggleModal());
-});
-
 [openModalBtnCiclo, closeModalBtnCiclo, fadeCiclo].forEach((el) => {
   el.addEventListener("click", () => toggleModalCiclo());
 });

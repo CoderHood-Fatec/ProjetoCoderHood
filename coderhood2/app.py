@@ -141,6 +141,29 @@ def getTurmas(nome):
 
     return jsonify({"Erro": "Turma não encontrada"})
 
+# @app.route('/ciclos/<string:nome>')
+# def getCiclos(nome):
+#     search_id_alunos = []
+#     with open("JSON/turmas.json") as f:
+#     load_turmas = json.load(f)
+#     for turma in load_turmas:
+#         if turma["Nome da Turma"] == nome:
+#             return jsonify(turma["ciclos"])
+
+#     with open("JSON/alunos.json") as a:
+#     load_alunos = json.load(a)
+#     for aluno in load_alunos:
+#         if aluno["ID"] in search_id_alunos:
+#             alunos_encontrados.append(aluno)
+#     global turmas
+
+#     turma = next((t for t in turmas if t["Nome da Turma"] == nome), None)
+#     if turma:
+#         return render_template('teleAlunos/index.html', turma=turma, alunos=alunos_encontrados)
+
+#     return jsonify({"Erro": "Turma não encontrada"})
+
+
 @app.route('/ciclo', methods=['POST'])
 def addCiclo():
     """
