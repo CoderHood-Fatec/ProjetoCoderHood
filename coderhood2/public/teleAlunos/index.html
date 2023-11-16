@@ -86,7 +86,7 @@
 
           <div id="modal-body">
             {% for ciclo in turma['ciclos'] %}
-              <a href="/turmas/{{ciclo}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
+              <a href="/ciclos/{{ciclo['id']}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
             {% endfor %}
             <!--<ul>
               <li>Nome</li>

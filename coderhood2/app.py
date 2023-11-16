@@ -1,7 +1,6 @@
-from flask import Flask, jsonify, request, send_from_directory, render_template, Response
+from flask import Flask, jsonify, request, send_from_directory, render_template
 import json
 import os
-import csv
 
 app = Flask(__name__, template_folder='public')
 json_folder = "JSON"
@@ -31,54 +30,30 @@ def tela_professor():
 
     return render_template('telaProfessor/index.html', turmas=turmas,)
 
-@app.route('/export_csv')
-def export_csv():
-    json_file_path = 'JSON/alunos.json'
-
-    # Load data from JSON file
-    with open(json_file_path, 'r') as json_file:
-        data = json.load(json_file)
-
-    # Create a CSV string
-    csv_data = convert_to_csv(data)
-
-    # Set response headers
-    headers = {
-        'Content-Type': 'text/csv',
-        'Content-Disposition': 'attachment; filename=alunos.csv'
-    }
-
-    # Return the CSV as a response
-    return Response(csv_data, headers=headers)
-
-def convert_to_csv(data):
-    # Assuming data is a list of dictionaries
-    csv_string = ''
-    if data:
-        # Get header from the keys of the first dictionary
-        header = ','.join(data[0].keys()) + '\n'
-        csv_string += header
-
-        # Write data rows
-        for row in data:
-            values = ','.join(map(str, row.values())) + '\n'
-            csv_string += values
-
-    return csv_string
 
 # Inicializa os dados das turmas e alunos
 turmas = []
 alunos = []
 turma_id_counter = 1
 aluno_id_counter = 1
+ciclo_id_counter = 1
 
 with open("JSON/turmas.json") as t:
     turmas = json.load(t)
     if turmas != []:
         max_id = max(item["ID"] for item in turmas)
+        max_id_ciclo = 0
+        for turma in turmas:
+            if turma["ciclos"] == []:
+                continue
+            actual_max_id = max(item["id"] for item in turma["ciclos"])
+            if actual_max_id > max_id_ciclo:
+                max_id_ciclo = actual_max_id
+        ciclo_id_counter = max_id_ciclo + 1
 
         if max_id > 0:
             turma_id_counter = max_id + 1
+            
 
 with open("JSON/alunos.json") as a:
     alunos = json.load(a)
@@ -141,29 +116,6 @@ def getTurmas(nome):
 
     return jsonify({"Erro": "Turma não encontrada"})
 
-# @app.route('/ciclos/<string:nome>')
-# def getCiclos(nome):
-#     search_id_alunos = []
-#     with open("JSON/turmas.json") as f:
-#     load_turmas = json.load(f)
-#     for turma in load_turmas:
-#         if turma["Nome da Turma"] == nome:
-#             return jsonify(turma["ciclos"])
-
-#     with open("JSON/alunos.json") as a:
-#     load_alunos = json.load(a)
-#     for aluno in load_alunos:
-#         if aluno["ID"] in search_id_alunos:
-#             alunos_encontrados.append(aluno)
-#     global turmas
-
-#     turma = next((t for t in turmas if t["Nome da Turma"] == nome), None)
-#     if turma:
-#         return render_template('teleAlunos/index.html', turma=turma, alunos=alunos_encontrados)
-
-#     return jsonify({"Erro": "Turma não encontrada"})
-
-
 @app.route('/ciclo', methods=['POST'])
 def addCiclo():
     """
@@ -177,43 +129,45 @@ def addCiclo():
     data = request.get_json()
     periodo_inicio = data.get("periodo_inicio")
     periodo_fim = data.get("periodo_fim")
+    global ciclo_id_counter
+    ciclo_id = ciclo_id_counter
+    ciclo_id_counter += 1
 
     global turmas
 
     ciclo = {
         "periodo_inicio": periodo_inicio,
-        "periodo_fim": periodo_fim
+        "periodo_fim": periodo_fim,
+        "id": ciclo_id
     }
 
     # Encontra a turma e adiciona o ciclo
     turma = next((t for t in turmas if t["Nome da Turma"] == data.get("turma")), None)
     if turma:
         turma["ciclos"].append(ciclo)
+
+    
         
     save_data()
     return jsonify({"periodo_inicio": periodo_inicio, "periodo_fim": periodo_fim})
 
+@app.route('/ciclos/<int:id>')
+def cicloAlunos(id):
+    ciclo = next((c for t in turmas for c in t["ciclos"] if c["id"] == id), None)
+    if ciclo:
+        alunos_ciclo = []
+        for turma in turmas:
+            alunos_ciclo += [get_aluno_by_id(aluno) for aluno in turma["alunos"] if get_aluno_by_id(aluno)]
+        turma = next((t for t in turmas if  ciclo in t["ciclos"]), None)
+        return render_template('telaCiclos/index.html', alunos_ciclo=alunos_ciclo, turma=turma)
+    else:
+        return jsonify({"Erro": "Ciclo não encontrado"})
 
-# def cicloEntregas(turma, periodo_inicio, periodo_fim):
-#     try:
-#         with open("JSON/turmas.json", "r") as f:
-#             turma = json.load(f)
-
-#         ciclos = turma['ciclos']
-
-#         entrega = {'periodo_inicio': periodo_inicio, 'periodo_fim': periodo_fim}
-#         ciclos.append(entrega)
-#         print("Pegou aqui")
-
-#         with open('JSON/turmas.json', "w") as f2:
-#             json.dump(turma, f, indent=4)
-
-#         print(f"Período de entrega {periodo_inicio} - {periodo_fim} adicionado com sucesso.")
-#     except Exception as e:
-#         print(f"Ocorreu um erro: {e}")
-
-#     return
-
+def get_aluno_by_id(id):
+    for aluno in alunos:
+        if aluno["ID"] == id:
+            return aluno
+    raise ValueError("Aluno não encontrado")
 
 # Rota para adicionar aluno
 @app.route('/aluno', methods=['POST'])
@@ -233,15 +187,15 @@ def addAluno():
     save_data()
 
     with open("JSON/turmas.json", "r") as at:
-        add_alunos_turmas = json.load(at)
+        turmas_json = json.load(at)
 
     with open("JSON/turmas.json", "w") as at:
-        aluno_em_turma = aluno["turma"]
-        for turma in add_alunos_turmas:
-            if turma["Nome da Turma"] == aluno_em_turma:
+        turma_do_aluno = aluno["turma"]
+        for turma in turmas_json:
+            if turma["Nome da Turma"] == turma_do_aluno:
                 turma["alunos"].append(aluno["ID"])
 
-        json.dump(add_alunos_turmas, at)
+        json.dump(turmas_json, at)
 
     return data.get("Nome do Aluno")
 
@@ -260,7 +214,6 @@ def save_data():
         json.dump(turmas, f)
     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
         json.dump(alunos, f)
-
 
 # Roda a API
 if __name__ == '__main__':

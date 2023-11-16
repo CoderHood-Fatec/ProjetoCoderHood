@@ -25,7 +25,7 @@
       <main>
         <h1>Turma {{turma["Nome da Turma"]}} - {{turma["Turno"]}}</h1>
         <div id="inserirAluno">
-          {% for aluno in alunos %}
+          {% for aluno in alunos_ciclo %}
           <div class="aluno">
             <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
             <span class="titulo">R.A:</span> {{aluno["R.A"]}}
