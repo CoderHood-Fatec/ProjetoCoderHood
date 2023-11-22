@@ -21,9 +21,7 @@
     </header>
     <div id="container">
       <nav id="nav-container">
-        <button id="openModalBtn" class="link-button">
-          Cadastro de Alunos
-        </button>
+        
         <button id="openModalBtnCiclo" class="link-button">
           Ciclo de Entregas
         </button>
@@ -36,14 +34,19 @@
           <div class="aluno">
             <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
             <span class="titulo">R.A:</span> {{aluno["R.A"]}}
-            <input id="nota{{aluno['R.A']}}" type="text" placeholder="Nota" />
-            <button
+            <!--<input id="nota{{aluno['R.A']}}" type="text" placeholder="Nota" />-->
+            <!--<button
               type="submit"
               onclick="receberNotas({{aluno['R.A']}})"
               class="btnNota"
             >
+<<<<<<< HEAD
               Salvar
             </button>
+=======
+              Teste
+            </button>-->
+>>>>>>> d9fb6f4700f9ee8e1b283b181820e8431bb0525a
                 
           </div>
           {% endfor %}
@@ -53,10 +56,7 @@
       <div id="modal-container">
         <div id="fade" class="hide"></div>
         <div id="modal" class="hide">
-          <div id="modal-header">
-            <h2 class="cadastro-turma">Cadastre o Aluno</h2>
-            <button id="closeModalBtn">X</button>
-          </div>
+          
 
           <div id="modal-body">
             <input id="nomeAluno" type="text" placeholder="Nome do Aluno:" />
@@ -91,7 +91,11 @@
 
           <div id="modal-body">
             {% for ciclo in turma['ciclos'] %}
+<<<<<<< HEAD
               <a class="ciclo-link" href="/turmas/{{ciclo}}">Inicio do Ciclo: {{ciclo["periodo_inicio"]}} <br>Final do Ciclo: {{ciclo["periodo_fim"]}}</a>
+=======
+              <a href="/ciclos/{{ciclo['id']}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
+>>>>>>> d9fb6f4700f9ee8e1b283b181820e8431bb0525a
             {% endfor %}
             <!--<ul>
               <li>Nome</li>

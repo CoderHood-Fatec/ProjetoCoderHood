@@ -26,14 +26,14 @@
 
 | Ranking de Prioridades do 3º sprint | Prioridade | User Stories | Sprint | Status |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1º | Alta |  **Gerenciar Ciclo de Entrega:** O professor terá a função de criar ciclos de entregas para que consiga definir o início e o fim de cada período de atividades e poderá inserir as notas somente no fim de cada ciclo. **Pendências:** Pesos, inserir notas no fim do ciclo, visualização de ciclos criados  | [#3]  |40%| 
-| 2º | Alta |  **Armazenamento das informações:** Garantir que os dados persistam no sistema a partir da alteração da base para criar dois JSON de Turmas e Alunos  | [#3]  |✔️| 
-| 3º | Alta | **Visualizar Ciclo de Entrega:** Um botão que permite vizualizar o que acabou de criar. | [#3]  |✔️| 
-| 4º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas. | [#3]  |✔️| 
-| 5º | Média | **Visualizar Aluno:** O professor precisa visualizar os dados dos alunos (nome, RA) ao entrar na página da turma.  | [#3] |✔️| 
-| 6º | Média | **Estilizações:** Atualizações na interface visual. | [#3] |✔️| 
+| 1º | Alta |  **Armazenamento das informações:** Garantir que os dados persistam no sistema a partir da alteração da base para criar dois JSON de Turmas e Alunos  | [#3]  |✔️| 
+| 2º | Alta | **Visualizar Ciclo de Entrega:** Um botão que permite visualizar o que acabou de criar. | [#3]  |✔️| 
+| 3º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas. | [#3]  |✔️| 
+| 4º | Média | **Visualizar Aluno:** O professor precisa visualizar os dados dos alunos (nome, RA) ao entrar na página da turma.  | [#3] |✔️| 
+| 5º | Média |  **Gerenciar Ciclo de Entrega:** O professor terá a função de criar ciclos de entregas para que consiga definir o início e o fim de cada período de atividades e poderá inserir as notas somente no fim de cada ciclo. **Pendências:** Pesos, inserir notas no fim do ciclo, visualização de ciclos criados  | [#3]  |Em Andamento| 
+| 6º | Baixa | **Estilizações:** Atualizações na interface visual. | [#3] |✔️| 
 
 
 ## Entrega do 3º Sprint
 
-<p align="center"> <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/blob/f7a00a79f4f0a7b97e58df59e64e4363957755b6/Sprints_docs/Turmas%20-%20Google%20Chrome%202023-11-05%2022-43-15.gif"/> </p>
+<p align="center"> <img src="https://github.com/CoderHood-Fatec/ProjetoCoderHood/blob/6eca3ca5e8d6eecbce69729d45e6de9295b69d13/Sprints_docs/WhatsApp%20Video%202023-11-06%20at%2022.06.50.gif"/> </p>

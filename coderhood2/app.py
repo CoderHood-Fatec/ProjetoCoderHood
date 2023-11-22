@@ -36,14 +36,24 @@ turmas = []
 alunos = []
 turma_id_counter = 1
 aluno_id_counter = 1
+ciclo_id_counter = 1
 
 with open("JSON/turmas.json") as t:
     turmas = json.load(t)
     if turmas != []:
         max_id = max(item["ID"] for item in turmas)
+        max_id_ciclo = 0
+        for turma in turmas:
+            if turma["ciclos"] == []:
+                continue
+            actual_max_id = max(item["id"] for item in turma["ciclos"])
+            if actual_max_id > max_id_ciclo:
+                max_id_ciclo = actual_max_id
+        ciclo_id_counter = max_id_ciclo + 1
 
         if max_id > 0:
             turma_id_counter = max_id + 1
+            
 
 with open("JSON/alunos.json") as a:
     alunos = json.load(a)
@@ -129,43 +139,45 @@ def addCiclo():
     data = request.get_json()
     periodo_inicio = data.get("periodo_inicio")
     periodo_fim = data.get("periodo_fim")
+    global ciclo_id_counter
+    ciclo_id = ciclo_id_counter
+    ciclo_id_counter += 1
 
     global turmas
 
     ciclo = {
         "periodo_inicio": periodo_inicio,
-        "periodo_fim": periodo_fim
+        "periodo_fim": periodo_fim,
+        "id": ciclo_id
     }
 
     # Encontra a turma e adiciona o ciclo
     turma = next((t for t in turmas if t["Nome da Turma"] == data.get("turma")), None)
     if turma:
         turma["ciclos"].append(ciclo)
+
+    
         
     save_data()
     return jsonify({"periodo_inicio": periodo_inicio, "periodo_fim": periodo_fim})
 
+@app.route('/ciclos/<int:id>')
+def cicloAlunos(id):
+    ciclo = next((c for t in turmas for c in t["ciclos"] if c["id"] == id), None)
+    if ciclo:
+        alunos_ciclo = []
+        for turma in turmas:
+            alunos_ciclo += [get_aluno_by_id(aluno) for aluno in turma["alunos"] if get_aluno_by_id(aluno)]
+        turma = next((t for t in turmas if  ciclo in t["ciclos"]), None)
+        return render_template('telaCiclos/index.html', alunos_ciclo=alunos_ciclo, turma=turma)
+    else:
+        return jsonify({"Erro": "Ciclo não encontrado"})
 
-# def cicloEntregas(turma, periodo_inicio, periodo_fim):
-#     try:
-#         with open("JSON/turmas.json", "r") as f:
-#             turma = json.load(f)
-
-#         ciclos = turma['ciclos']
-
-#         entrega = {'periodo_inicio': periodo_inicio, 'periodo_fim': periodo_fim}
-#         ciclos.append(entrega)
-#         print("Pegou aqui")
-
-#         with open('JSON/turmas.json', "w") as f2:
-#             json.dump(turma, f, indent=4)
-
-#         print(f"Período de entrega {periodo_inicio} - {periodo_fim} adicionado com sucesso.")
-#     except Exception as e:
-#         print(f"Ocorreu um erro: {e}")
-
-#     return
-
+def get_aluno_by_id(id):
+    for aluno in alunos:
+        if aluno["ID"] == id:
+            return aluno
+    raise ValueError("Aluno não encontrado")
 
 # Rota para adicionar aluno
 @app.route('/aluno', methods=['POST'])
@@ -184,6 +196,7 @@ def addAluno():
     alunos.append(aluno)
     save_data()
 
+<<<<<<< HEAD
     # Adicione o aluno às turmas existentes sem sobrescrever o arquivo JSON
     for turma in turmas:
         if turma["ID"] in aluno["turma"]:
@@ -192,6 +205,18 @@ def addAluno():
 
     with open(os.path.join(json_folder, "turmas.json"), "w") as f:
         json.dump(turmas, f)
+=======
+    with open("JSON/turmas.json", "r") as at:
+        turmas_json = json.load(at)
+
+    with open("JSON/turmas.json", "w") as at:
+        turma_do_aluno = aluno["turma"]
+        for turma in turmas_json:
+            if turma["Nome da Turma"] == turma_do_aluno:
+                turma["alunos"].append(aluno["ID"])
+
+        json.dump(turmas_json, at)
+>>>>>>> d9fb6f4700f9ee8e1b283b181820e8431bb0525a
 
     return data.get("Nome do Aluno")
 
@@ -215,7 +240,6 @@ def save_data():
         json.dump(turmas, f)
     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
         json.dump(alunos, f)
-
 
 # Roda a API
 if __name__ == '__main__':
