@@ -196,7 +196,6 @@ def addAluno():
     alunos.append(aluno)
     save_data()
 
-<<<<<<< HEAD
     # Adicione o aluno às turmas existentes sem sobrescrever o arquivo JSON
     for turma in turmas:
         if turma["ID"] in aluno["turma"]:
@@ -205,7 +204,6 @@ def addAluno():
 
     with open(os.path.join(json_folder, "turmas.json"), "w") as f:
         json.dump(turmas, f)
-=======
     with open("JSON/turmas.json", "r") as at:
         turmas_json = json.load(at)
 
@@ -216,7 +214,6 @@ def addAluno():
                 turma["alunos"].append(aluno["ID"])
 
         json.dump(turmas_json, at)
->>>>>>> d9fb6f4700f9ee8e1b283b181820e8431bb0525a
 
     return data.get("Nome do Aluno")
 
