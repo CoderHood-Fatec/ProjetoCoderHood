@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: teko;
+    font-size: 20px;
+}
+
+body{
+    color: rgb(255, 255, 255);
+    background: rgb(40,40,50);
+    background: linear-gradient(119deg, rgba(40,40,50,0.6) 0%, rgba(222,231,231,0.6) 50%, rgba(198,214,214,0.6) 100%);    
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: auto;
+    background-color: #28283260;
+    padding-top: 15px;
+    height: 75px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.coderhood{
+    margin: -67px 0 0 -100px;
+    height: 200px;
+    transition: transform 0.2s;
+}
+
+.pbltex{
+    height: 65px;
+    transition: transform 0.2s;
+}
+
+.coderhood:hover{
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+.pbltex:hover{
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+#container{
+    display: flex;
+    justify-content: baseline;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px;
+    height: 100vh;
+    background-color: #28283260;
+}
+
+.link-button{
+    width: 300px;
+    height: 57px;
+    margin-top: 20px;
+    font-size: 30px;
+    border: none;
+}
+
+.link-button:hover{
+    background-color: rgb(196, 196, 196);
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    opacity: 1;
+}
+
+#modal-container{
+    padding: 1rem;
+}
+
+#modal-container h2{
+    margin-bottom: 1rem;
+}
+
+#fade, #modal, #modalCiclo, #modalhide{
+    transition: .5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#fade, #fadeCiclo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+#modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #c6d6d6;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 500px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 25px;
+}
+
+#modalCiclo{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #c6d6d6;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 800px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 25px;
+}
+
+#modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#modal-body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#modal-body input{
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+}
+
+#modal-body button {
+    margin: 0 auto;
+    width: 30%;
+    height: 40px;
+    text-align: center;
+    background-color: #a92727;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    letter-spacing: 1.5px; 
+    color: #dee7e7;
+}
+
+
+#modal-body ul{
+    list-style: none;
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+}
+
+#modal-body li{
+    display: table-cell ;
+    padding: 5px 10px; 
+    border: 1px solid #0490fc; 
+    text-align: center; 
+    align-items: center;
+    color: #015190;
+    font-weight: bold;
+}
+
+#modal-body button:hover{
+    background-color: #a92727;
+    cursor: pointer;
+}
+
+#modal.hide, #modalCiclo.hide,
+#fade.hide, #fadeCiclo.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#closeModalBtn, #closeModalBtnCiclo{
+    background-color: rgb(3, 3, 3);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+#closeModalBtn:hover{
+    cursor: pointer;
+    background-color: rgb(199, 0, 0);
+}
+
+#closeModalBtnCiclo:hover{
+    cursor: pointer;
+    background-color: rgb(199, 0, 0);
+}
+
+.cadastro-turma, .cicloEntregas{
+    margin: 0 auto; 
+    background-color: #283232;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 25px; 
+    letter-spacing: 2px;
+}
+
+main{
+  width: 100%;
+  display: flex;
+  color: #282832;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  font-size: 45px; 
+  letter-spacing: 3px;
+}
+
+main h1{
+  font-size: 1.8rem;
+  margin: 30px 0 20px 0;
+  position: static;
+}
+
+main input{
+  width: 50px;
+  height: 20px;
+  margin-left: 25px;
+}
+
+#inserirAluno p{
+  display: flex;
+  flex-direction: row;
+}
+
+#inserirAluno{
+    color: white;
+    width: 90%;
+    text-align: center;
+}
+
+.aluno{
+    background-color: #a92727;  
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+}
+
+.aluno input{
+    width: 70px;
+    text-align: center;
+}
+
+.titulo{
+    color:#283232;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.infAluno{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+main #inserirTurma{
+  display: flex;
+  flex-direction: column;
+}
+
+main a{
+  text-decoration:none;
+  color: #015190;
+  margin-bottom: 10px;
+}
+
+main a:hover{
+  transition: .3s;
+  color: #026ec0;
+  font-size: 1.2rem;
+}
+
+div#addHtml{
+  display: flex;
+  flex-direction: inline;
+}
+
+.btnNota {
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: #283232; 
+    width: 60px;
+    height: 30px;
+    border: 1px solid #a92727;
+    background-color: #dee7e7;
+    border-radius: 2px;
+}
+
+.btnNota:hover{
+    background-color: #c6d6d630;
+    transition: .4s;
+    cursor: pointer;
+}
+
+#ciclo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#ciclo label{
+    color: #000;
+}
+
+#ciclo button{
+    height: 25px;
+    margin: auto 0;
+}
+
+/* Estilo para os links dos ciclos */
+.ciclo-link {
+  text-decoration: none; /* Remova a formatação de sublinhado padrão */
+  color: #333; /* Cor do texto */
+  font-size: 30px; /* Tamanho da fonte */
+}
+
+/* Estilo para o contêiner modal-body */
+#modal-body {
+  padding: 20px; /* Espaçamento interno para melhor leitura */
+
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/telaProfessor/style.css">
+    <script src="/public/telaProfessor/script.js" defer></script>
+    <title>Turmas</title>
+</head>
+<body>
+    <header>
+        <img class="coderhood" src="/public/Logo API.png" alt="" href="/turmas">
+        <img class="pbltex" src="/public/Logo PBLTex.png" alt="" href="/turmas">
+    </header>
+    <div id="container">
+        <nav id="nav-container">
+                <button id="openModalBtn" class="link-button">Cadastro de Turmas</button>
+                <button id="openModalBtnAluno" class="link-button">Cadastro de Alunos</button>
+                <a href="/alunos"> <button class="link-button">Alunos</button></a>
+                <a href="/export_csv"  target="_blank" > <button class="link-button">Exportar Alunos</button></a>
+                
+        </nav>
+
+        <main>
+          <h1>Turmas</h1>
+          <div class="bgTurma">
+            <div id="inserirTurma">
+                {% for turma in turmas %}
+                    <a class=turma href="/turmas/{{turma['Nome da Turma']}}"> {{turma["Nome da Turma"]}} </a>
+                {% endfor %}  
+            </div>
+          </div>
+        </main>
+        
+        <div id="modal-container">
+            <div id="fade" class="hide"></div>
+            <div id="modal" class="hide">
+
+                <div id="modal-header">
+                    <h2 class="cadastro-turma">Cadastre a Turma</h2>
+                    <button id="closeModalBtn">X</button>
+                </div>
+
+                <div id="modal-body">
+                    <input id="nomeTurma" type="text" placeholder="Nome da Turma:" required>
+                    <input id="professor" type="text" placeholder="Professor:" required>
+                    <input id="turno" type="text" placeholder="Turno:" required>
+                    
+                    <button id="btn" type="submit" onclick="enviarDados()">Adicionar</button>
+                </div>
+
+            </div>
+        </div>
+        <div id="modal-container">
+            <div id="fadeAluno" class="hide"></div>
+            <div id="modalAluno" class="hide">
+
+                <div id="modal-header">
+                    <h2 class="cadastro-turma">Cadastre o Aluno</h2>
+                    <button id="closeModalBtnAluno">X</button>
+                </div>
+
+
+                <div id="modal-body">
+                    <input id="nomeAluno" type="text" placeholder="Nome do Aluno:" required>
+                    <input id="ra" type="number" placeholder="Digite o R.A do Aluno:" required>
+                    <div id="turmasAdicionadas">
+                        {% for turma in turmas %}
+                            <input type="checkbox" id="turma{{ turma['ID'] }}" name="turmas[]" value="{{ turma['ID'] }}">
+                            <label for="turma{{ turma['ID'] }}">{{ turma['Nome da Turma'] }}</label>
+                        {% endfor %}
+                    </div>
+                    <button id="btn" type="submit" onclick="enviarDadosAluno()">Adicionar</button>
+                </div>
+                
+
+        </div>
+    </div>
+
+</body>
+</html>
