@@ -34,19 +34,6 @@
           <div class="aluno">
             <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
             <span class="titulo">R.A:</span> {{aluno["R.A"]}}
-            <!--<input id="nota{{aluno['R.A']}}" type="text" placeholder="Nota" />-->
-            <!--<button
-              type="submit"
-              onclick="receberNotas({{aluno['R.A']}})"
-              class="btnNota"
-            >
-<<<<<<< HEAD
-              Salvar
-            </button>
-=======
-              Teste
-            </button>-->
->>>>>>> d9fb6f4700f9ee8e1b283b181820e8431bb0525a
                 
           </div>
           {% endfor %}
@@ -91,11 +78,8 @@
 
           <div id="modal-body">
             {% for ciclo in turma['ciclos'] %}
-<<<<<<< HEAD
               <a class="ciclo-link" href="/turmas/{{ciclo}}">Inicio do Ciclo: {{ciclo["periodo_inicio"]}} <br>Final do Ciclo: {{ciclo["periodo_fim"]}}</a>
-=======
               <a href="/ciclos/{{ciclo['id']}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
->>>>>>> d9fb6f4700f9ee8e1b283b181820e8431bb0525a
             {% endfor %}
             <!--<ul>
               <li>Nome</li>
