@@ -123,10 +123,9 @@ function adicionarCiclo(){
       turma: turmaAtual
     })
   }).then(response => response.json()).then(data => {
-    const novo_ciclo = document.getElementById('modal-body').innerHTML+=`<a/turmas/${ciclo}">`+ "" +ciclo+'</a>'
+    document.querySelector('#modalCiclo #modal-body').innerHTML+=`<a href="/ciclos/${data["id"]}">` +data["periodo_inicio"] + ' - ' + data["periodo_fim"]+'</a>'
 
     console.log(data);
-    window.location.reload();
   })
 }
 

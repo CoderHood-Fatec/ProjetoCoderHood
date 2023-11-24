@@ -159,7 +159,7 @@ def addCiclo():
     
         
     save_data()
-    return jsonify({"periodo_inicio": periodo_inicio, "periodo_fim": periodo_fim})
+    return jsonify({"periodo_inicio": periodo_inicio, "periodo_fim": periodo_fim, "id": ciclo_id})
 
 @app.route('/ciclos/<int:id>')
 def cicloAlunos(id):
