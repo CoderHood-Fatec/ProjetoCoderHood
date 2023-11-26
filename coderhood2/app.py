@@ -218,9 +218,23 @@ def addAluno():
     return data.get("Nome do Aluno")
 
 
+# @app.route('/aluno/<int:id>', methods=['DELETE'])
+# def deleteAluno(id):
+#     global alunos
+#     aluno = next((a for a in alunos if a["ID"] == id), None)
+#     if aluno is None:
+#         return jsonify({"Erro": "Aluno não encontrado"}), 404
+#     alunos.remove(aluno)
+#     save_data()
+#     return jsonify({"Mensagem": "Aluno excluído com sucesso"}), 200
 
-
-
+# def save_data():
+#     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
+#         for turma in turmas:
+#             turma["alunos"] = [aluno for aluno in turma["alunos"] if aluno not in [a["ID"] for a in alunos]]
+#         json.dump(turmas, f)
+#     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
+#         json.dump(alunos, f)
 
 # Rota para obter todos os alunos
 
