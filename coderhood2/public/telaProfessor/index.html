@@ -31,6 +31,18 @@
             </div>
           </div>
         </main>
+
+        <div class="bgTurma">
+            <div id="inserirTurma">
+                {% for turma in turmas %}
+                    <div class="turma-container">
+                        <a class="turma" href="/turmas/{{ turma['Nome da Turma'] }}">{{ turma["Nome da Turma"] }}</a>
+                        <button class="excluir-btn" onclick="excluirTurma('{{ turma['Nome da Turma'] }}')">Excluir</button>
+                        <button class="apagar-btn" onclick="apagarTurma('{{ turma['Nome da Turma'] }}')">Apagar</button>
+                    </div>
+                {% endfor %}  
+            </div>
+        </div>
         
         <div id="modal-container">
             <div id="fade" class="hide"></div>

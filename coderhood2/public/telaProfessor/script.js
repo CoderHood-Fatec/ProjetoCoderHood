@@ -145,6 +145,48 @@ function enviarDadosAluno() {
   // Limpar os campos de entrada
   nomeAlunoInput.value = "";
   raInput.value = "";
+
+  // Função para excluir turma
+function excluirTurma(nomeTurma) {
+  const confirmacao = confirm(`Tem certeza que deseja excluir a turma '${nomeTurma}'?`);
+  if (confirmacao) {
+      // Envia uma requisição para o servidor para excluir a turma
+      fetch(window.location.origin + '/excluir-turma', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ nomeTurma }),
+      })
+      .then(response => response.text())
+      .then(result => {
+          // Atualiza a página ou realiza ações adicionais, se necessário
+          window.location.reload();
+      })
+      .catch(error => console.error('Erro ao excluir turma:', error));
+  }
+}
+
+// Função para apagar turma
+function apagarTurma(nomeTurma) {
+  const confirmacao = confirm(`Tem certeza que deseja apagar a turma '${nomeTurma}'? Isso excluirá permanentemente a turma e todos os dados relacionados.`);
+  if (confirmacao) {
+      // Envia uma requisição para o servidor para apagar a turma
+      fetch(window.location.origin + '/apagar-turma', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ nomeTurma }),
+      })
+      .then(response => response.text())
+      .then(result => {
+          // Atualiza a página ou realiza ações adicionais, se necessário
+          window.location.reload();
+      })
+      .catch(error => console.error('Erro ao apagar turma:', error));
+  }
+}
 }
 
 /* //Carregar turmas para selecionar em qual turma o aluno irá fazer parte

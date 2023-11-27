@@ -99,6 +99,29 @@ def load_turmas():
 
 turmas = load_turmas()
 
+# Rota para excluir turma
+@app.route('/excluir-turma', methods=['POST'])
+def excluirTurma():
+    data = request.get_json()
+    nomeTurma = data.get("nomeTurma")
+
+    save_data()
+
+    return jsonify({"Mensagem": f"Turma '{nomeTurma}' excluída com sucesso"})
+
+# Rota para apagar turma
+@app.route('/apagar-turma', methods=['POST'])
+def apagarTurma():
+    data = request.get_json()
+    nomeTurma = data.get("nomeTurma")
+
+    # Adicione lógica para apagar a turma permanentemente (por exemplo, remova todos os dados relacionados à turma)
+    # Certifique-se de salvar os dados após o apagamento
+
+    save_data()
+
+    return jsonify({"Mensagem": f"Turma '{nomeTurma}' apagada com sucesso"})
+
 
 # Rota para obter todas as turmas
 
