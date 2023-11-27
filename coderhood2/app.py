@@ -169,7 +169,7 @@ def cicloAlunos(id):
         for turma in turmas:
             alunos_ciclo += [get_aluno_by_id(aluno) for aluno in turma["alunos"] if get_aluno_by_id(aluno)]
         turma = next((t for t in turmas if  ciclo in t["ciclos"]), None)
-        return render_template('telaCiclos/index.html', alunos_ciclo=alunos_ciclo, turma=turma)
+        return render_template('telaCiclos/index.html', alunos_ciclo=alunos_ciclo, turma=turma, ciclo_id=id)
     else:
         return jsonify({"Erro": "Ciclo não encontrado"})
 
@@ -191,7 +191,8 @@ def addAluno():
         "ID": aluno_id,
         "Nome do Aluno": data.get("Nome do Aluno"),
         "R.A": data.get("R.A"),
-        "turma": [int(turma_id) for turma_id in data.get("turmas")]
+        "turma": [int(turma_id) for turma_id in data.get("turmas")],
+        "Notas": {}
     }
     alunos.append(aluno)
     save_data()
@@ -236,6 +237,21 @@ def addAluno():
 #     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
 #         json.dump(alunos, f)
 
+@app.route('/aluno/notas', methods=['POST'])
+def saveNotas():
+    data = request.get_json()
+    aluno_id = data.get('aluno_id')
+    ciclo_id = data.get('ciclo_id')
+    notas = data.get('notas')
+
+    for i, aluno in enumerate(alunos):
+        if aluno['R.A'] == str(aluno_id):
+            alunos[i]['Notas'][ciclo_id] = notas
+            break
+    save_data()
+
+    return jsonify({"Mensagem": "Notas salvas com sucesso."})
+
 
 # Rota para obter todos os alunos
 
@@ -243,13 +259,13 @@ def addAluno():
 def getAlunos():
     return jsonify({"alunos": alunos})
 
-@app.route('/aluno/<int:id>', methods=['GET'])
-def obterAluno(id):
-    if os.path.exists(os.path.join(json_folder, "alunos.json")):
-        with open(os.path.join(json_folder, "alunos.json"), "r") as f:
-            alunos = json.load(f)
+# @app.route('/aluno/<int:id>', methods=['GET'])
+# def obterAluno(id):
+#     if os.path.exists(os.path.join(json_folder, "alunos.json")):
+#         with open(os.path.join(json_folder, "alunos.json"), "r") as f:
+#             alunos = json.load(f)
 
-            return jsonify(alunos[id])
+#             return jsonify(alunos[id])
     
 
 

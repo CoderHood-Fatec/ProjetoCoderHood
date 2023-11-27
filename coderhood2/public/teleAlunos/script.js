@@ -54,11 +54,21 @@ function receberNotas(id) {
   const notaAluno = parseFloat(notaAlunoInput.value);
 
   if (notaAluno >= 0 && notaAluno <= 10) {
-    const nota = {
-      "nota aluno": notaAluno,
+    const data = {
+      "notas": notaAluno,
+      "aluno_id": id,
+      "ciclo_id": ciclo_id
     };
-    console.log("Deu certo");
-    console.log(nota);
+    fetch(window.location.origin + '/aluno/notas', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then(response => response.json()).then(data => {
+      console.log("Deu certo");
+      console.log(data);
+    });
   } else {
     console.log("deu errado");
   }
