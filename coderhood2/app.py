@@ -236,15 +236,25 @@ def addAluno():
 #     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
 #         json.dump(alunos, f)
 
-# Rota para obter todos os alunos
 
+# Rota para obter todos os alunos
 
 @app.route('/alunos')
 def getAlunos():
     return jsonify({"alunos": alunos})
 
-# Função para salvar os dados em arquivos JSON
+@app.route('/aluno/<int:id>', methods=['GET'])
+def obterAluno(id):
+    if os.path.exists(os.path.join(json_folder, "alunos.json")):
+        with open(os.path.join(json_folder, "alunos.json"), "r") as f:
+            alunos = json.load(f)
 
+            return jsonify(alunos[id])
+    
+
+
+
+# Função para salvar os dados em arquivos JSON
 
 def save_data():
     with open(os.path.join(json_folder, "turmas.json"), "w") as f:

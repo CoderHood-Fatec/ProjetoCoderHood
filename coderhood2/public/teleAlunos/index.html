@@ -35,8 +35,7 @@
           <div class="aluno">
             <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
             <span class="titulo">R.A:</span> {{aluno["R.A"]}}
-            <!-- <button type="submit" onclick="deleteAluno('${aluno["R.A"]}')" class="btnDeletar">Excluir Aluno</button> -->
-
+            <button type="submit" data-id='{{aluno["ID"]}}' class="btnAlterarAluno">Alterar Aluno</button>
           </div>
           {% endfor %}
         </div>

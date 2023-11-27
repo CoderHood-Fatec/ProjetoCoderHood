@@ -19,9 +19,33 @@ const toggleModalCiclo = () => {
   fadeCiclo.classList.toggle("hide");
 };
 
+window.addEventListener('load', () => {
+  configurarEventoBotaoEditarAluno()
+
+})
+
+function configurarEventoBotaoEditarAluno(){
+  let listaBotoes = document.querySelectorAll('.btnAlterarAluno')
+
+  for (let botao of listaBotoes){
+    botao.addEventListener('click', () => {
+      let id = botao.getAttribute('data-id')
+      fetch(window.location.origin + '/aluno/'+ id)
+        .then(function(res){ return res.json(); })
+        .then((resposta) => {
+          console.log(resposta)
+        })
+        .catch()
+    })
+  }
+}
+
 [openModalBtnCiclo, closeModalBtnCiclo, fadeCiclo].forEach((el) => {
   el.addEventListener("click", () => toggleModalCiclo());
 });
+
+
+// Função para Receber Notas
 
 function receberNotas(id) {
   console.log(id);
@@ -40,7 +64,9 @@ function receberNotas(id) {
   }
 }
 
+
 //Recebendo os dados inseridos no cadastrar turmas
+
 function enviarDados() {
   //Referências dos elementos inseridos
   const nomeAlunoInput = document.getElementById("nomeAluno");
@@ -69,6 +95,10 @@ function enviarDados() {
   };
 
   const inserirAlunoDiv = document.getElementById("inserirAluno");
+
+
+  // Função para Adicionar Aluno
+
   function adicionarAluno(aluno) {
     const alunoDiv = document.createElement("div");
 
@@ -101,7 +131,10 @@ function enviarDados() {
   raInput.value = "";
 }
 
-function adicionarCiclo(){
+
+// Função para Adicionar Ciclo
+
+function adicionarCiclo() {
   const inicioCicloInput = document.getElementById("cicloInicio");
   const fimCicloInput = document.getElementById("cicloFim")
 
@@ -124,41 +157,53 @@ function adicionarCiclo(){
       turma: turmaAtual
     })
   }).then(response => response.json()).then(data => {
-    document.querySelector('#modalCiclo #modal-body').innerHTML+=`<a href="/ciclos/${data["id"]}">` +data["periodo_inicio"] + ' - ' + data["periodo_fim"]+'</a>'
+    document.querySelector('#modalCiclo #modal-body').innerHTML += `<a href="/ciclos/${data["id"]}">` + data["periodo_inicio"] + ' - ' + data["periodo_fim"] + '</a>'
 
     console.log(data);
   })
 }
 
-function deleteAluno(ra){
-    
-  const option = {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
 
-  
-  fetch(window.location.origin + '/turma/'+turmaAtual+'/aluno/' + ra, option).then(response => {
-    if (response.ok){
+// Função para Deletar o Aluno
+
+function deleteAluno(ra) {
+
+  const option = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }
+
+
+  fetch(window.location.origin + '/turma/' + turmaAtual + '/aluno/' + ra, option).then(response => {
+    if (response.ok) {
       const alunoDiv = document.querySelector(`div[data-ra="${ra}"]`);
       alunoDiv.parentNode.removeChild(alunoDiv)
     } else {
       throw new Error('Erro ao deletar aluno')
     }
   })
-  .catch((e) => {
-    alert("Ocorreu um erro: " + e);
-  });
+    .catch((e) => {
+      alert("Ocorreu um erro: " + e);
+    });
 
-//Adicionando evento para fechar o modal ao click no button ou apertar tecla enter
-document.querySelectorAll("input").forEach((input) => {
-  input.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      enviarDados();
-    }
+
+
+  // Função para Alterar Alunos
+  
+
+
+
+
+  //Adicionando evento para fechar o modal ao click no button ou apertar tecla enter
+
+  document.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        enviarDados();
+      }
+    });
   });
-});
 }
