@@ -26,10 +26,10 @@
 
 | Ranking de Prioridades do 3º sprint | Prioridade | User Stories | Sprint | Status |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1º | Alta |  **Gerenciar Ciclo de Entrega:** O professor terá a função de criar ciclos de entregas para que consiga definir o início e o fim de cada período de atividades e poderá inserir as notas somente no fim de cada ciclo. **Pendências:** Pesos, inserir notas no fim do ciclo, visualização de ciclos criados  | [#4]  || 
+| 1º | Alta |  **Gerenciar Ciclo de Entrega:** O professor terá a função de criar ciclos de entregas para que consiga definir o início e o fim de cada período de atividades e poderá inserir as notas somente no fim de cada ciclo. **Pendências:** Pesos, inserir notas no fim do ciclo, visualização de ciclos criados  | [#4]  |✔️| 
 | 2º | Alta | **Desenvolver tela de Alunos** Desenvolver o front da tela de Alunos onde serão mostrados todos os alunos do sistema e as turmas em que estão adicionados | [#4]  || 
 | 3º | Alta | **Visualizar notas:** O professor terá acesso ao cadastramento de notas dos alunos ao entrar na página das turmas.	| [#4]  || 
-| 4º | Alta |  **Inserir um mesmo aluno em mais de uma turma:** Garantir que um mesmo aluno possa ser inserido em mais de uma turma | [#4]  || 
+| 4º | Alta |  **Inserir um mesmo aluno em mais de uma turma:** Garantir que um mesmo aluno possa ser inserido em mais de uma turma | [#4]  |✔️| 
 | 5º | Média | **Editar e Remover aluno** Permitir a edição e exclusão de alunos. | [#4]  || 
 | 6º | Média | **Remover Turmas** Permitir excluir Turmas | [#4]  || 
 
