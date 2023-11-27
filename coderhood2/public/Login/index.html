@@ -17,14 +17,73 @@
                 <p class="login">Login</p>
             </div>
             <div id="container-box-user">
-                <label class="first-label">Usuario:</label>
-                <input placeholder="Insira seu usuario" type="text" id="user">
-                
-                <label class="second-label">Senha:</label>
-                <input placeholder="Insira sua senha" type="text" id="user">
-
-                <a href="/professor"><button>Entrar</button></a>
-                <!-- <button>Entrar</button> -->
+                <div>
+                    <small id="textForm"></small>
+                    <form id="loginForm">
+                      <label for="email">Usuario:</label>
+                      <input type="email" id="email" required>
+                      <small id="textEmail"></small>
+                  
+                      <label for="password">Senha:</label>
+                      <input type="password" id="password" required>
+                      <small id="textPassword"></small>
+                  
+                      <button type="submit">Entrar</button>
+                    </form>
+                  </div>
+                  
+                  <script>
+                    const form = document.getElementById("loginForm");
+                    const emailInput = document.getElementById("email");
+                    const passwordInput = document.getElementById("password");
+                    const textForm = document.getElementById("textForm");
+                    const textEmail = document.getElementById("textEmail");
+                    const textPassword = document.getElementById("textPassword");
+                  
+                    form.addEventListener("submit", function(e) {
+                      e.preventDefault();
+                      if (emailInput.value == "" || passwordInput.value == "") {
+                        textForm.textContent = "Você precisa preencher todos os campos!";
+                      } else if (
+                        !validatorEmail(emailInput.value) ||
+                        !validatorPassword(passwordInput.value)
+                      ) {
+                        textForm.textContent = "Login ou senha incorretos";
+                      } else {
+                        textForm.textContent = "";
+                        textEmail.textContent = "";
+                        textPassword.textContent = "";
+                  
+                        window.location.href = "http://127.0.0.1:5000/professor "; 
+                      }
+                    });
+                  
+                    emailInput.addEventListener("keyup", function() {
+                      if (!validatorEmail(emailInput.value)) {
+                        textEmail.textContent = "Usuario invalido";
+                      } else {
+                        textEmail.textContent = "";
+                      }
+                    });
+                  
+                    passwordInput.addEventListener("keyup", function() {
+                      if (!validatorPassword(passwordInput.value)) {
+                        textPassword.textContent = "A Senha deve ter pelo menos 6 caracteres";
+                      } else {
+                        textPassword.textContent = "";
+                      }
+                    });
+                  
+                    function validatorEmail(email) {
+                      let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                      return emailPattern.test(email);
+                    }
+                  
+                    function validatorPassword(password) {
+                      let passwordPattern = /^.{6,}$/;
+                      return passwordPattern.test(password);
+                    }
+                  </script>
             </div>
         </div>
     </main>
