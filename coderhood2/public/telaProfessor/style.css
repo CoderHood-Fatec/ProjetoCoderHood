@@ -190,11 +190,11 @@ nav {
 .turma {
   background-color: #a92727;
   border-radius: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
   font-weight: bold;
   font-size: 30px;
-  letter-spacing: 2px;;
+  letter-spacing: 2px;
 }
 
 #ciclo {
@@ -246,8 +246,7 @@ main a {
 
 main a:hover {
   transition: 0.3s;
-  color: #026ec0;
-  font-size: 1.2rem;
+  background-color: rgb(143, 33, 33)
 }
 
 #turmasAdicionadas {

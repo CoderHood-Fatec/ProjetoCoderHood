@@ -167,7 +167,7 @@ function adicionarCiclo() {
       turma: turmaAtual
     })
   }).then(response => response.json()).then(data => {
-    document.querySelector('#modalCiclo #modal-body').innerHTML += `<a href="/ciclos/${data["id"]}">` + data["periodo_inicio"] + ' - ' + data["periodo_fim"] + '</a>'
+    document.querySelector('#modalCiclo #modal-body').innerHTML += `<a class="ciclo-link" href="/ciclos/${data["id"]}">` + data["periodo_inicio"] + ' - ' + data["periodo_fim"] + '</a>'
 
     console.log(data);
   })

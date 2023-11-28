@@ -121,7 +121,7 @@ nav{
     background-color: #c6d6d6;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 800px;
+    width: 600px;
     max-width: 90%;
     padding: 1.2rem;
     border-radius: 25px;
@@ -240,7 +240,7 @@ main h1{
 
 main input{
   width: 50px;
-  height: 20px;
+  height: 26px;
   margin-left: 25px;
 }
 
@@ -266,6 +266,7 @@ main input{
     letter-spacing: 1.5px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .aluno input{
@@ -342,8 +343,17 @@ div#addHtml{
 }
 
 #ciclo button{
-    height: 25px;
+    height: 35px;
     margin: auto 0;
+    border-radius: 5px;
+    border: none;
+}
+
+#ciclo button:hover{
+    background-color: #a92727;
+    cursor: pointer;
+    color: #fff;
+    transition: .3s;
 }
 
 /* Estilo para os links dos ciclos */
@@ -351,6 +361,12 @@ div#addHtml{
   text-decoration: none; /* Remova a formatação de sublinhado padrão */
   color: #333; /* Cor do texto */
   font-size: 30px; /* Tamanho da fonte */
+}
+
+.ciclo-link:hover{
+  color: #a92727;
+  transition: .3s;
+  cursor: pointer;
 }
 
 /* Estilo para o contêiner modal-body */
