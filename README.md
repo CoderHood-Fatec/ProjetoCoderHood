@@ -47,7 +47,7 @@ acompanhamento dos scores de seus alunos.
 | <a href="https://github.com/CoderHood-Fatec/ProjetoCoderHood/blob/main/Sprints_docs/Sprint1.md">1</a>  | Sprint 1   | 04/09   | 24/09 |✔️ | 
 | <a href="https://github.com/CoderHood-Fatec/ProjetoCoderHood/blob/main/Sprints_docs/Sprint2.md">2</a>  | Sprint 2   | 25/09   | 15/10 |✔️ |
 | <a href="https://github.com/CoderHood-Fatec/ProjetoCoderHood/blob/main/Sprints_docs/Sprint3.md">3</a>  | Sprint 3   | 16/10   | 05/11 |✔️ | 
-| 4  | Sprint 4   | 06/11   | 26/11 | | 
+| 4  | Sprint 4   | 06/11   | 26/11 |✔️ | 
 | -- | Feira de Soluções  | 12/12  | 12/12 ||
 
 
