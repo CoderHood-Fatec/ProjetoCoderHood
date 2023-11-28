@@ -264,6 +264,7 @@ main input{
     text-align: center;
     font-size: 30px;
     letter-spacing: 1.5px;
+    display: flex;
 }
 
 .aluno input{
@@ -277,6 +278,11 @@ main input{
     letter-spacing: 1.5px;
     margin-left: 40px;
     font-weight: bold;
+}
+
+.btnAlterarAluno{
+    margin-left: 40px;
+    padding: 5px 25px 5px 25px;
 }
 
 .infAluno{
@@ -350,4 +356,18 @@ div#addHtml{
 #modal-body {
   padding: 20px; /* Espaçamento interno para melhor leitura */
 
+}
+
+.notas {
+    list-style: none;
+    display: flex; /* Alteração para flex */
+    justify-content: space-around; /* Ajuste a propriedade conforme necessário */
+    align-items: center;
+
+    border-collapse: collapse;
+    font-size: 30px;
+}
+
+li {
+    font-size: 30px;
 }

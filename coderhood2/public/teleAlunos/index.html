@@ -31,15 +31,28 @@
       <main>
         <h1>Turma {{turma["Nome da Turma"]}} - {{turma["Turno"]}}</h1>
         <div id="inserirAluno">
-          {% for aluno in alunos %}
-          <div class="aluno">
-            <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
-            <span class="titulo">R.A:</span> {{aluno["R.A"]}}
-            <button type="submit" data-id='{{aluno["ID"]}}' class="btnAlterarAluno">Alterar Aluno</button>
-          </div>
-          {% endfor %}
+            {% for aluno in alunos %}
+            <div class="aluno">
+                <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
+                <span class="titulo">R.A:</span> {{aluno["R.A"]}}
+                
+                {% if aluno["Notas"] %}
+                    <span class="titulo">Notas:</span>
+                    <ul class="notas">
+                        {% for ciclo_id, nota in aluno["Notas"].items() %}
+                            <li><span class="titulo">Ciclo {{ ciclo_id }}: </span>{{ nota }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <span class="titulo">Notas:</span> Nenhuma nota registrada.
+                {% endif %}
+    
+                <button type="submit" data-id='{{aluno["ID"]}}' class="btnAlterarAluno">Alterar Aluno</button>
+            </div>
+            {% endfor %}
         </div>
-      </main>
+    </main>
+    
 
       <div id="modal-container">
         <div id="fade" class="hide"></div>
@@ -79,8 +92,7 @@
 
           <div id="modal-body">
             {% for ciclo in turma['ciclos'] %}
-              <a class="ciclo-link" href="/turmas/{{ciclo}}">Inicio do Ciclo: {{ciclo["periodo_inicio"]}} <br>Final do Ciclo: {{ciclo["periodo_fim"]}}</a>
-              <a href="/ciclos/{{ciclo['id']}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
+              <a class="ciclo-link" href="/ciclos/{{ciclo['id']}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
             {% endfor %}
             <!--<ul>
               <li>Nome</li>
