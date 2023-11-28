@@ -265,6 +265,7 @@ main input{
     font-size: 30px;
     letter-spacing: 1.5px;
     display: flex;
+    justify-content: center;
 }
 
 .aluno input{
@@ -370,4 +371,10 @@ div#addHtml{
 
 li {
     font-size: 30px;
+}
+
+#btnCiclo{
+    padding: 0px 15px 0px 15px;
+    align-items: center;
+    text-align: center;
 }
