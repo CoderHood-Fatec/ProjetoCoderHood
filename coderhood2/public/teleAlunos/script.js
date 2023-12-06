@@ -23,9 +23,11 @@ const toggleModalCiclo = () => {
   fadeCiclo.classList.toggle("hide");
 };
 
-const toggleModalNota = () => {
-  ModalNota.classList.toggle("hide-nota");
-  fadeNota.classList.toggle("hide-nota");
+const toggleModalNota = (id) => {
+  let modal = document.querySelector("#modal-nota-" + id);
+  let fade = document.querySelector("#fade-nota-" + id);
+  modal.classList.toggle("hide-nota");
+  fade.classList.toggle("hide-nota");
 };
 
 window.addEventListener('load', () => {
@@ -53,9 +55,6 @@ function configurarEventoBotaoEditarAluno(){
   el.addEventListener("click", () => toggleModalCiclo());
 });
 
-[openModalNota, closeModalNota, fadeNota].forEach((el) => {
-  el.addEventListener("click", () => toggleModalNota());
-});
 
 
 // Função para Receber Notas

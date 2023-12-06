@@ -34,27 +34,34 @@
             <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
             <span class="titulo">R.A:</span> {{aluno["R.A"]}}
 
-            <button id="open-modal-nota">Visualizar Notas</button>
-            <div id="fade-nota" class="hide-nota"></div>
-            <div id="modal-nota" class="hide-nota">
+            <button id="open-modal-nota" onclick="toggleModalNota({{aluno['ID']}})">Visualizar Notas</button>
+            <div id="fade-nota-{{aluno['ID']}}" class="hide-nota fade-nota"></div>
+            <div id="modal-nota-{{aluno['ID']}}" class="hide-nota modal-nota">
               <div id="modal-nota-header">
               </div>
               <div id="modal-nota-body">
                 {% if aluno["Notas"] %}
                 <div id="principal">
                   <span class="titulo">Notas:</span>
-                  <button id="close-modal-nota">X</button>
+                  <button id="close-modal-nota" onclick="toggleModalNota({{aluno['ID']}})">X</button>
                 </div>
                 <ul class="notas">
                   {% for ciclo_id, nota in aluno["Notas"].items() %}
                   <li>
-                    <span class="titulo">Ciclo {{ ciclo_id }}: </span>{{ nota }}
+                    <span class="titulo-span">Ciclo {{ ciclo_id }}: </span>{{ nota }}
                   </li>
                   {% endfor %}
                 </ul>
+                <p>
+                Média de notas: {{ media[ aluno["ID"]] }} 
+                </p>
                 {% else %}
-                <span class="titulo">Notas:</span> Nenhuma nota registrada. {%
-                endif %}
+                
+                <div id="principal">
+                  <span class="titulo">Notas:</span> Nenhuma nota registrada. 
+                  <button id="close-modal-nota" onclick="toggleModalNota({{aluno['ID']}})">X</button>
+                </div>
+                {% endif %}
               </div>
             </div>
           </div>

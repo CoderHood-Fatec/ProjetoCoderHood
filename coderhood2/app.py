@@ -4,6 +4,8 @@ import os
 
 app = Flask(__name__, template_folder='public')
 json_folder = "JSON"
+app.config['DEBUG'] = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # Rota para login
 
@@ -102,6 +104,13 @@ turmas = load_turmas()
 
 # Rota para obter todas as turmas
 
+from typing import List, Optional
+
+def find_aluno(aluno_id: int) -> Optional[dict]:
+    for aluno in alunos:
+        if aluno["ID"] == aluno_id:
+            return aluno
+    return None
 
 @app.route('/turmas/<string:nome>')
 def getTurmas(nome):
@@ -122,7 +131,20 @@ def getTurmas(nome):
 
     turma = next((t for t in turmas if t["Nome da Turma"] == nome), None)
     if turma:
-        return render_template('teleAlunos/index.html', turma=turma, alunos=alunos_encontrados)
+        media = {}
+        total_peso = 0  # Inicializa o total do peso
+        for aluno_id in turma["alunos"]:
+            aluno = find_aluno(aluno_id)
+            if not aluno or len(aluno["Notas"].values()) == 0:
+                continue
+            notas = aluno["Notas"]
+            peso = aluno.get("Peso", 1)  # Obtém o peso do aluno ou usa um peso padrão
+            total_peso += peso  # Adiciona o peso ao total_peso
+            media[aluno_id] = sum(notas.values()) / len(notas.values())  # Média simples
+            if total_peso != 0:
+                for aluno_id in media:
+                    media[aluno_id] *= peso / total_peso  # Multiplica a média pelo peso relativo
+        return render_template('teleAlunos/index.html', turma=turma, alunos=alunos_encontrados, media=media)
 
     return jsonify({"Erro": "Turma não encontrada"})
 
@@ -166,9 +188,11 @@ def cicloAlunos(id):
     ciclo = next((c for t in turmas for c in t["ciclos"] if c["id"] == id), None)
     if ciclo:
         alunos_ciclo = []
-        for turma in turmas:
-            alunos_ciclo += [get_aluno_by_id(aluno) for aluno in turma["alunos"] if get_aluno_by_id(aluno)]
         turma = next((t for t in turmas if  ciclo in t["ciclos"]), None)
+        if not turma:
+            return jsonify({"Erro": "Ciclo não encontrado"})
+        alunos_ciclo += [get_aluno_by_id(aluno) for aluno in turma["alunos"] if get_aluno_by_id(aluno)]
+        
         return render_template('telaCiclos/index.html', alunos_ciclo=alunos_ciclo, turma=turma, ciclo_id=id)
     else:
         return jsonify({"Erro": "Ciclo não encontrado"})

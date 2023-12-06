@@ -247,6 +247,10 @@ main input{
 #inserirAluno p{
   display: flex;
   flex-direction: row;
+  color: #000;
+  margin-top: 20px;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 #inserirAluno{
@@ -278,7 +282,7 @@ main input{
     color:#283232;
     font-size: 30px;
     letter-spacing: 1.5px;
-    margin-left: 40px;
+    margin: 0 10px 0 60px;
     font-weight: bold;
 }
 
@@ -387,6 +391,7 @@ div#addHtml{
 
 li {
     font-size: 30px;
+    color: black;
 }
 
 #btnCiclo{
@@ -395,7 +400,7 @@ li {
     text-align: center;
 }
 
-#fade-nota{
+.fade-nota{
     position: fixed;
     top: 0;
     left: 0;
@@ -405,7 +410,7 @@ li {
     z-index: 5
 }
 
-#modal-nota{
+.modal-nota{
     position: fixed;
     left: 50%;
     top: 50%;
@@ -426,8 +431,8 @@ li {
     flex-direction: row-reverse;
 }
 
-#modal-nota.hide-nota,
-#fade-nota.hide-nota{
+.modal-nota.hide-nota,
+.fade-nota.hide-nota{
     opacity: 0;
     pointer-events: none;
 }
@@ -460,7 +465,9 @@ li {
 }
 
 .notas{
-    margin-top: 25px;
+    display: flex;
+    margin: 25px 0 0 0;
+    justify-content: space-around;
 }
 
 #principal{
@@ -468,4 +475,10 @@ li {
     align-items: center;
     justify-content: space-evenly;
     border-bottom: 1px solid #a92727;
+}
+
+.titulo-span{
+    color: 283232;
+    font-size: 30px;
+    font-weight: bold;
 }
