@@ -46,14 +46,14 @@
                   <button id="close-modal-nota" onclick="toggleModalNota({{aluno['ID']}})">X</button>
                 </div>
                 <ul class="notas">
-                  {% for ciclo_id, nota in aluno["Notas"].items() %}
+                  {% for ciclo_id in ciclos_id %}
                   <li>
-                    <span class="titulo-span">Ciclo {{ ciclo_id }}: </span>{{ nota }}
+                    <span class="titulo-span">Ciclo {{ loop.index }}: </span>{{ aluno["Notas"][ciclo_id] }}
                   </li>
                   {% endfor %}
                 </ul>
                 <p>
-                Média de notas: {{ media[ aluno["ID"]] }} 
+                Média de notas: {{ media[aluno["ID"]] }} 
                 </p>
                 {% else %}
                 

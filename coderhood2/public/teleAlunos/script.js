@@ -51,8 +51,10 @@ function configurarEventoBotaoEditarAluno(){
   }
 }
 
-[openModalBtnCiclo, closeModalBtnCiclo, fadeCiclo].forEach((el) => {
-  el.addEventListener("click", () => toggleModalCiclo());
+document.addEventListener('DOMContentLoaded', () => {
+  [openModalBtnCiclo, closeModalBtnCiclo, fadeCiclo].forEach((el) => {
+    el.addEventListener("click", () => toggleModalCiclo());
+  });
 });
 
 
