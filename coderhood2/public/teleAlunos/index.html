@@ -21,42 +21,50 @@
     </header>
     <div id="container">
       <nav id="nav-container">
-        
         <button id="openModalBtnCiclo" class="link-button">
           Ciclo de Entregas
         </button>
-      
       </nav>
 
       <main>
         <h1>Turma {{turma["Nome da Turma"]}} - {{turma["Turno"]}}</h1>
         <div id="inserirAluno">
-            {% for aluno in alunos %}
-            <div class="aluno">
-                <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
-                <span class="titulo">R.A:</span> {{aluno["R.A"]}}
-                
+          {% for aluno in alunos %}
+          <div class="aluno">
+            <span class="titulo">Nome:</span> {{aluno["Nome do Aluno"]}}
+            <span class="titulo">R.A:</span> {{aluno["R.A"]}}
+
+            <button id="open-modal-nota">Notas</button>
+            <div id="fade-nota" class="hide-nota"></div>
+            <div id="modal-nota" class="hide-nota">
+              <div id="modal-nota-header">
+              </div>
+              <div id="modal-nota-body">
                 {% if aluno["Notas"] %}
-                    <span class="titulo">Notas:</span>
-                    <ul class="notas">
-                        {% for ciclo_id, nota in aluno["Notas"].items() %}
-                            <li><span class="titulo">Ciclo {{ ciclo_id }}: </span>{{ nota }}</li>
-                        {% endfor %}
-                    </ul>
+                <div id="principal">
+                  <span class="titulo">Notas:</span>
+                  <button id="close-modal-nota">X</button>
+                </div>
+                <ul class="notas">
+                  {% for ciclo_id, nota in aluno["Notas"].items() %}
+                  <li>
+                    <span class="titulo">Ciclo {{ ciclo_id }}: </span>{{ nota }}
+                  </li>
+                  {% endfor %}
+                </ul>
                 {% else %}
-                    <span class="titulo">Notas:</span> Nenhuma nota registrada.
-                {% endif %}
+                <span class="titulo">Notas:</span> Nenhuma nota registrada. {%
+                endif %}
+              </div>
             </div>
-            {% endfor %}
+          </div>
+          {% endfor %}
         </div>
-    </main>
-    
-      
+      </main>
+
       <div id="modal-container">
         <div id="fade" class="hide"></div>
         <div id="modal" class="hide">
-          
-
           <div id="modal-body">
             <input id="nomeAluno" type="text" placeholder="Nome do Aluno:" />
             <input id="ra" type="text" placeholder="Digite o R.A do Aluno:" />
@@ -75,36 +83,31 @@
             <button id="closeModalBtnCiclo">X</button>
           </div>
           <div id="ciclo">
-              <div>
-                  <label>
-                    Início do Ciclo:
-                    <input id="cicloInicio" type="date" placeholder="teste"> 
-                  </label>
-                  <label>
-                    Fim do Ciclo:
-                    <input id="cicloFim" type="date" placeholder="Fim do Ciclo">
-                  </label>                  
-              </div>
-              <button id="btnCiclo" type="submit" onclick="adicionarCiclo()">Salvar Ciclo</button>
+            <div>
+              <label>
+                Início do Ciclo:
+                <input id="cicloInicio" type="date" placeholder="teste" />
+              </label>
+              <label>
+                Fim do Ciclo:
+                <input id="cicloFim" type="date" placeholder="Fim do Ciclo" />
+              </label>
+            </div>
+            <button id="btnCiclo" type="submit" onclick="adicionarCiclo()">
+              Salvar Ciclo
+            </button>
           </div>
 
           <div id="modal-body">
             {% for ciclo in turma['ciclos'] %}
-              <a class="ciclo-link" href="/ciclos/{{ciclo['id']}}">{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a>
+            <a class="ciclo-link" href="/ciclos/{{ciclo['id']}}"
+              >{{ciclo["periodo_inicio"]}} - {{ciclo["periodo_fim"]}}</a
+            >
             {% endfor %}
-            <!--<ul>
-              <li>Nome</li>
-              <li>Data Ínicio</li>
-              <li>Data Fim</li>
-              <li>Peso</li>
-              <li>Status</li>
-            </ul> -->
           </div>
         </div>
       </div>
     </div>
-    <footer>
-      
-    </footer>
+    <footer></footer>
   </body>
 </html>

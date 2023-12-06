@@ -394,3 +394,78 @@ li {
     align-items: center;
     text-align: center;
 }
+
+#fade-nota{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5
+}
+
+#modal-nota{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #c6d6d6;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 500px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 25px;
+}
+
+#modal-nota-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-direction: row-reverse;
+}
+
+#modal-nota.hide-nota,
+#fade-nota.hide-nota{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#open-modal-nota{
+    padding: 3px 25px 3px 25px;
+    border-radius: .5rem;
+    border: 1px solid #a92727;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#open-modal-nota:hover{
+    background-color: #fa4343;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+#close-modal-nota{
+    padding: 3px 25px 3px 25px;
+    border-radius: .5rem;
+    border: 1px solid #a92727;
+    cursor: pointer;
+}
+
+#close-modal-nota:hover{
+    background-color: #fa4343;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+.notas{
+    margin-top: 25px;
+}
+
+#principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #a92727;
+}

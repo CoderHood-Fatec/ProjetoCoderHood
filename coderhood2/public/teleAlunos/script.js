@@ -7,6 +7,10 @@ const openModalBtnCiclo = document.getElementById("openModalBtnCiclo");
 const closeModalBtnCiclo = document.getElementById("closeModalBtnCiclo");
 const modalCiclo = document.getElementById("modalCiclo");
 const fadeCiclo = document.getElementById("fadeCiclo");
+const openModalNota = document.getElementById("open-modal-nota");
+const closeModalNota = document.getElementById("close-modal-nota");
+const ModalNota = document.querySelector("#modal-nota");
+const fadeNota = document.querySelector("#fade-nota");
 
 //Função para alterar a visibilidade do modal
 const toggleModal = () => {
@@ -17,6 +21,11 @@ const toggleModal = () => {
 const toggleModalCiclo = () => {
   modalCiclo.classList.toggle("hide");
   fadeCiclo.classList.toggle("hide");
+};
+
+const toggleModalNota = () => {
+  ModalNota.classList.toggle("hide-nota");
+  fadeNota.classList.toggle("hide-nota");
 };
 
 window.addEventListener('load', () => {
@@ -42,6 +51,10 @@ function configurarEventoBotaoEditarAluno(){
 
 [openModalBtnCiclo, closeModalBtnCiclo, fadeCiclo].forEach((el) => {
   el.addEventListener("click", () => toggleModalCiclo());
+});
+
+[openModalNota, closeModalNota, fadeNota].forEach((el) => {
+  el.addEventListener("click", () => toggleModalNota());
 });
 
 
