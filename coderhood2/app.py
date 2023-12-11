@@ -1,5 +1,6 @@
-from flask import Flask, jsonify, request, send_from_directory, render_template
+from flask import Flask, jsonify, request, send_from_directory, render_template, send_file
 import json
+import csv
 import os
 
 app = Flask(__name__, template_folder='public')
@@ -299,16 +300,6 @@ def saveNotas():
 def getAlunos():
     return jsonify({"alunos": alunos})
 
-# @app.route('/aluno/<int:id>', methods=['GET'])
-# def obterAluno(id):
-#     if os.path.exists(os.path.join(json_folder, "alunos.json")):
-#         with open(os.path.join(json_folder, "alunos.json"), "r") as f:
-#             alunos = json.load(f)
-
-#             return jsonify(alunos[id])
-    
-
-
 
 # Função para salvar os dados em arquivos JSON
 
@@ -317,6 +308,23 @@ def save_data():
         json.dump(turmas, f)
     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
         json.dump(alunos, f)
+
+@app.route('/converter', methods=['POST'])
+def realizarConversao():
+    resultado = converter()
+    return jsonify({"Mensagem": resultado})
+
+def converter():
+    with open('JSON/turmas.json', 'r') as arquivo_json:
+        dados_json = json.load(arquivo_json)
+
+    with open('saida.csv', 'w') as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        escritor_csv.writerow(dados_json[0].keys())
+        for linha in dados_json:
+            escritor_csv.writerow(linha.values())
+
+    return send_file('saida.csv', as_attachment=True, download_name='saida.csv')
 
 # Roda a API
 if __name__ == '__main__':
@@ -328,3 +336,4 @@ if __name__ == '__main__':
         with open(os.path.join(json_folder, "alunos.json"), "r") as f:
             alunos = json.load(f)
     app.run(host='0.0.0.0')
+

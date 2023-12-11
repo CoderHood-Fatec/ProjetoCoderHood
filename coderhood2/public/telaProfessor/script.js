@@ -147,36 +147,21 @@ function enviarDadosAluno() {
   raInput.value = "";
 }
 
-/* //Carregar turmas para selecionar em qual turma o aluno irá fazer parte
-
-function carregarTurmas() {
-  fetch('/turmas')
-      .then(response => response.json())
-      .then(data => {
-          const turmasDiv = document.getElementById('turmas');
-
-          // Preencher o div com as checkboxes das turmas do arquivo turmas.json
-          data.forEach(turma => {
-              const checkbox = document.createElement('input');
-              checkbox.type = 'checkbox';
-              checkbox.name = 'turma'; // Define um nome para o grupo de checkboxes
-              checkbox.value = turma['Nome da Turma'];
-              checkbox.id = `turma_${turma['ID']}`; // Define um ID exclusivo para cada checkbox
-
-              const label = document.createElement('label');
-              label.htmlFor = `turma_${turma['ID']}`;
-              label.appendChild(document.createTextNode(turma['Nome da Turma']));
-
-              turmasDiv.appendChild(checkbox);
-              turmasDiv.appendChild(label);
-              turmasDiv.appendChild(document.createElement('br')); // Adicione uma quebra de linha
-          });
-      })
-      .catch(error => {
-          console.error('Erro ao carregar turmas:', error);
-      });
-}
-
-// Chame a função carregarTurmas para preencher o div de checkboxes quando a página for carregada
-window.addEventListener('load', carregarTurmas); */
-
+document.getElementById('converterBtn').addEventListener('click', () => {
+  fetch('/converter', {
+    method: 'POST'
+  })
+  .then(response => {
+    if (response.ok){
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(new Blob([response.blob], { type: 'text/csv' }));
+      link.download = 'saida.csv';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      response.text().then(message => alert(`Erro: ${message}`));
+    }
+  })
+  .catch(error => console.error(error));
+})
