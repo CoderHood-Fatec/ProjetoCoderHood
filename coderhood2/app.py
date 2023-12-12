@@ -312,18 +312,27 @@ def save_data():
 @app.route('/converter', methods=['POST'])
 def realizarConversao():
     resultado = converter()
-    return jsonify({"Mensagem": resultado})
+    return resultado
 
 def converter():
+    # Verifique os dados do JSON antes da conversão
     with open('JSON/turmas.json', 'r') as arquivo_json:
         dados_json = json.load(arquivo_json)
+        print("Dados do JSON antes da conversão:", dados_json)
 
-    with open('saida.csv', 'w') as arquivo_csv:
+    # Sua lógica de conversão para CSV aqui
+    with open('saida.csv', 'w', newline='') as arquivo_csv:
         escritor_csv = csv.writer(arquivo_csv)
         escritor_csv.writerow(dados_json[0].keys())
         for linha in dados_json:
             escritor_csv.writerow(linha.values())
 
+    # Verifique os dados do CSV após a conversão
+    with open('saida.csv', 'r') as arquivo_csv:
+        dados_csv = arquivo_csv.read()
+        print("Dados do CSV após a conversão:", dados_csv)
+
+    # Retorne o arquivo CSV como resposta
     return send_file('saida.csv', as_attachment=True, download_name='saida.csv')
 
 # Roda a API

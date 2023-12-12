@@ -1,3 +1,3 @@
-ID,Nome da Turma,Professor,Turno,alunos,ciclos
-1,BD,Nadalete,Noturno,[1],"[{'periodo_inicio': '2023-11-15', 'periodo_fim': '2023-11-22', 'id': 1}, {'periodo_inicio': '2023-11-23', 'periodo_fim': '2023-12-01', 'id': 2}, {'periodo_inicio': '2023-11-07', 'periodo_fim': '2023-11-16', 'id': 3}, {'periodo_inicio': '2023-10-31', 'periodo_fim': '2023-11-07', 'id': 4}]"
-2,teste,teste,teste,[],[]
+ID,Nome da Turma,Professor,Turno,alunos,ciclos
+1,BD,Nadalete,Noturno,[1],"[{'periodo_inicio': '15/11/2023', 'periodo_fim': '22/11/2023', 'id': 1}, {'periodo_inicio': '23/11/2023', 'periodo_fim': '01/12/2023', 'id': 2}, {'periodo_inicio': '07/11/2023', 'periodo_fim': '16/11/2023', 'id': 3}, {'periodo_inicio': '31/10/2023', 'periodo_fim': '07/11/2023', 'id': 4}, {'periodo_inicio': '2023-12-14', 'periodo_fim': '2023-12-21', 'id': 5}]"
+2,teste,teste,teste,[],[]

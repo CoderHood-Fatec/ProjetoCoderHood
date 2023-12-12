@@ -221,14 +221,6 @@ function deleteAluno(ra) {
       alert("Ocorreu um erro: " + e);
     });
 
-
-
-  // Função para Alterar Alunos
-  
-
-
-
-
   //Adicionando evento para fechar o modal ao click no button ou apertar tecla enter
 
   document.querySelectorAll("input").forEach((input) => {
