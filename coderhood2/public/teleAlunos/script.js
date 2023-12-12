@@ -181,7 +181,16 @@ function adicionarCiclo() {
       turma: turmaAtual
     })
   }).then(response => response.json()).then(data => {
-    document.querySelector('#modalCiclo #modal-body').innerHTML += `<a class="ciclo-link" href="/ciclos/${data["id"]}">` + data["periodo_inicio"] + ' - ' + data["periodo_fim"] + '</a>'
+    // Convertendo a data de "aaaa/mm/dd" para um objeto Date
+    const inicioCicloDate = new Date(data["periodo_inicio"]);
+    const fimCicloDate = new Date(data["periodo_fim"]);
+
+    // Obtendo o formato "dd/mm/aaaa"
+    const inicioFormatado = `${inicioCicloDate.getDate().toString().padStart(2, '0')}/${(inicioCicloDate.getMonth() + 1).toString().padStart(2, '0')}/${inicioCicloDate.getFullYear()}`;
+    const fimFormatado = `${fimCicloDate.getDate().toString().padStart(2, '0')}/${(fimCicloDate.getMonth() + 1).toString().padStart(2, '0')}/${fimCicloDate.getFullYear()}`;
+
+    // Atualizando o conteúdo HTML
+    document.querySelector('#modalCiclo #modal-body').innerHTML += `<a class="ciclo-link" href="/ciclos/${data["id"]}">` + inicioFormatado + ' - ' + fimFormatado + '</a>';
 
     console.log(data);
   })
