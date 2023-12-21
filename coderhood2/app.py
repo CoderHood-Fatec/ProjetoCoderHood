@@ -37,9 +37,11 @@ def tela_professor():
 # Inicializa os dados das turmas e alunos
 turmas = []
 alunos = []
+professores = []
 turma_id_counter = 1
 aluno_id_counter = 1
 ciclo_id_counter = 1
+professor_id_counter = 1
 
 with open("JSON/turmas.json") as t:
     turmas = json.load(t)
@@ -65,6 +67,14 @@ with open("JSON/alunos.json") as a:
 
         if max_id_a > 0:
             aluno_id_counter = max_id_a + 1
+
+with open("JSON/professores.json") as a:
+    professores = json.load(a)
+    if professores != []:
+        max_id_a = max(item["ID"] for item in professores)
+
+        if max_id_a > 0:
+            professor_id_counter = max_id_a + 1
 
 with open("JSON/turmas.json") as aa:
     add_alunos = json.load(aa)
@@ -232,6 +242,7 @@ def addAluno():
         "ID": aluno_id,
         "Nome do Aluno": data.get("Nome do Aluno"),
         "R.A": data.get("R.A"),
+        "Email do Aluno": data.get("emailAluno"),
         "turma": [int(turma_id) for turma_id in data.get("turmas")],
         "Notas": {}
     }
@@ -258,6 +269,45 @@ def addAluno():
         json.dump(turmas_json, at)
 
     return data.get("Nome do Aluno")
+
+# Rota para adicionar professor
+@app.route('/cadastrar-professor', methods=['POST'])
+def addProfessor():
+    data = request.get_json()
+    global professor_id_counter
+    professor_id = professor_id_counter
+    professor_id_counter += 1
+
+    professor = {
+        "ID": professor_id,
+        "Nome do Professor": data.get("Nome do Professor"),
+        "R.A": data.get("R.A"),
+        "turma": [int(turma_id) for turma_id in data.get("turmas")],
+        "email": data.get("email")
+    }
+    professores.append(professor)
+    save_data()
+
+    # Adicione o professor às turmas existentes sem sobrescrever o arquivo JSON
+    for turma in turmas:
+        if turma["ID"] in professor["turma"]:
+            if professor_id not in turma["professores"]:
+                turma["professores"].append(professor_id)
+
+    with open(os.path.join(json_folder, "turmas.json"), "w") as f:
+        json.dump(turmas, f)
+    with open("JSON/turmas.json", "r") as at:
+        turmas_json = json.load(at)
+
+    with open("JSON/turmas.json", "w") as at:
+        turma_do_professor = professor["turma"]
+        for turma in turmas_json:
+            if turma["Nome da Turma"] == turma_do_professor:
+                turma["professores"].append(professor["ID"])
+
+        json.dump(turmas_json, at)
+
+    return data.get("Nome do Professor")
 
 
 # @app.route('/aluno/<int:id>', methods=['DELETE'])
@@ -308,6 +358,8 @@ def save_data():
         json.dump(turmas, f)
     with open(os.path.join(json_folder, "alunos.json"), "w") as f:
         json.dump(alunos, f)
+    with open(os.path.join(json_folder, "professores.json"), "w") as f:
+        json.dump(professores, f)
 
 @app.route('/converter', methods=['POST'])
 def realizarConversao():
@@ -345,4 +397,4 @@ if __name__ == '__main__':
         with open(os.path.join(json_folder, "alunos.json"), "r") as f:
             alunos = json.load(f)
     app.run(host='0.0.0.0')
-
+    

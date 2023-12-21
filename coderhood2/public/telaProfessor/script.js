@@ -34,11 +34,11 @@ function enviarDados() {
 
   //Criando uma lista de objeto com os dados das turmas
   const dados = {
-      "Nome da Turma": nomeTurma,
-      Professor: professor,
-      Turno: turno,
-      Alunos: []
-    };
+    "Nome da Turma": nomeTurma,
+    Professor: professor,
+    Turno: turno,
+    Alunos: []
+  };
 
   //exibindo o teste no navegador
   console.log(dados);
@@ -56,14 +56,14 @@ function enviarDados() {
 
   //Enviando a requisição POST para o servidor
   fetch(window.location.origin + '/turma', option).then(teste => {
-    teste.text().then(id =>{
-    //Exibindo a resposta do servidor na página
-    document.getElementById("inserirTurma").innerHTML+=`<a class=turma href="/turmas/${id}">` + " " +id+'</a>'
+    teste.text().then(id => {
+      //Exibindo a resposta do servidor na página
+      document.getElementById("inserirTurma").innerHTML += `<a class=turma href="/turmas/${id}">` + " " + id + '</a>'
       console.log(id + "este é o text")
-  })
+    })
   }).catch(e => {
-      console.log(e);
-      });
+    console.log(e);
+  });
 
   toggleModal();
 
@@ -99,28 +99,47 @@ const toggleModalAluno = () => {
   el.addEventListener("click", () => toggleModalAluno());
 });
 
-//Recebendo os dados inseridos no cadastrar turmas
-function enviarDadosAluno() {
+//Referências para os elemetnos do modal
+const openModalBtnProfessor = document.getElementById("openModalBtnProfessor");
+const closeModalBtnProfessor = document.getElementById("closeModalBtnProfessor");
+const modalProfessor = document.getElementById("modalProfessor");
+const fadeProfessor = document.getElementById("fadeProfessor");
+
+//Função para alterar a visibilidade do modalAluno
+const toggleModalProfessor = () => {
+  modalProfessor.classList.toggle("hide");
+  fadeProfessor.classList.toggle("hide");
+};
+
+[openModalBtnProfessor, closeModalBtnProfessor, fadeProfessor].forEach((el) => {
+  el.addEventListener("click", () => toggleModalProfessor());
+});
+
+//Recebendo os dados inseridos no cadastrar professor
+function enviarDadosProfessor() {
   // Referências dos elementos inseridos
-  const nomeAlunoInput = document.getElementById("nomeAluno");
-  const raInput = document.getElementById("ra");
+  const nomeProfessorInput = document.getElementById("nomeProfessor");
+  const raInput = document.getElementById("raProfessor");
+  const emailInput = document.getElementById("email");
   const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
 
   // Pegando os valores inseridos nos inputs
-  const nomeAluno = nomeAlunoInput.value;
+  const nomeProfessor = nomeProfessorInput.value;
   const ra = raInput.value;
+  const email = emailInput.value;
   const turmasSelecionadas = [];
 
   checkboxes.forEach(checkbox => {
-      turmasSelecionadas.push(checkbox.value);
-      console.log(turmasSelecionadas)
+    turmasSelecionadas.push(checkbox.value);
+    console.log(turmasSelecionadas)
   });
 
-  // Criando um objeto com os dados do aluno, incluindo as turmas selecionadas
+  // Criando um objeto com os dados do Professor, incluindo as turmas selecionadas
   const dados = {
-      "Nome do Aluno": nomeAluno,
-      "R.A": ra,
-      "turmas": turmasSelecionadas
+    "Nome do Professor": nomeProfessor,
+    "R.A": ra,
+    "turmas": turmasSelecionadas,
+    "email": email
   };
 
   // exibindo os dados no navegador
@@ -128,16 +147,68 @@ function enviarDadosAluno() {
 
   // configurando a requisição POST
   const option = {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(dados), // convertendo em JSON os objetos
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dados), // convertendo em JSON os objetos
+  }
+
+  // Enviando a requisição POST para o servidor
+  fetch(window.location.origin + '/cadastrar-professor', option).catch(e => {
+    console.log(e);
+  });
+
+  toggleModalProfessor();
+
+  // Limpar os campos de entrada
+  nomeProfessorInput.value = "";
+  raInput.value = "";
+  emailInput.value = "";
+}
+
+//Recebendo os dados inseridos no cadastrar turmas
+function enviarDadosAluno() {
+  // Referências dos elementos inseridos
+  const nomeAlunoInput = document.getElementById("nomeAluno");
+  const raInput = document.getElementById("ra");
+  const emailInputAluno = document.getElementById("emailAluno");
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+  // Pegando os valores inseridos nos inputs
+  const nomeAluno = nomeAlunoInput.value;
+  const ra = raInput.value;
+  const emailAluno = emailInputAluno.value;
+  const turmasSelecionadas = [];
+
+  checkboxes.forEach(checkbox => {
+    turmasSelecionadas.push(checkbox.value);
+    console.log(turmasSelecionadas)
+  });
+
+  // Criando um objeto com os dados do aluno, incluindo as turmas selecionadas
+  const dados = {
+    "Nome do Aluno": nomeAluno,
+    "R.A": ra,
+    "email do Aluno": emailAluno,
+    "turmas": turmasSelecionadas
+  };
+
+  // exibindo os dados no navegador
+  console.log(dados);
+
+  // configurando a requisição POST
+  const option = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dados), // convertendo em JSON os objetos
   }
 
   // Enviando a requisição POST para o servidor
   fetch(window.location.origin + '/aluno', option).catch(e => {
-      console.log(e);
+    console.log(e);
   });
 
   toggleModalAluno();
@@ -145,23 +216,26 @@ function enviarDadosAluno() {
   // Limpar os campos de entrada
   nomeAlunoInput.value = "";
   raInput.value = "";
+  emailInputAluno.value = "";
 }
 
 document.getElementById('converterBtn').addEventListener('click', () => {
   fetch('/converter', {
     method: 'POST'
   })
-  .then(response => {
-    if (response.ok){
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(new Blob([response.blob], { type: 'text/csv' }));
-      link.download = 'saida.csv';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      response.text().then(message => alert(`Erro: ${message}`));
-    }
-  })
-  .catch(error => console.error(error));
+    .then(response => {
+      if (response.ok) {
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(new Blob([response.blob], { type: 'text/csv' }));
+        link.download = 'saida.csv';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        response.text().then(message => alert(`Erro: ${message}`));
+      }
+    })
+    .catch(error => console.error(error));
 })
+
+

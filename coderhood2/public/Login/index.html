@@ -1,38 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/Login/style.css">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/Login/style.css">
+  <title>Login</title>
+
+
+  <style>
+    div {
+      margin: 22px auto;
+
+    }
+
+    small {
+      display: block;
+    }
+  </style>
+
 </head>
+
 <body>
-    <main>
-        <header>
-            <img class="coderhood" src="public/Logo API.png" alt="" srcset="">
-            <img class="pbltex" src="public/Logo PBLTex.png" alt="" srcset="">
-        </header>
-        <div id="container">
-            <div id="container-login">
-                <p class="login">Login</p>
-            </div>
-            <div id="container-box-user">
-                <label class="first-label">Usuario:</label>
-                <input placeholder="Insira seu usuario" type="text" id="user">
-                
-                <label class="second-label">Senha:</label>
-                <input placeholder="Insira sua senha" type="text" id="user">
 
-                <a href="/professor"><button>Entrar</button></a>
-                <!-- <button>Entrar</button> -->
-            </div>
+  <main>
+    <header>
+      <img class="coderhood" src="public/Logo API.png" alt="" srcset="">
+      <img class="pbltex" src="public/Logo PBLTex.png" alt="" srcset="">
+    </header>
+
+      <div id="container">
+
+
+        <div id="container-login">
+          <p class="login">Login</p>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2023 todos os direitos reservado Coderhood Software<br>Contato:<a href="mailto:caiquepv1@gmail.com">coderhood@software.com</a>
-        </p>
-    </footer>
-</body>
 
-
-</html>
+        <div id="container-box-user">
+          <div>
+            <small id="textForm"></small>
+            <form id="loginForm">
+              <label for="email">Usuario:</label>
+              <input type="email" id="email" required>
+              <small id="textEmail"></small>
+          
+              <label for="password">Senha:</label>
+              <input type="password" id="password" required>
+              <small id="textPassword"></small>
+          
+              <button type="submit">Entrar</button>
+            </form>
+          </div>
+          
+          <script>
+            const form = document.getElementById("loginForm");
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("password");
+            const textForm = document.getElementById("textForm");
+            const textEmail = document.getElementById("textEmail");
+            const textPassword = document.getElementById("textPassword");
+          
+            form.addEventListener("submit", function(e) {
+              e.preventDefault();
+              if (emailInput.value == "" || passwordInput.value == "") {
+                textForm.textContent = "";
+              } else if (
+                !validatorEmail(emailInput.value) ||
+                !validatorPassword(passwordInput.value)
+              ) {
+                textForm.textContent = "Usuario ou senha incorretos!";
+              } else {
+                textForm.textContent = "";
+                textEmail.textContent = "";
+                textPassword.textContent = "";
+          
+                window.location.href = "http://127.0.0.1:5000/professor ";// Aqui você pode redirecionar para a página desejada
+              }
+            });
+          
+            emailInput.addEventListener("keyup", function() {
+              if (!validatorEmail(emailInput.value)) {
+                textEmail.textContent = "";
+              } else {
+                textEmail.textContent = "";
+              }
+            });
+          
+            passwordInput.addEventListener("keyup", function() {
+              if (!validatorPassword(passwordInput.value)) {
+                textPassword.textContent = "";
+              } else {
+                textPassword.textContent = "";
+              }
+            });
+          
+            function validatorEmail(email) {
+              let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+              return emailPattern.test(email);
+            }
+          
+            function validatorPassword(password) {
+              let passwordPattern = /^.{6,}$/;
+              return passwordPattern.test(password);
+            }
+          </script>

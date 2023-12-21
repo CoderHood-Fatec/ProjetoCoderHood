@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="/public/telaProfessor/script.js" defer></script>
     <title>Turmas</title>
 </head>
+
 <body>
     <header>
         <img class="coderhood" src="/public/Logo API.png" alt="" href="/turmas">
@@ -14,25 +16,26 @@
     </header>
     <div id="container">
         <nav id="nav-container">
-                <button id="openModalBtn" class="link-button">Cadastro de Turmas</button>
-                <button id="openModalBtnAluno" class="link-button">Cadastro de Alunos</button>
-                <button id="converterBtn" class="link-button">Importar Dados</button>
-                <!--<a href="/alunos"> <button class="link-button">Alunos</button></a>
+            <button id="openModalBtn" class="link-button">Cadastro de Turmas</button>
+            <button id="openModalBtnAluno" class="link-button">Cadastro de Alunos</button>
+            <button id="openModalBtnProfessor" class="link-button">Cadastro de Professor</button>
+            <button id="converterBtn" class="link-button">Importar Dados</button>
+            <!--<a href="/alunos"> <button class="link-button">Alunos</button></a>
                 <a href="/export_csv"  target="_blank" > <button class="link-button">Exportar Alunos</button></a>-->
-                
+
         </nav>
 
         <main>
-          <h1>Turmas</h1>
-          <div class="bgTurma">
-            <div id="inserirTurma">
-                {% for turma in turmas %}
+            <h1>Turmas</h1>
+            <div class="bgTurma">
+                <div id="inserirTurma">
+                    {% for turma in turmas %}
                     <a class=turma href="/turmas/{{turma['Nome da Turma']}}"> {{turma["Nome da Turma"]}} </a>
-                {% endfor %}  
+                    {% endfor %}
+                </div>
             </div>
-          </div>
         </main>
-        
+
         <div id="modal-container">
             <div id="fade" class="hide"></div>li
             <div id="modal" class="hide">
@@ -46,7 +49,7 @@
                     <input id="nomeTurma" type="text" placeholder="Nome da Turma:" required>
                     <input id="professor" type="text" placeholder="Professor:" required>
                     <input id="turno" type="text" placeholder="Turno:" required>
-                    
+
                     <button id="btn" type="submit" onclick="enviarDados()">Adicionar</button>
                 </div>
 
@@ -65,18 +68,47 @@
                 <div id="modal-body">
                     <input id="nomeAluno" type="text" placeholder="Nome do Aluno:" required>
                     <input id="ra" type="number" placeholder="Digite o R.A do Aluno:" required>
+                    <input id="emailAluno" type="email" placeholder="Digite o e-mail do Aluno:" required>
                     <div id="turmasAdicionadas">
                         {% for turma in turmas %}
-                            <input type="checkbox" id="turma{{ turma['ID'] }}" name="turmas[]" value="{{ turma['ID'] }}">
-                            <label for="turma{{ turma['ID'] }}">{{ turma['Nome da Turma'] }}</label>
+                        <input type="checkbox" id="turma{{ turma['ID'] }}" name="turmas[]" value="{{ turma['ID'] }}">
+                        <label for="turma{{ turma['ID'] }}">{{ turma['Nome da Turma'] }}</label>
                         {% endfor %}
                     </div>
                     <button id="btn" type="submit" onclick="enviarDadosAluno()">Adicionar</button>
                 </div>
-                
 
+
+            </div>
         </div>
-    </div>
+        <div id="modal-container">
+            <div id="fadeProfessor" class="hide"></div>
+            <div id="modalProfessor" class="hide">
+
+                <div id="modal-header">
+                    <h2 class="cadastro-turma">Cadastre o Professor</h2>
+                    <button id="closeModalBtnProfessor">X</button>
+                </div>
+
+
+                <div id="modal-body">
+                    <input id="nomeProfessor" type="text" placeholder="Nome do Professor:" required>
+                    <input id="raProfessor" type="number" placeholder="Digite o ID do Professor:" required>
+                    <input id="email" type="email" placeholder="Digite o e-mail do Professor:" required>
+                    <div id="turmasAdicionadas">
+                        {% for turma in turmas %}
+                        <input type="checkbox" id="turma{{ turma['ID'] }}" name="turmas[]" value="{{ turma['ID'] }}">
+                        <label for="turma{{ turma['ID'] }}">{{ turma['Nome da Turma'] }}</label>
+                        {% endfor %}
+                    </div>
+                    <button id="btn" type="submit" onclick="enviarDadosProfessor()">Adicionar</button>
+                </div>
+
+
+            </div>
+        </div>
 
 </body>
+
 </html>
+
